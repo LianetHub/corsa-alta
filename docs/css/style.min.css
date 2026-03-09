@@ -6,6 +6,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "TTFirsNeue";
+  font-display: swap;
+  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
   font-family: "Onest";
   src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"), url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"), url("../fonts/Onest-VariableFont_wght.woff") format("woff");
   font-weight: 100 900;
@@ -16,8 +23,8 @@
 @font-face {
   font-family: "TTFirsNeue";
   font-display: swap;
-  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -25,13 +32,6 @@
   font-display: swap;
   src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TTFirsNeue";
-  font-display: swap;
-  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 [class^=icon-]:before,
@@ -693,41 +693,41 @@ h3:not([class]) {
   z-index: 1;
   display: inline-flex;
   justify-content: center;
+  gap: 1.5rem;
   align-items: center;
   text-align: center;
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 0.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 2rem;
+  padding: 1.25rem 2.5rem;
+  font-family: "Onest";
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.btn::before {
+  order: 1;
+  transition: all 0.3s ease;
 }
 .btn:focus-visible {
   box-shadow: 0 0 0.0625rem 0.0625rem #2D2D2D;
 }
 .btn.btn-primary {
-  border-color: #eb5b38;
-  background: #eb5b38;
-  color: #f8f8f8;
+  border-color: #BF1618;
+  background: #BF1618;
+  color: #F9F9F9;
 }
-.btn.btn-primary:hover {
-  background: #f63a19;
-  border-color: #f63a19;
+.btn.btn-primary:hover, .btn.btn-primary:active {
+  background: #1F1F1F;
+  color: #F9F9F9;
 }
-.btn.btn-primary:active {
-  background: #f63a19;
-  border-color: #f63a19;
-}
-@media (min-width: 991.98px) {
-  .btn.btn-lg {
-    line-height: 1.5;
-    padding: 0.9375rem 1.5rem;
-    font-size: 1.25rem;
-  }
+.btn.btn-primary:hover::before, .btn.btn-primary:active::before {
+  color: #BF1618;
 }
 .btn:disabled, .btn[aria-disabled=true] {
   cursor: default;
-  opacity: 0.3;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -1034,6 +1034,61 @@ body {
 }
 .icon-menu.active span:nth-child(3)::before {
   transform: rotate(-225deg);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(31, 31, 31, 0) 64.27%, #1F1F1F 93.04%), url("../img/hero/noise.svg") center/cover no-repeat, url("../img/hero/main.jpg") center/cover no-repeat;
+  height: 64rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+}
+.hero .container {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.hero__offer {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+.hero__tagline {
+  max-width: 12.3125rem;
+}
+.hero__logo {
+  margin-top: 1.875rem;
+}
+.hero__title {
+  position: relative;
+  z-index: 2;
+  margin-top: 8.125rem;
+  max-width: 21.125rem;
+}
+.hero__btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+}
+.hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero__image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .philosophy {

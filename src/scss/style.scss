@@ -61,6 +61,79 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
 //=======================================
 
+.hero {
+    position: relative;
+    z-index: $ui-index-2;
+    background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%),
+        url("@img/hero/noise.svg") center / cover no-repeat,
+        url("@img/hero/main.jpg") center / cover no-repeat;
+    height: rem(1024);
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+
+    .container {
+        width: 100%;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .hero__offer
+    &__offer {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+    }
+
+    // .hero__tagline
+    &__tagline {
+        max-width: 12.3125rem;
+    }
+
+    // .hero__logo
+    &__logo {
+        margin-top: rem(30);
+    }
+
+    // .hero__title
+    &__title {
+        position: relative;
+        z-index: $ui-index-2;
+        margin-top: rem(130);
+        max-width: 21.125rem;
+    }
+
+    // .hero__btn
+    &__btn {
+        position: relative;
+        z-index: $ui-index-2;
+        margin-top: 2rem;
+    }
+
+    // .hero__image
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: $ui-index-1;
+        pointer-events: none;
+
+        & img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+
 .philosophy {
     padding: rem(50) 0;
 }

@@ -6,6 +6,13 @@
 								font-style: normal;
 							}
 @font-face {
+								font-family: 'TTFirsNeue';
+								font-display: swap;
+								src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+								font-weight: 700;
+								font-style: normal;
+							}
+@font-face {
 								font-family: 'Onest';
 								src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"),
 									url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"),
@@ -18,8 +25,8 @@
 @font-face {
 								font-family: 'TTFirsNeue';
 								font-display: swap;
-								src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
-								font-weight: 700;
+								src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
+								font-weight: 400;
 								font-style: normal;
 							}
 @font-face {
@@ -27,12 +34,5 @@
 								font-display: swap;
 								src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
 								font-weight: 500;
-								font-style: normal;
-							}
-@font-face {
-								font-family: 'TTFirsNeue';
-								font-display: swap;
-								src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
-								font-weight: 400;
 								font-style: normal;
 							}
