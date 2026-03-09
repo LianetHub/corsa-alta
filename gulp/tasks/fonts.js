@@ -102,6 +102,7 @@ export const fontsStyle = () => {
                             case "medium": fontWeight = 500; break;
                             case "semibold":
                             case "demi": fontWeight = 600; break;
+                            case "demibold": fontWeight = 600; break;
                             case "bold": fontWeight = 700; break;
                             case "extrabold":
                             case "heavy": fontWeight = 800; break;

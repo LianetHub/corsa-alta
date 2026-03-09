@@ -23,15 +23,15 @@
 @font-face {
   font-family: "TTFirsNeue";
   font-display: swap;
-  src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "TTFirsNeue";
   font-display: swap;
-  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 [class^=icon-]:before,
@@ -703,7 +703,7 @@ h3:not([class]) {
   font-family: "Onest";
   font-size: 1.125rem;
   font-weight: 500;
-  line-height: 120%;
+  line-height: 145%;
   text-transform: uppercase;
 }
 .btn.icon-arrows::before {
@@ -717,7 +717,6 @@ h3:not([class]) {
   box-shadow: 0 0 0.0625rem 0.0625rem #2D2D2D;
 }
 .btn.btn-primary {
-  border-color: #BF1618;
   background: #BF1618;
   color: #F9F9F9;
 }
@@ -728,9 +727,24 @@ h3:not([class]) {
 .btn.btn-primary:hover::before, .btn.btn-primary:active::before {
   color: #BF1618;
 }
+.btn.btn-secondary {
+  background: #1F1F1F;
+  color: #F9F9F9;
+}
+.btn.btn-secondary::before {
+  color: #BF1618;
+}
+.btn.btn-secondary:hover, .btn.btn-secondary:active {
+  background: #BF1618;
+  color: #F9F9F9;
+}
+.btn.btn-secondary:hover::before, .btn.btn-secondary:active::before {
+  color: #F9F9F9;
+}
 .btn.btn-sm {
   padding: 0.75rem 1rem;
   gap: 1rem;
+  font-size: 1rem;
   text-transform: none;
 }
 .btn:disabled, .btn[aria-disabled=true] {
@@ -924,6 +938,7 @@ body {
 }
 .section-header__title::before {
   color: #BF1618;
+  font-size: 1.375rem;
 }
 .section-header__content {
   display: flex;
@@ -949,12 +964,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.header__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .header__callback::before {
   width: 1.5rem;
@@ -1088,7 +1097,34 @@ body {
 }
 
 .philosophy {
-  padding: 3.125rem 0;
+  padding: 2.5rem 0;
+}
+.philosophy__content {
+  margin-top: 3rem;
+  border-radius: 2rem;
+  background: #F8F8F8;
+  color: #2D2D2D;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.philosophy__image img {
+  border-radius: 1.5rem;
+}
+.philosophy__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.philosophy__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.philosophy__btn {
+  margin-top: auto;
 }
 
 .programm {

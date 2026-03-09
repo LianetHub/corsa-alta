@@ -132,7 +132,7 @@
 	font-family: $font-onest;
 	font-size: 1.125rem;
 	font-weight: 500;
-	line-height: 120%;
+	line-height: 145%;
 	text-transform: uppercase;
 
 	&.icon-arrows {
@@ -151,7 +151,6 @@
 	}
 
 	&.btn-primary {
-		border-color: $red;
 		background: $red;
 		color: $text-white;
 
@@ -167,9 +166,31 @@
 
 	}
 
+	&.btn-secondary {
+
+		background: $bg-dark;
+		color: $text-white;
+
+		&::before {
+			color: $red;
+		}
+
+		&:hover,
+		&:active {
+			background: $red;
+			color: $text-white;
+
+			&::before {
+				color: $text-white;
+			}
+		}
+
+	}
+
 	&.btn-sm {
 		padding: 0.75rem 1rem;
 		gap: 1rem;
+		font-size: 1rem;
 		text-transform: none;
 	}
 
