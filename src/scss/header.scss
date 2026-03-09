@@ -1,0 +1,90 @@
+.icon-menu {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 1rem;
+	margin-left: auto;
+	color: #272a2d;
+	z-index: 11;
+	transition: all 0.3s ease;
+
+	@media (min-width: $md5) {
+		height: 1.5rem;
+		min-width: 3rem;
+	}
+
+	@media (min-width: $md3) {
+		display: none;
+	}
+
+	& span {
+		display: block;
+		align-self: stretch;
+		transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
+		will-change: transform;
+		padding: rem(3) rem(0);
+
+		@media (min-width: $md5) {
+			padding: rem(5) rem(0);
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			height: rem(2);
+			background: currentColor;
+			transition: transform 0.3s ease 0s;
+			will-change: transform;
+			margin: auto;
+		}
+	}
+
+	&.active {
+		background: transparent;
+
+		& span {
+			transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+
+			&::before {
+				transition: transform 0.45s ease 0.35s, width 0.3s ease 0s;
+				width: 75%;
+
+				@media (min-width: $md5) {
+					width: 50%;
+				}
+			}
+
+			&:first-child {
+				transform: translateY(rem(8));
+
+				@media (min-width: $md5) {
+					transform: translateY(rem(12));
+				}
+
+				&::before {
+					transform: rotate(-135deg);
+				}
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				transform: translateY(rem(-8));
+
+				@media (min-width: $md5) {
+					transform: translateY(rem(-12));
+				}
+
+				&::before {
+					transform: rotate(-225deg);
+				}
+			}
+		}
+	}
+}

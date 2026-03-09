@@ -1,0 +1,595 @@
+.h1,
+h1 {
+	font-weight: 700;
+	line-height: 120%;
+	font-size: rem(32);
+	text-transform: uppercase;
+
+	@media (min-width:$md4) {
+		font-size: rem(36);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(48)
+	}
+}
+
+.h2,
+h2 {
+	font-weight: 600;
+	line-height: 120%;
+	font-size: rem(20);
+
+	@media (min-width:$md4) {
+		font-size: rem(28);
+	}
+
+	@media (min-width:$md2) {
+		font-size: rem(32);
+	}
+}
+
+.h3,
+h3 {
+	font-size: rem(18);
+	line-height: 120%;
+	font-weight: 600;
+
+	@media (min-width:$md4) {
+		font-size: rem(22);
+	}
+
+	@media (min-width:$md2) {
+		font-size: rem(24);
+	}
+}
+
+.subtitle {
+	line-height: 120%;
+	font-weight: 500;
+	font-size: rem(18);
+
+	@media (min-width: $md4) {
+		font-size: 1.25rem
+	}
+
+	@media (min-width: $md2) {
+		font-size: 1.375rem;
+	}
+}
+
+.subtitle-sm {
+	font-size: 1rem;
+	line-height: 120%;
+	font-weight: 600;
+
+	@media (min-width:$md4) {
+		font-size: 1.125rem;
+	}
+
+	@media (min-width: $md2) {
+		font-size: 1.25rem;
+	}
+}
+
+.text-l {
+	font-family: $font-onest;
+	line-height: 120%;
+	font-weight: 500;
+	font-size: rem(14);
+
+	@media (min-width: $md4) {
+		font-size: rem(18);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(20);
+	}
+}
+
+.text-m {
+	font-family: $font-onest;
+	line-height: 120%;
+	font-weight: 400;
+	font-size: rem(14);
+
+	@media (min-width: $md4) {
+		font-size: rem(16);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(18);
+	}
+
+	&--medium {
+		font-weight: 500;
+	}
+
+	&--bold {
+		font-weight: 700;
+	}
+
+	&--caps {
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+}
+
+.text-s {
+	font-family: $font-onest;
+	line-height: 120%;
+	font-weight: 400;
+	font-size: rem(12);
+
+	@media (min-width: $md4) {
+		font-size: rem(14);
+	}
+
+	@media (min-width: $md2) {
+		font-size: rem(16);
+	}
+
+	&--medium {
+		font-weight: 500;
+	}
+
+	&--bold {
+		font-weight: 700;
+	}
+}
+
+.text-xs {
+	font-family: $font-onest;
+	line-height: 120%;
+	font-weight: 400;
+	font-size: rem(12);
+
+	@media (min-width: $md2) {
+		font-size: rem(14);
+	}
+}
+
+.caption {
+	font-family: $font-onest;
+	line-height: 120%;
+	font-weight: 500;
+	font-size: rem(10);
+
+	@media (min-width: $md2) {
+		font-size: rem(12);
+	}
+}
+
+.color-accent {
+	color: $accent;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	position: static;
+	z-index: 1;
+	transform: none;
+	margin: 0;
+	width: 3rem;
+	height: 3rem;
+	font-size: 1.25rem;
+	border: rem(1) solid currentColor;
+	border-radius: 0.5rem;
+	color: currentColor;
+	transition: all 0.3s ease;
+
+	& svg {
+		display: none;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: #e6e4dc;
+			color: #eb5b38;
+		}
+	}
+}
+
+.swiper-pagination {
+	&.swiper-pagination-lock {
+		display: none !important;
+	}
+
+	&.swiper-pagination-bullets {
+		position: static;
+		bottom: auto;
+		left: auto;
+		transform: none;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		--swiper-pagination-bullet-horizontal-gap: #{rem(10)};
+		--swiper-pagination-bullet-size: #{rem(10)};
+		--swiper-pagination-bullet-inactive-opacity: 0.4;
+
+		&.swiper-pagination-bullets-dynamic {
+			transform: none;
+			margin-inline: auto;
+			display: block;
+			width: 100%;
+		}
+
+		.swiper-pagination-bullet {
+			background: currentColor;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: rem(24);
+				height: rem(24);
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			&.swiper-pagination-bullet-active {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.swiper-pagination-fraction {
+		position: static;
+		width: auto;
+		font-size: 1.25rem;
+		line-height: 150%;
+	}
+}
+
+.typography-block {
+	& p {
+		&:not(:first-child) {
+			margin-top: 0.75rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.75rem;
+		}
+
+		line-height: 150%;
+		font-size: 1rem;
+
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+		}
+	}
+
+	& img {
+		width: fit-content;
+
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	& ul {
+		line-height: 150%;
+		padding-left: 1em;
+		font-size: 0.875rem;
+
+		@media (min-width: $md4) {
+			font-size: 1rem;
+		}
+
+		@media (min-width: $md2) {
+			font-size: 1.125rem;
+		}
+
+		& li {
+			padding-left: 1.5em;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0.55em;
+				left: 0;
+				width: 0.55em;
+				height: 0.55em;
+				background: $accent;
+				border-radius: 50%;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 0.75rem;
+			}
+		}
+	}
+
+	& a {
+		&:not([class]) {
+			color: $accent;
+			text-decoration: underline;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: darken($accent, 10%);
+				text-decoration: none;
+			}
+		}
+	}
+
+	& strong,
+	& b {
+		font-weight: 700;
+		color: inherit;
+	}
+
+	& em,
+	& i {
+		font-style: italic;
+		color: inherit;
+	}
+
+	& hr {
+		border: none;
+		border-top: 1px solid #ccc;
+		margin: 2rem 0;
+	}
+
+	& blockquote {
+		margin: 1.5rem 0;
+		padding-left: 1.5rem;
+		border-left: rem(4) solid $accent;
+		font-style: italic;
+		color: #555;
+
+		& p {
+			margin: 0;
+			font-size: 0.875rem;
+
+			@media (min-width: $md4) {
+				font-size: 1rem;
+			}
+
+			@media (min-width: $md2) {
+				font-size: 1.125rem;
+			}
+		}
+	}
+
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		& a {
+			text-decoration: none;
+			color: inherit;
+			display: inline-flex;
+			gap: 1rem;
+			align-items: center;
+
+			&::before {
+				order: 1;
+				color: $accent;
+				transition: transform 0.3s ease;
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accent;
+
+					&::before {
+						transform: translateX(0.5rem);
+					}
+				}
+			}
+		}
+	}
+
+	& h1 {
+		&:not(:last-child) {
+			margin-bottom: 0.75rem;
+
+			@media (min-width: $md4) {
+				margin-bottom: 1rem;
+			}
+		}
+
+		font-weight: 700;
+		line-height: 120%;
+		font-size: 1.5rem;
+
+		@media (min-width: $md4) {
+			font-size: 1.75rem;
+		}
+	}
+
+	& h2 {
+		&:not(:first-child) {
+			margin-top: 0.75rem;
+
+			@media (min-width: $md4) {
+				margin-top: 1.5rem;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+
+			@media (min-width: $md4) {
+				margin-bottom: 1.25rem;
+			}
+		}
+
+		font-weight: 500;
+		line-height: 120%;
+		font-size: 1.25rem;
+
+		@media (min-width: $md4) {
+			font-size: 1.5rem;
+		}
+	}
+
+	& h3 {
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		font-weight: 500;
+		line-height: 120%;
+
+		@media (min-width: $md4) {
+			font-size: 1.25rem;
+		}
+	}
+
+	& h4 {
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		font-weight: 600;
+		line-height: 130%;
+
+		@media (min-width: $md4) {
+			font-size: 1.125rem;
+		}
+	}
+
+	& h5,
+	& h6 {
+		&:not(:first-child) {
+			margin-top: 1rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.5rem;
+		}
+
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 140%;
+	}
+
+	& ol {
+		font-size: 1.125rem;
+		line-height: 150%;
+		padding-left: 1.5rem;
+		list-style: decimal;
+
+		& li {
+			& h4 {
+				&~* {
+					margin-left: -1.25rem;
+				}
+
+				&:not(:last-child) {
+					margin-bottom: rem(8);
+				}
+			}
+
+			&:has(h4) {
+				& p {
+					&:not(:first-child) {
+						margin-top: rem(8);
+					}
+				}
+
+				& p,
+				& ul {
+					font-size: 1rem;
+				}
+			}
+
+			&::marker {
+				color: $accent;
+				font-weight: 500;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 0.75rem;
+			}
+		}
+	}
+}
+
+//============ ОБЩИЕ ЭЛЕМЕНТЫ ============
+
+// Стилизация селекта
+// $selectBg: $orange;
+// $selectColor: $dark;
+
+// ::-moz-selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	box-shadow: none;
+// }
+// ::selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	-webkit-box-shadow: none;
+// 	box-shadow: none;
+// }
+// ::-moz-selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	box-shadow: none;
+// }
+
+// Стилизация скролла
+
+$scrollbarColor: $accent;
+
+::-webkit-scrollbar {
+	width: rem(8);
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $scrollbarColor;
+	border-radius: rem(8);
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: darken($color: $scrollbarColor, $amount: 10);
+		}
+	}
+}
+
+//============ ОБЩИЕ ЭЛЕМЕНТЫ ============
+
+// ========== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ======
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.cover-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// ========== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ======
