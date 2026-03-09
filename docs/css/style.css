@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "Onest";
   src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"), url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"), url("../fonts/Onest-VariableFont_wght.woff") format("woff");
   font-weight: 100 900;
@@ -7,10 +14,10 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "icons";
+  font-family: "TTFirsNeue";
   font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -18,13 +25,6 @@
   font-display: swap;
   src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TTFirsNeue";
-  font-display: swap;
-  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -228,12 +228,6 @@ h3:not([class]) {
     font-size: 1rem;
   }
 }
-.text-s--medium {
-  font-weight: 500;
-}
-.text-s--bold {
-  font-weight: 700;
-}
 
 .text-xs {
   font-family: "Onest";
@@ -268,13 +262,13 @@ h3:not([class]) {
   position: static;
   z-index: 1;
   transform: none;
-  margin: 0;
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.25rem;
-  border: 0.0625rem solid currentColor;
+  margin-top: 0 !important;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
   border-radius: 0.5rem;
-  color: currentColor;
+  background: #1F1F1F;
+  color: #F9F9F9;
   transition: all 0.3s ease;
 }
 .swiper-button-next svg,
@@ -284,8 +278,7 @@ h3:not([class]) {
 @media (any-hover: hover) {
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    background: #e6e4dc;
-    color: #eb5b38;
+    background: #BF1618;
   }
 }
 
@@ -600,9 +593,16 @@ h3:not([class]) {
   object-fit: cover;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
 .form__field {
   position: relative;
   display: block;
+}
+.form__field + .form__field {
+  margin-top: 1rem;
 }
 .form__control {
   text-overflow: ellipsis;
@@ -680,16 +680,14 @@ h3:not([class]) {
     font-size: 1rem;
   }
 }
-.form__checkbox {
-  display: block;
+.form__submit {
+  width: 100%;
+  margin-top: 2rem;
 }
-.form__checkbox--dark .form__checkbox-field {
-  color: #8f9192;
+.form__policy {
+  text-align: center;
 }
-.form__checkbox--dark .form__checkbox-field::before {
-  background: #e6e4dc;
-  border: 0.0625rem solid #e6e4dc;
-}
+
 .btn {
   position: relative;
   z-index: 1;
@@ -1055,6 +1053,45 @@ body {
   color: #2D2D2D;
   padding: 2.5rem 0;
 }
+.reviews__slider {
+  margin-top: 3rem;
+}
+.reviews__controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.review {
+  border-radius: 2rem;
+  background: #fff;
+  box-shadow: 0.0625rem 0.25rem remn(4) 0 rgba(169, 169, 169, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.review.swiper-slide {
+  height: auto;
+}
+.review__header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-weight: 500;
+  color: #9C9C9C;
+}
+.review__image {
+  margin-top: 1rem;
+  display: block;
+}
+.review__image img {
+  border-radius: 1.5rem;
+  aspect-ratio: 1.3816793893;
+}
+.review__text {
+  margin-top: 1rem;
+}
 
 .start {
   background: #BF1618;
@@ -1108,4 +1145,21 @@ body {
 }
 .faq__item-answer {
   display: none;
+}
+
+.journey {
+  padding: 7.1875rem 0;
+}
+.journey__content {
+  width: calc(66.66% - 0.5rem);
+  margin-left: auto;
+}
+.journey__body {
+  max-width: 34.6875rem;
+}
+.journey__subtitle {
+  margin: 1rem;
+}
+.journey__form {
+  margin-top: 3rem;
 }

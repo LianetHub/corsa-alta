@@ -59,25 +59,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
+    if (document.querySelector('.reviews__slider')) {
 
-    const reviewsSlider = new Swiper('.reviews__slider', {
-        slidesPerView: "auto",
-        spaceBetween: 16,
-        navigation: {
-            nextEl: '.reviews__next',
-            prevEl: '.reviews__prev',
-        },
-        breakpoints: {
-            991.98: {
-                slidesPerView: 2,
-                spaceBetween: 24,
+        const reviews__slider = new Swiper('.reviews__slider', {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev',
             },
-            1199.98: {
-                spaceBetween: 24,
-                slidesPerView: 3,
+            breakpoints: {
+                991.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1199.98: {
+                    spaceBetween: 24,
+                    slidesPerView: 3,
+                }
             }
-        }
-    });
+        });
+    }
 
     initPhoneMask();
     initFloatingLabels();

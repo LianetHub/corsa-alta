@@ -1,9 +1,15 @@
 .form {
+	display: flex;
+	flex-direction: column;
 
 	// .form__field
 	&__field {
 		position: relative;
 		display: block;
+
+		&+.form__field {
+			margin-top: 1rem;
+		}
 	}
 
 	// .form__control
@@ -29,6 +35,8 @@
 		@media (min-width: $md3) {
 			padding: 1rem;
 		}
+
+
 
 		&._input {
 			padding: rem(22.2) 1rem rem(12.2);
@@ -96,31 +104,15 @@
 		}
 	}
 
-	// .form__checkbox
-	&__checkbox {
-		display: block;
-
-		&--dark {
-			.form__checkbox-field {
-				color: #8f9192;
-
-				&::before {
-					background: #e6e4dc;
-					border: rem(1) solid #e6e4dc;
-				}
-			}
-		}
+	// .form__submit
+	&__submit {
+		width: 100%;
+		margin-top: 2rem;
 	}
 
-	// .form__checkbox-input
-	&__checkbox-input {
-		&:checked {
-			&~.form__checkbox-field {
-				&::before {
-					// @extend %ic, .icon-check;
-				}
-			}
-		}
+	// .form__policy
+	&__policy {
+		text-align: center;
 	}
 
 }

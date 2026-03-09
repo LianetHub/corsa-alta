@@ -77,7 +77,72 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     background: $bg-white;
     color: $text-black;
     padding: 2.5rem 0;
+
+    // .reviews__slider
+    &__slider {
+        margin-top: 3rem;
+    }
+
+    // .reviews__controls
+    &__controls {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    // .reviews__prev
+    &__prev {}
+
+    // .reviews__next
+    &__next {}
 }
+
+.review {
+    border-radius: 2rem;
+    background: $bg-cards;
+    box-shadow: rem(1) rem(4) remn(4) 0 rgba(169, 169, 169, 0.10);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &.swiper-slide {
+        height: auto;
+    }
+
+    // .review__header
+    &__header {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-weight: 500;
+        color: $text-grey;
+    }
+
+    // .review__author
+    &__author {}
+
+    // .review__time
+    &__time {}
+
+    // .review__image
+    &__image {
+        margin-top: 1rem;
+        display: block;
+
+        & img {
+            border-radius: rem(24);
+            aspect-ratio: math.div(362, 262);
+        }
+    }
+
+    // .review__text
+    &__text {
+        margin-top: 1rem;
+    }
+}
+
 
 .start {
     background: $red;
@@ -150,5 +215,33 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .faq__item-answer
     &__item-answer {
         display: none;
+    }
+}
+
+.journey {
+    padding: rem(115) 0;
+
+    // .journey__content
+    &__content {
+        width: calc(66.66% - 0.5rem);
+        margin-left: auto;
+    }
+
+    // .journey__body
+    &__body {
+        max-width: rem(555);
+    }
+
+    // .journey__title
+    &__title {}
+
+    // .journey__subtitle
+    &__subtitle {
+        margin: 1rem;
+    }
+
+    // .journey__form
+    &__form {
+        margin-top: 3rem;
     }
 }

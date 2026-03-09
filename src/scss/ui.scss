@@ -115,14 +115,6 @@ h3:not([class]) {
 	@media (min-width: $md2) {
 		font-size: rem(16);
 	}
-
-	&--medium {
-		font-weight: 500;
-	}
-
-	&--bold {
-		font-weight: 700;
-	}
 }
 
 .text-xs {
@@ -156,13 +148,13 @@ h3:not([class]) {
 	position: static;
 	z-index: 1;
 	transform: none;
-	margin: 0;
-	width: 3rem;
-	height: 3rem;
-	font-size: 1.25rem;
-	border: rem(1) solid currentColor;
+	margin-top: 0 !important;
+	width: 4rem;
+	height: 4rem;
+	font-size: 1.5rem;
 	border-radius: 0.5rem;
-	color: currentColor;
+	background: $bg-dark;
+	color: $text-white;
 	transition: all 0.3s ease;
 
 	& svg {
@@ -171,8 +163,7 @@ h3:not([class]) {
 
 	@media (any-hover: hover) {
 		&:hover {
-			background: #e6e4dc;
-			color: #eb5b38;
+			background: $red;
 		}
 	}
 }
