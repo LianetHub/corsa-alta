@@ -66,11 +66,17 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     z-index: $ui-index-2;
     background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%),
         url("@img/hero/noise.svg") center / cover no-repeat,
-        url("@img/hero/main.jpg") center / cover no-repeat;
-    height: rem(1024);
+        url("@img/hero/main.jpg") center / auto rem(1024) no-repeat;
+    min-height: rem(1024);
     display: flex;
     flex-direction: column;
     padding: 5rem 0;
+
+    @media (min-width:$md1) {
+        background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%),
+            url("@img/hero/noise.svg") center / cover no-repeat,
+            url("@img/hero/main.jpg") center / cover no-repeat;
+    }
 
     .container {
         width: 100%;
@@ -91,12 +97,15 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .hero__tagline
     &__tagline {
+        position: relative;
+        z-index: $ui-index-2;
         max-width: 12.3125rem;
     }
 
     // .hero__logo
     &__logo {
         margin-top: rem(30);
+        display: block;
     }
 
     // .hero__title

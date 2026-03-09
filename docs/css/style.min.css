@@ -6,13 +6,6 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "TTFirsNeue";
-  font-display: swap;
-  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
   font-family: "Onest";
   src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"), url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"), url("../fonts/Onest-VariableFont_wght.woff") format("woff");
   font-weight: 100 900;
@@ -23,8 +16,8 @@
 @font-face {
   font-family: "TTFirsNeue";
   font-display: swap;
-  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"), url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -32,6 +25,13 @@
   font-display: swap;
   src: url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"), url("../fonts/TTFirsNeue-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTFirsNeue";
+  font-display: swap;
+  src: url("../fonts/TTFirsNeue-DemiBold.woff2") format("woff2"), url("../fonts/TTFirsNeue-DemiBold.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 [class^=icon-]:before,
@@ -706,6 +706,9 @@ h3:not([class]) {
   line-height: 120%;
   text-transform: uppercase;
 }
+.btn.icon-arrows::before {
+  font-size: 1.375rem;
+}
 .btn::before {
   order: 1;
   transition: all 0.3s ease;
@@ -724,6 +727,11 @@ h3:not([class]) {
 }
 .btn.btn-primary:hover::before, .btn.btn-primary:active::before {
   color: #BF1618;
+}
+.btn.btn-sm {
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  text-transform: none;
 }
 .btn:disabled, .btn[aria-disabled=true] {
   cursor: default;
@@ -765,32 +773,12 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 1rem;
-  max-width: 100%;
+  max-width: 82.5rem;
 }
 @media (min-width: 575.98px) {
   .container {
+    padding: 0 2.5rem;
     box-sizing: content-box;
-    max-width: 33.75rem;
-  }
-}
-@media (min-width: 743.98px) {
-  .container {
-    max-width: 39rem;
-  }
-}
-@media (min-width: 991.98px) {
-  .container {
-    max-width: 60rem;
-  }
-}
-@media (min-width: 1199.98px) {
-  .container {
-    max-width: 71.25rem;
-  }
-}
-@media (min-width: 1399.98px) {
-  .container {
-    max-width: 82.5rem;
   }
 }
 
@@ -949,6 +937,40 @@ body {
   margin-left: auto;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  padding: 1.25rem;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header__callback::before {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #F8F8F8;
+  color: #BF1618;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
 .icon-menu {
   flex-shrink: 0;
   display: flex;
@@ -956,94 +978,65 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
   margin-left: auto;
-  color: #272a2d;
+  color: #BF1618;
+  background: #F8F8F8;
   z-index: 11;
   transition: all 0.3s ease;
-}
-@media (min-width: 575.98px) {
-  .icon-menu {
-    height: 1.5rem;
-    min-width: 3rem;
-  }
-}
-@media (min-width: 991.98px) {
-  .icon-menu {
-    display: none;
-  }
+  padding: 0.3125rem;
 }
 .icon-menu span {
   display: block;
   align-self: stretch;
   transition: transform 0.4s ease 0.4s, opacity 0.4s ease 0.4s;
   will-change: transform;
-  padding: 0.1875rem 0rem;
-}
-@media (min-width: 575.98px) {
-  .icon-menu span {
-    padding: 0.3125rem 0rem;
-  }
+  padding: 0.125rem 0;
 }
 .icon-menu span::before {
   content: "";
   display: block;
   height: 0.125rem;
+  border-radius: 0.125rem;
   background: currentColor;
   transition: transform 0.3s ease 0s;
   will-change: transform;
   margin: auto;
 }
-.icon-menu.active {
-  background: transparent;
-}
 .icon-menu.active span {
-  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, opacity 0.3s ease;
 }
 .icon-menu.active span::before {
-  transition: transform 0.45s ease 0.35s, width 0.3s ease 0s;
-  width: 75%;
-}
-@media (min-width: 575.98px) {
-  .icon-menu.active span::before {
-    width: 50%;
-  }
+  transition: transform 0.45s ease 0.35s, width 0.3s ease;
 }
 .icon-menu.active span:first-child {
-  transform: translateY(0.5rem);
-}
-@media (min-width: 575.98px) {
-  .icon-menu.active span:first-child {
-    transform: translateY(0.75rem);
-  }
+  transform: translateY(0.1875rem);
 }
 .icon-menu.active span:first-child::before {
   transform: rotate(-135deg);
 }
-.icon-menu.active span:nth-child(2) {
-  opacity: 0;
+.icon-menu.active span:last-child {
+  transform: translateY(-0.1875rem);
 }
-.icon-menu.active span:nth-child(3) {
-  transform: translateY(-0.5rem);
-}
-@media (min-width: 575.98px) {
-  .icon-menu.active span:nth-child(3) {
-    transform: translateY(-0.75rem);
-  }
-}
-.icon-menu.active span:nth-child(3)::before {
+.icon-menu.active span:last-child::before {
   transform: rotate(-225deg);
 }
 
 .hero {
   position: relative;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(31, 31, 31, 0) 64.27%, #1F1F1F 93.04%), url("../img/hero/noise.svg") center/cover no-repeat, url("../img/hero/main.jpg") center/cover no-repeat;
-  height: 64rem;
+  background: linear-gradient(180deg, rgba(31, 31, 31, 0) 64.27%, #1F1F1F 93.04%), url("../img/hero/noise.svg") center/cover no-repeat, url("../img/hero/main.jpg") center/auto 64rem no-repeat;
+  min-height: 64rem;
   display: flex;
   flex-direction: column;
   padding: 5rem 0;
+}
+@media (min-width: 1399.98px) {
+  .hero {
+    background: linear-gradient(180deg, rgba(31, 31, 31, 0) 64.27%, #1F1F1F 93.04%), url("../img/hero/noise.svg") center/cover no-repeat, url("../img/hero/main.jpg") center/cover no-repeat;
+  }
 }
 .hero .container {
   width: 100%;
@@ -1060,10 +1053,13 @@ body {
   text-align: center;
 }
 .hero__tagline {
+  position: relative;
+  z-index: 2;
   max-width: 12.3125rem;
 }
 .hero__logo {
   margin-top: 1.875rem;
+  display: block;
 }
 .hero__title {
   position: relative;
