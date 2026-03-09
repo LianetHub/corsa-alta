@@ -60,3 +60,95 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 @import "footer";
 
 //=======================================
+
+.philosophy {
+    padding: rem(50) 0;
+}
+
+.programm {
+    padding: rem(50) 0;
+}
+
+.about {
+    padding: rem(50) 0 rem(100);
+}
+
+.reviews {
+    background: $bg-white;
+    color: $text-black;
+    padding: 2.5rem 0;
+}
+
+.start {
+    background: $red;
+    color: $text-black;
+    padding: 3.75rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 10vw;
+    text-transform: uppercase;
+    line-height: 1;
+
+    // .start__line
+    &__line {}
+}
+
+
+
+.faq {
+    background: $bg-white;
+    color: $text-black;
+    padding: 2.5rem 0;
+
+    // .faq__content
+    &__content {
+        margin-top: 3rem;
+        width: calc(66.66% - 0.5rem);
+        margin-left: auto;
+    }
+
+    // .faq__list
+    &__list {}
+
+    // .faq__item
+    &__item {
+        border-bottom: rem(1) solid $red;
+    }
+
+    // .faq__item-btn
+    &__item-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &::before {
+            order: 1;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            color: $red;
+            transition: all 0.3s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: $red;
+                color: $text-white;
+
+                &::before {
+                    color: $text-white;
+                }
+            }
+        }
+    }
+
+    // .faq__item-answer
+    &__item-answer {
+        display: none;
+    }
+}

@@ -1,5 +1,11 @@
 .form {
 
+	// .form__field
+	&__field {
+		position: relative;
+		display: block;
+	}
+
 	// .form__control
 	&__control {
 		text-overflow: ellipsis;
@@ -24,26 +30,27 @@
 			padding: 1rem;
 		}
 
-		&.form__control--grey {
-			color: #fff;
-			background: #3a3d3f;
-			border-color: #3a3d3f;
+		&._input {
+			padding: rem(22.2) 1rem rem(12.2);
 
-			&:hover {
-				border-color: #666f79;
+			&+.form__field-placeholder {
+				font-size: rem(12);
+				top: rem(4);
+				color: #7a7a7a;
+				transition: top 0.3s ease, font-size 0.3s ease;
 			}
+		}
 
-			&:focus {
-				border-color: #e6e4dc;
-			}
-
-			&::placeholder {
-				color: #8f9192;
+		&:-webkit-autofill,
+		&:not(:placeholder-shown) {
+			&+.form__field-placeholder {
+				font-size: rem(12);
+				top: rem(4);
 			}
 		}
 
 		&::placeholder {
-			opacity: 1;
+			opacity: 0;
 		}
 
 		&:hover,
@@ -63,6 +70,29 @@
 		&:is(textarea) {
 			height: 7.5rem;
 			resize: none;
+		}
+	}
+
+	&__field-placeholder {
+		position: absolute;
+		top: 1.2rem;
+		left: rem(5);
+		padding: 0 0.75rem;
+
+		color: #b6bbc0;
+		display: block;
+		transition: top 0.3s ease 0s, font-size 0.3s ease 0s;
+		font-size: 1rem;
+
+		pointer-events: none;
+		width: calc(100% - rem(10));
+
+		@media (min-width: $md4) {
+			font-size: 0.875rem;
+		}
+
+		@media (min-width: $md2) {
+			font-size: 1rem;
 		}
 	}
 
@@ -93,137 +123,6 @@
 		}
 	}
 
-	// .form__checkbox-field
-	&__checkbox-field {
-		color: #666f79;
-		line-height: 130%;
-		position: relative;
-		text-align: left;
-		cursor: pointer;
-		user-select: none;
-		min-height: 2rem;
-		align-content: center;
-		display: block;
-		font-size: 0.875rem;
-		padding-left: rem(40);
-
-		@media (min-width: $md3) {
-			padding-left: rem(48);
-			font-size: 1rem;
-		}
-
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 1.5rem;
-			height: 1.5rem;
-			background: #f8f8f8;
-			color: #272a2d;
-			border: rem(1) solid #666f79;
-			border-radius: 0.25rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			@media (min-width: $md3) {
-				width: 2rem;
-				height: 2rem;
-			}
-		}
-
-		& a {
-			text-decoration: underline;
-
-			@media (any-hover: hover) {
-				&:hover {
-					text-decoration: none;
-					color: $red;
-				}
-			}
-		}
-	}
-
-	// .form__bottom
-	&__bottom {
-		display: flex;
-		margin-top: 0.7rem;
-		flex-direction: column;
-
-		gap: 1rem;
-
-		@media (min-width: $md5) {
-			gap: rem(40);
-
-			flex-direction: row;
-		}
-
-		@media (min-width: $md3) {
-			gap: rem(80);
-			margin-top: 1.5rem;
-		}
-	}
-
-	// .form__submit
-	&__submit {
-		@media (min-width: $md5) {
-			flex: 0 1 rem(300);
-		}
-
-		@media (min-width: $md3) {
-			flex: 1 1 auto;
-		}
-	}
-
-	// .form__socials
-	&__socials {
-		align-self: center;
-	}
-}
-
-.socials {
-	display: flex;
-	gap: 1rem;
-	flex-wrap: wrap;
-
-	// .socials__btn
-	&__btn {
-		flex-shrink: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 0.5rem;
-		color: #eb5b38;
-		border: rem(1) solid #666f79;
-		transition: all 0.3s ease;
-		width: 3rem;
-		height: 3rem;
-		font-size: 1.375rem;
-
-		@media (min-width: $md3) {
-			font-size: 1.5rem;
-			width: 3.75rem;
-			height: 3.75rem;
-		}
-
-		&.socials__btn--dark {
-			background: #3a3d3f;
-			border-color: #3a3d3f;
-		}
-
-		&:hover {
-			background: #eb5b38;
-			border-color: #eb5b38;
-			color: #fff;
-		}
-
-		&:active {
-			background: #f63a19;
-			border-color: #f63a19;
-			color: #fff;
-		}
-	}
 }
 
 .btn {

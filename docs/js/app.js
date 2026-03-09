@@ -80,14 +80,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     initPhoneMask();
+    initFloatingLabels();
 
     // animation
-    
+
     gsap.registerPlugin(ScrollTrigger)
 
 });
 
+function initFloatingLabels() {
+    const floatingInputs = document.querySelectorAll('.form__control');
 
+    const checkEmpty = (input) => {
+        if (input.value && input.value.trim() !== "") {
+            input.classList.add('_input');
+        } else {
+            input.classList.remove('_input');
+        }
+    };
+
+    floatingInputs.forEach(input => {
+        checkEmpty(input);
+
+        input.addEventListener('input', () => checkEmpty(input));
+        input.addEventListener('change', () => checkEmpty(input));
+    });
+
+    setTimeout(() => {
+        floatingInputs.forEach(checkEmpty);
+    }, 100);
+}
 
 
 function initPhoneMask() {
