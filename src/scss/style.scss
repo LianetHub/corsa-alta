@@ -15,7 +15,7 @@ $fontfamily: "TTFirsNeue";
 $font-onest: "Onest";
 // Шрифт по умолчанию
 
-$md1: 1303.98px;
+$md1: 1399.98px;
 $md2: 1199.98px;
 $md3: 991.98px;
 $md4: 743.98px;
@@ -26,13 +26,19 @@ $md6: 389.98px;
 
 $minWidth: 360; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1272); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1320); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 // ЦВЕТА
 
-$accent: #eb5b38;
-$text: #272a2d;
+$bg-dark: #1F1F1F;
+$bg-line: #656565;
+$bg-cards: #fff;
+$bg-white: #F8F8F8;
+$text-black: #2D2D2D;
+$text-grey: #9C9C9C;
+$text-white: #F9F9F9;
+$red: #BF1618;
 
 $header: var(--header-height, 11.375rem);
 

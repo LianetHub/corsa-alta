@@ -77,4 +77,52 @@ body {
 
 // =============== MODULES ====================
 @import "./modules/popup";
+
 // =============== MODULES ====================
+.philosophy {
+	padding: rem(50) 0;
+}
+
+.programm {
+	padding: rem(50) 0;
+}
+
+.about {
+	padding: rem(50) 0;
+}
+
+
+.section-header {
+	display: grid;
+	align-items: start;
+	grid-template-columns: 1fr 2fr;
+	gap: 1rem;
+
+	// .section-header__title
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		&::before {
+			color: $red;
+		}
+	}
+
+	// .section-header__content
+	&__content {
+		display: flex;
+		gap: 2rem;
+	}
+
+	// .section-header__tagline
+	&__tagline {
+		max-width: rem(490);
+	}
+
+	// .section-header__text
+	&__text {
+		max-width: rem(290);
+		margin-left: auto;
+	}
+}

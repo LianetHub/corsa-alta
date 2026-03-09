@@ -17,27 +17,40 @@
 		display: block;
 	}
 }
-.icon-arrow-top:before {
+
+
+.icon-quotes:before {
+	content: "\e908";
+}
+
+.icon-arrows:before {
 	content: "\e900";
 }
-.icon-check:before {
+
+.icon-envelope:before {
 	content: "\e901";
 }
-.icon-cross:before {
+
+.icon-left:before {
 	content: "\e902";
 }
-.icon-next:before {
+
+.icon-mail:before {
 	content: "\e903";
 }
-.icon-plus:before {
+
+.icon-minus:before {
 	content: "\e904";
 }
-.icon-prev:before {
+
+.icon-plus:before {
 	content: "\e905";
 }
-.icon-telegram:before {
+
+.icon-right:before {
 	content: "\e906";
 }
-.icon-whatsapp:before {
+
+.icon-telegram:before {
 	content: "\e907";
 }

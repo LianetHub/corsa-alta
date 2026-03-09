@@ -34,7 +34,7 @@
   font-weight: 400;
   font-style: normal;
 }
-.form__checkbox-input:checked ~ .form__checkbox-field::before, [class^=icon-]:before,
+[class^=icon-]:before,
 [class*=" icon-"]:before {
   font-family: "icons";
   font-style: normal;
@@ -52,40 +52,44 @@
   display: block;
 }
 
-.icon-arrow-top:before {
+.icon-quotes:before {
+  content: "\e908";
+}
+
+.icon-arrows:before {
   content: "\e900";
 }
 
-.icon-check:before, .form__checkbox-input:checked ~ .form__checkbox-field:before {
+.icon-envelope:before {
   content: "\e901";
 }
 
-.icon-cross:before {
+.icon-left:before {
   content: "\e902";
 }
 
-.icon-next:before {
+.icon-mail:before {
   content: "\e903";
 }
 
-.icon-plus:before {
+.icon-minus:before {
   content: "\e904";
 }
 
-.icon-prev:before {
+.icon-plus:before {
   content: "\e905";
 }
 
-.icon-telegram:before {
+.icon-right:before {
   content: "\e906";
 }
 
-.icon-whatsapp:before {
+.icon-telegram:before {
   content: "\e907";
 }
 
 .h1,
-h1 {
+h1:not([class]) {
   font-weight: 700;
   line-height: 120%;
   font-size: 2rem;
@@ -93,51 +97,51 @@ h1 {
 }
 @media (min-width: 743.98px) {
   .h1,
-  h1 {
+  h1:not([class]) {
     font-size: 2.25rem;
   }
 }
 @media (min-width: 1199.98px) {
   .h1,
-  h1 {
+  h1:not([class]) {
     font-size: 3rem;
   }
 }
 
 .h2,
-h2 {
+h2:not([class]) {
   font-weight: 600;
   line-height: 120%;
   font-size: 1.25rem;
 }
 @media (min-width: 743.98px) {
   .h2,
-  h2 {
+  h2:not([class]) {
     font-size: 1.75rem;
   }
 }
 @media (min-width: 1199.98px) {
   .h2,
-  h2 {
+  h2:not([class]) {
     font-size: 2rem;
   }
 }
 
 .h3,
-h3 {
+h3:not([class]) {
   font-size: 1.125rem;
   line-height: 120%;
   font-weight: 600;
 }
 @media (min-width: 743.98px) {
   .h3,
-  h3 {
+  h3:not([class]) {
     font-size: 1.375rem;
   }
 }
 @media (min-width: 1199.98px) {
   .h3,
-  h3 {
+  h3:not([class]) {
     font-size: 1.5rem;
   }
 }
@@ -194,7 +198,7 @@ h3 {
 .text-m {
   font-family: "Onest";
   line-height: 120%;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.875rem;
 }
 @media (min-width: 743.98px) {
@@ -206,16 +210,6 @@ h3 {
   .text-m {
     font-size: 1.125rem;
   }
-}
-.text-m--medium {
-  font-weight: 500;
-}
-.text-m--bold {
-  font-weight: 700;
-}
-.text-m--caps {
-  text-transform: uppercase;
-  font-weight: 500;
 }
 
 .text-s {
@@ -266,7 +260,7 @@ h3 {
 }
 
 .color-accent {
-  color: #eb5b38;
+  color: #BF1618;
 }
 
 .swiper-button-next,
@@ -389,19 +383,19 @@ h3 {
   left: 0;
   width: 0.55em;
   height: 0.55em;
-  background: #eb5b38;
+  background: #BF1618;
   border-radius: 50%;
 }
 .typography-block ul li:not(:last-child) {
   margin-bottom: 0.75rem;
 }
 .typography-block a:not([class]) {
-  color: #eb5b38;
+  color: #BF1618;
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 .typography-block a:not([class]):hover {
-  color: #da3c16;
+  color: #911112;
   text-decoration: none;
 }
 .typography-block strong, .typography-block b {
@@ -420,7 +414,7 @@ h3 {
 .typography-block blockquote {
   margin: 1.5rem 0;
   padding-left: 1.5rem;
-  border-left: 0.25rem solid #eb5b38;
+  border-left: 0.25rem solid #BF1618;
   font-style: italic;
   color: #555;
 }
@@ -447,12 +441,12 @@ h3 {
 }
 .typography-block h1 a::before, .typography-block h2 a::before, .typography-block h3 a::before, .typography-block h4 a::before, .typography-block h5 a::before, .typography-block h6 a::before {
   order: 1;
-  color: #eb5b38;
+  color: #BF1618;
   transition: transform 0.3s ease;
 }
 @media (any-hover: hover) {
   .typography-block h1 a:hover, .typography-block h2 a:hover, .typography-block h3 a:hover, .typography-block h4 a:hover, .typography-block h5 a:hover, .typography-block h6 a:hover {
-    color: #eb5b38;
+    color: #BF1618;
   }
   .typography-block h1 a:hover::before, .typography-block h2 a:hover::before, .typography-block h3 a:hover::before, .typography-block h4 a:hover::before, .typography-block h5 a:hover::before, .typography-block h6 a:hover::before {
     transform: translateX(0.5rem);
@@ -562,7 +556,7 @@ h3 {
   font-size: 1rem;
 }
 .typography-block ol li::marker {
-  color: #eb5b38;
+  color: #BF1618;
   font-weight: 500;
 }
 .typography-block ol li:not(:last-child) {
@@ -578,12 +572,12 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #eb5b38;
+  background: #BF1618;
   border-radius: 0.5rem;
 }
 @media (any-hover: hover) {
   ::-webkit-scrollbar-thumb:hover {
-    background: #da3c16;
+    background: #911112;
   }
 }
 
@@ -648,7 +642,7 @@ h3 {
   opacity: 1;
 }
 .form__control:hover, .form__control:focus {
-  border-color: #eb5b38;
+  border-color: #BF1618;
 }
 .form__control:disabled {
   background: #ddd;
@@ -717,7 +711,7 @@ h3 {
 @media (any-hover: hover) {
   .form__checkbox-field a:hover {
     text-decoration: none;
-    color: #eb5b38;
+    color: #BF1618;
   }
 }
 .form__bottom {
@@ -807,7 +801,7 @@ h3 {
   font-weight: 600;
 }
 .btn:focus-visible {
-  box-shadow: 0 0 0.0625rem 0.0625rem #272a2d;
+  box-shadow: 0 0 0.0625rem 0.0625rem #2D2D2D;
 }
 .btn.btn-primary {
   border-color: #eb5b38;
@@ -892,9 +886,9 @@ body {
     max-width: 71.25rem;
   }
 }
-@media (min-width: 1303.98px) {
+@media (min-width: 1399.98px) {
   .container {
-    max-width: 79.5rem;
+    max-width: 82.5rem;
   }
 }
 
@@ -931,7 +925,7 @@ body {
 .f-button.is-close-button {
   --f-close-button-svg-stroke-width: 0.125rem;
   --f-close-button-color: #272a2d;
-  --f-close-button-hover-color: #eb5b38;
+  --f-close-button-hover-color: #BF1618;
   --f-close-button-width: 2.5rem;
   --f-close-button-height: 2.5rem;
   --f-close-button-svg-width: 1.5rem;
@@ -1017,7 +1011,7 @@ body {
 }
 @media (any-hover: hover) {
   .popup__phone:hover {
-    color: #eb5b38;
+    color: #BF1618;
   }
 }
 .popup__btn {
@@ -1025,6 +1019,44 @@ body {
 }
 .popup__article {
   margin-top: 2rem;
+}
+
+.philosophy {
+  padding: 3.125rem 0;
+}
+
+.programm {
+  padding: 3.125rem 0;
+}
+
+.about {
+  padding: 3.125rem 0;
+}
+
+.section-header {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+.section-header__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-header__title::before {
+  color: #BF1618;
+}
+.section-header__content {
+  display: flex;
+  gap: 2rem;
+}
+.section-header__tagline {
+  max-width: 30.625rem;
+}
+.section-header__text {
+  max-width: 18.125rem;
+  margin-left: auto;
 }
 
 .icon-menu {
