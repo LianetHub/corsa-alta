@@ -311,13 +311,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         padding: 2rem;
     }
 
-    // .programm__info-image
-    &__info-image {
+    // .programm__info-video
+    &__info-video {
         flex: 0 0 rem(395);
+        width: 100%;
+        object-fit: cover;
+        border-radius: 2rem;
+        overflow: hidden;
 
-        & img {
-            border-radius: 2rem;
-        }
     }
 
     // .programm__tours
@@ -550,12 +551,17 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 10vw;
     text-transform: uppercase;
-    line-height: 1;
 
     // .start__line
     &__line {}
+
+    // .start__line-text
+    &__line-text {
+        line-height: 1;
+        font-weight: 700;
+        font-size: 10vw;
+    }
 }
 
 
