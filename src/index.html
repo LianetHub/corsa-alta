@@ -97,7 +97,38 @@
                             </div>
                         </div>
                         <div class="programm__content">
-                            .programm
+                            <div class="programm__navigation">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 1</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 2</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 3</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 4</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 5</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 6</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 7</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper programm__details">
+                                <div class="swiper-wrapper">
+                                    @@loop('./html/templates/_program-card.html', './html/json/program.json')
+                                </div>
+                            </div>
+                        </div>
+                        <div class="programm__info">
+                            <div class="programm__info-image">
+                                <img src="@img/program/info.jpg" class="cover-image" alt="Фото дороги">
+                            </div>
+                            <div class="programm__tours">
+                                <div class="programm__tours-title h2">Ближайшие туры 2026</div>
+                                <ul class="programm__tours-list text-l">
+                                    <li>20.06 - 29.06 2026</li>
+                                    <li>20.06 - 29.06 2026</li>
+                                    <li>20.06 - 29.06 2026</li>
+                                </ul>
+                                <a href="" class="programm__tours-btn btn btn-white">стать участником</a>
+                            </div>
                         </div>
                     </div>
                 </section>

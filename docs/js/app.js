@@ -1,5 +1,7 @@
 "use strict";
 
+// const { default: Swiper } = require("swiper");
+
 //  Fancybox
 if (typeof Fancybox !== "undefined" && Fancybox !== null) {
     Fancybox.bind("[data-fancybox]", {
@@ -90,6 +92,44 @@ document.addEventListener("DOMContentLoaded", function () {
                     slidesPerView: 3,
                 }
             }
+        });
+    }
+
+    if (document.querySelector('.programm__content')) {
+        const daysSwiper = new Swiper('.programm__navigation .swiper', {
+            direction: 'vertical',
+            slidesPerView: 4,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+            mousewheel: true,
+            centeredSlides: true,
+        });
+
+        const detailsSwiper = new Swiper('.programm__details', {
+            direction: 'vertical',
+            spaceBetween: 20,
+            mousewheel: true,
+            grabCursor: true,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: [0, "-120%", -500],
+                },
+                next: {
+                    shadow: true,
+                    translate: [0, "120%", -500],
+                },
+            },
+
+        });
+
+        daysSwiper.on('slideChange', () => {
+            detailsSwiper.slideTo(daysSwiper.activeIndex);
+        });
+
+        detailsSwiper.on('slideChange', () => {
+            daysSwiper.slideTo(detailsSwiper.activeIndex);
         });
     }
 

@@ -187,6 +187,24 @@
 
 	}
 
+	&.btn-white {
+
+		background: $bg-white;
+		color: $red;
+
+
+		&:hover,
+		&:active {
+			background: $bg-dark;
+			color: $text-white;
+
+			&::before {
+				color: $red;
+			}
+		}
+
+	}
+
 	&.btn-sm {
 		padding: 0.75rem 1rem;
 		gap: 1rem;

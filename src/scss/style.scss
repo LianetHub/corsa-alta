@@ -37,6 +37,7 @@ $bg-cards: #fff;
 $bg-white: #F8F8F8;
 $text-black: #2D2D2D;
 $text-grey: #9C9C9C;
+$text-grey-dark: #535353;
 $text-white: #F9F9F9;
 $red: #BF1618;
 
@@ -196,7 +197,176 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
 .programm {
     padding: 3.75rem 0;
+
+    // .programm__content
+    &__content {
+        margin-top: rem(50);
+        display: grid;
+        align-items: start;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+    }
+
+    // .programm__navigation
+    &__navigation {
+        min-width: 0;
+        max-width: 100%;
+        margin-left: 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.00) 54.32%, #1F1F1F 100%);
+        }
+
+        & .swiper {
+            height: rem(300);
+        }
+    }
+
+    // .programm__navigation-item
+    &__navigation-item {
+        height: auto;
+        display: flex;
+        align-items: center;
+
+        transition: transform 0.4s ease;
+        cursor: pointer;
+        user-select: none;
+        transform-origin: left center;
+
+        &.swiper-slide-active {
+
+            transform: scale(1.3333)
+        }
+    }
+
+
+    // .programm__details
+    &__details {
+        min-width: 0;
+        max-width: 100%;
+        height: rem(430);
+    }
+
+    // .programm__card
+    &__card {
+        background-color: $bg-white;
+        color: $text-grey-dark;
+        height: rem(430);
+        border-radius: rem(32);
+        overflow: hidden;
+        padding: 2rem;
+        display: flex;
+        ;
+        gap: 1rem;
+    }
+
+    // .programm__card-info
+    &__card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        flex: 1 1 auto;
+    }
+
+    // .programm__card-caption
+    &__card-caption {
+        background-color: $red;
+        color: $text-white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 2rem;
+    }
+
+    // .programm__card-text
+    &__card-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    // .programm__card-image
+    &__card-image {
+        flex: 0 0 52.5%;
+
+        & img {
+            border-radius: 1.5rem;
+        }
+    }
+
+    // .programm__info
+    &__info {
+        margin-top: 1.25rem;
+        border-radius: 2rem;
+        background: $bg-white;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1.25rem;
+        padding: 2rem;
+    }
+
+    // .programm__info-image
+    &__info-image {
+        & img {
+            border-radius: 2rem;
+        }
+    }
+
+    // .programm__tours
+    &__tours {
+        border-radius: 2rem;
+        background: $red;
+        color: $text-white;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    // .programm__tours-title
+    &__tours-title {
+        text-align: center;
+    }
+
+    // .programm__tours-list
+    &__tours-list {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        & li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            &::before {
+                content: '';
+                width: rem(73);
+                height: rem(27);
+                display: block;
+                background: url("@img/decor/ornament.svg") 0 0 / cover no-repeat;
+            }
+        }
+    }
+
+    // .programm__tours-btn
+    &__tours-btn {
+        margin-top: 2rem;
+    }
 }
+
+
 
 .about {
     padding: 3.75rem 0;
