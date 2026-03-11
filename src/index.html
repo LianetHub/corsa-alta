@@ -24,14 +24,14 @@
                 </section>
                 <section id="history" class="history">
                     <div class="container">
-                        <div class="section-header">
+                        <div data-animate-fade class="history__header section-header">
                             <h2 class="section-header__title text-m icon-quotes">Философия тура</h2>
                             <div class="section-header__content">
                                 <div class="section-header__tagline h1">За каждым маршрутом стоит человек</div>
                             </div>
                         </div>
                         <div class="history__slider swiper">
-                            <div class="swiper-wrapper">
+                            <div data-animate-bottom class="swiper-wrapper">
                                 <div class="history__slide swiper-slide">
                                     <div class="history__image">
                                         <img src="@img/history/01.jpg" class="cover-image" alt="Фото со спорткаром">
@@ -89,7 +89,7 @@
                 </section>
                 <section id="programm" class="programm">
                     <div class="container">
-                        <div class="section-header">
+                        <div data-animate-fade class="programm__header section-header">
                             <h2 class="section-header__title text-m icon-quotes">Программа</h2>
                             <div class="section-header__content">
                                 <div class="section-header__tagline h1">Маршруты для&nbsp;тех, кто живёт эмоциями</div>
@@ -99,7 +99,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="programm__content">
+                        <div data-animate-bottom class="programm__content">
                             <div class="programm__navigation">
                                 <div class="swiper">
                                     <div class="swiper-wrapper">
@@ -120,7 +120,7 @@
                                 <div class="programm__details-scrollbar swiper-scrollbar"></div>
                             </div>
                         </div>
-                        <div class="programm__info">
+                        <div data-animate-bottom class="programm__info">
                             <video class="programm__info-video" muted loop playsinline autoplay="true" preload="metadata" poster="@img/program/info.jpg">
                                 <source src="./files/elbrusskiy.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                             </video>
@@ -138,25 +138,25 @@
                 </section>
                 <section id="about" class="about">
                     <div class="container">
-                        <div class="section-header">
+                        <div data-animate-bottom class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">О нас</h2>
                             <div class="section-header__content">
                                 <div class="section-header__tagline h1">Движение, которое ведёт к эмоциям</div>
                                 <p class="section-header__text text-s">Это путешествие про состояние. Когда движение приносит удовольствие не только скоростью, но и наслаждением от траекторий и природы.</p>
                             </div>
                         </div>
-                        <div class="about__desc text-m">
+                        <div data-animate-bottom class="about__desc text-m">
                             <p>Мы годами ездили по Кавказу за рулём, а не по карте. В этот маршрут вошли дороги, которые раскрываются в движении. И места, где важно замедлиться, чтобы увидеть регион целиком, а не проехать его насквозь.</p>
                         </div>
                         <video class="about__video" muted loop playsinline autoplay="true" preload="metadata" poster="@img/about-poster.jpg">
                             <source src="./files/about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                         </video>
                         <div class="about__content">
-                            <div class="about__heading">
+                            <div data-animate-bottom class="about__heading">
                                 <div class="about__heading-text subtitle">Вы прилетаете , а мы берём на себя всё остальное</div>
                                 <div class="about__heading-text text-s">Берём организацию под ключ.</div>
                             </div>
-                            <div class="about__cards swiper">
+                            <div data-animate-bottom class="about__cards swiper">
                                 <ol class="swiper-wrapper">
                                     <li class="about__card text-s swiper-slide">
                                         Самые лучшие из возможных отелей, логистика ваших автомобилей, помощь на дороге, фото-видео — все включено
@@ -178,14 +178,14 @@
                 </section>
                 <section id="reviews" class="reviews">
                     <div class="container">
-                        <div class="section-header">
+                        <div data-animate-fade class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">Отзывы</h2>
                             <div class="section-header__content">
                                 <div class="section-header__tagline h1">Впечатления без фильтров</div>
                                 <p class="section-header__text text-s">Каждый тур — это личный опыт. Мы собираем впечатления тех, кто уже прокатился вместе с нами по серпантинам, чтобы вы могли увидеть путешествие их глазами.</p>
                             </div>
                         </div>
-                        <div class="reviews__slider swiper">
+                        <div class="reviews__slider swiper" data-animate-bottom>
                             <ul class="swiper-wrapper">
                                 @@loop('./html/templates/_review.html', './html/json/reviews.json')
                                 @@loop('./html/templates/_review.html', './html/json/reviews.json')
@@ -271,12 +271,11 @@
                         <div class="start__line-media start__line-media--large">
                             <img src="@img/start/car.jpg" class="cover-image" alt="Фото поездки">
                         </div>
-
                     </div>
                 </div>
                 <section id="faq" class="faq">
                     <div class="container">
-                        <div class="section-header">
+                        <div data-animate-fade class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">На шаг ближе к мечте</h2>
                             <div class="section-header__content">
                                 <div class="section-header__tagline h1">FAQ</div>
@@ -292,7 +291,7 @@
                 </section>
                 <section id="journey" class="journey">
                     <div class="container">
-                        <div class="journey__content">
+                        <div class="journey__content" data-animate-bottom>
                             <div class="journey__body">
                                 <h2 class="journey__title h1">Ваше <span class="color-accent">путешествие</span> начинается здесь</h2>
                                 <p class="journey__subtitle text-m">Дальше — личный контакт и детали маршрута</p>

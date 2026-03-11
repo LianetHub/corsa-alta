@@ -741,18 +741,18 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         @media (min-width:$md4) {
             text-align: left;
             margin-left: auto;
-            width: calc(75% - 1.5rem);
+            width: calc(80% - 1.5rem);
             margin-top: 2rem;
         }
 
         @media (min-width:$md3) {
-            width: calc(75% - 2.5rem);
+            width: calc(80% - 3rem);
 
         }
 
         @media (min-width:$md2) {
             margin-top: 3rem;
-            width: calc(66.66% - 2.5rem);
+            width: calc(66.66% - 0.875rem);
 
         }
     }

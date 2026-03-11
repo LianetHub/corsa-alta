@@ -2064,19 +2064,19 @@ body {
   .about__desc {
     text-align: left;
     margin-left: auto;
-    width: calc(75% - 1.5rem);
+    width: calc(80% - 1.5rem);
     margin-top: 2rem;
   }
 }
 @media (min-width: 959.98px) {
   .about__desc {
-    width: calc(75% - 2.5rem);
+    width: calc(80% - 3rem);
   }
 }
 @media (min-width: 1199.98px) {
   .about__desc {
     margin-top: 3rem;
-    width: calc(66.66% - 2.5rem);
+    width: calc(66.66% - 0.875rem);
   }
 }
 .about__video {

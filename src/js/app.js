@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
             navigation: {
                 nextEl: '.history__next',
             },
+            breakpoints: {
+                1199.98: {
+                    autoHeight: false,
+                }
+            }
         });
     }
 
@@ -150,7 +155,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // animation
 
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
+
+    window.addEventListener('load', () => {
+        const startTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.start',
+                start: 'top 80%',
+                markers: true,
+                once: true,
+            }
+        });
+
+        startTl
+            .from('.start__line--one', {
+                xPercent: 100,
+                opacity: 0,
+                duration: 0.75,
+                ease: 'power1.inOut',
+            })
+            .from('.start__line--two', {
+                xPercent: -100,
+                opacity: 0,
+                duration: 0.75,
+                ease: 'power1.inOut',
+            })
+            .from('.start__line--three', {
+                xPercent: 100,
+                opacity: 0,
+                duration: 0.75,
+                ease: 'power1.inOut',
+            })
+            .from('.start__line--four', {
+                xPercent: -100,
+                opacity: 0,
+                duration: 0.75,
+                ease: 'power1.inOut',
+            });
+
+        const fadeAnimationBlocks = gsap.utils.toArray('[data-animate-fade]');
+        const bottomAnimationBlocks = gsap.utils.toArray('[data-animate-bottom]');
+
+        fadeAnimationBlocks.forEach((animBlock) => {
+            gsap.from(animBlock, {
+                scrollTrigger: {
+                    trigger: animBlock,
+                    start: 'top 80%',
+                    once: true
+                },
+                opacity: 0,
+                duration: 0.5,
+                ease: 'power1.inOut'
+            });
+        });
+
+        bottomAnimationBlocks.forEach((animBlock) => {
+            gsap.from(animBlock, {
+                scrollTrigger: {
+                    trigger: animBlock,
+                    start: 'top 80%',
+                    once: true
+                },
+                opacity: 0,
+                yPercent: 100,
+                duration: 0.5,
+                ease: 'power1.inOut'
+            });
+        });
+
+    });
+
+
+
 
 });
 
