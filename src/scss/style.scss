@@ -684,6 +684,20 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 .journey {
     padding: rem(115) 0;
 
+    .container {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1.25rem;
+            left: 2.5rem;
+            width: rem(172);
+            height: rem(60);
+            background: url("@img/decor/arrows.svg") 0 0 / cover no-repeat;
+        }
+    }
+
     // .journey__content
     &__content {
         width: calc(66.66% - 0.5rem);
@@ -700,7 +714,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .journey__subtitle
     &__subtitle {
-        margin: 1rem;
+        margin-top: 1rem;
     }
 
     // .journey__form

@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     initPhoneMask();
     initFloatingLabels();
+    initFormValidation();
 
     // animation
 
@@ -125,28 +126,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initFloatingLabels() {
-    const floatingInputs = document.querySelectorAll('.form__control');
+    const floatingInputs = document.querySelectorAll('.form__field > .form__input, .form__field > .form__textarea');
+    const events = ['input', 'blur', 'focus', 'change', 'keyup', 'mouseup'];
 
     const checkEmpty = (input) => {
-        if (input.value && input.value.trim() !== "") {
-            input.classList.add('_input');
-        } else {
-            input.classList.remove('_input');
-        }
+        input.classList.toggle('_input', input.value.length > 0);
     };
 
     floatingInputs.forEach(input => {
         checkEmpty(input);
 
-        input.addEventListener('input', () => checkEmpty(input));
-        input.addEventListener('change', () => checkEmpty(input));
+        events.forEach(eventType => {
+            input.addEventListener(eventType, () => checkEmpty(input));
+        });
     });
-
-    setTimeout(() => {
-        floatingInputs.forEach(checkEmpty);
-    }, 100);
 }
-
 
 function initPhoneMask() {
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
@@ -216,6 +210,68 @@ function initPhoneMask() {
         phoneInput.addEventListener('keydown', onPhoneKeyDown);
         phoneInput.addEventListener('input', onPhoneInput, false);
         phoneInput.addEventListener('paste', onPhonePaste, false);
+    });
+}
+
+function initFormValidation() {
+    const forms = document.querySelectorAll('.journey__form');
+
+    forms.forEach(form => {
+        const inputs = form.querySelectorAll('.form__control');
+        const submitBtn = form.querySelector('.form__submit');
+
+        const validateInput = (input) => {
+            const value = input.value.trim();
+            let isValid = true;
+
+            if (input.type === 'email') {
+                const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                isValid = emailReg.test(value);
+            } else if (input.type === 'tel') {
+                isValid = value.length >= 18;
+            } else {
+                isValid = value.length > 1;
+            }
+
+            if (!isValid && value !== "") {
+                input.classList.add('_error');
+            } else {
+                input.classList.remove('_error');
+            }
+
+            return isValid;
+        };
+
+        const checkFormState = () => {
+            let isFormValid = true;
+            inputs.forEach(input => {
+                const value = input.value.trim();
+                if (value === "" || input.classList.contains('_error')) {
+                    isFormValid = false;
+                }
+            });
+            submitBtn.disabled = !isFormValid;
+        };
+
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                validateInput(input);
+                checkFormState();
+            });
+
+            input.addEventListener('input', () => {
+                if (input.classList.contains('_error')) {
+                    validateInput(input);
+                }
+                checkFormState();
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            if (submitBtn.disabled) {
+                e.preventDefault();
+            }
+        });
     });
 }
 
