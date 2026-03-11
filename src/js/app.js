@@ -59,6 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
+    if (document.querySelector('.history__slider')) {
+
+        new Swiper('.history__slider', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            loop: true,
+            navigation: {
+                nextEl: '.history__next',
+            },
+        });
+    }
+
     if (document.querySelector('.reviews__slider')) {
 
         const reviews__slider = new Swiper('.reviews__slider', {

@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "Onest";
   src: url("../fonts/Onest-VariableFont_wght.woff2") format("woff2 supports variations"), url("../fonts/Onest-VariableFont_wght.woff2") format("woff2-variations"), url("../fonts/Onest-VariableFont_wght.woff") format("woff");
   font-weight: 100 900;
   font-stretch: 75% 125%;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
   font-family: "TTFirsNeue";
@@ -948,7 +948,7 @@ body {
   max-width: 30.625rem;
 }
 .section-header__text {
-  max-width: 18.125rem;
+  max-width: 13.4375rem;
   margin-left: auto;
 }
 
@@ -1096,11 +1096,13 @@ body {
   height: 100%;
 }
 
-.philosophy {
-  padding: 2.5rem 0;
+.history {
+  padding: 2.5rem 0 3.75rem;
 }
-.philosophy__content {
+.history__slider {
   margin-top: 3rem;
+}
+.history__slide {
   border-radius: 2rem;
   background: #F8F8F8;
   color: #2D2D2D;
@@ -1109,36 +1111,36 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-.philosophy__image img {
+.history__image img {
   border-radius: 1.5rem;
 }
-.philosophy__text {
+.history__text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
 }
-.philosophy__desc {
+.history__desc {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
-.philosophy__btn {
+.history__next {
   margin-top: auto;
 }
 
 .programm {
-  padding: 3.125rem 0;
+  padding: 3.75rem 0;
 }
 
 .about {
-  padding: 3.125rem 0 6.25rem;
+  padding: 3.75rem 0;
 }
 
 .reviews {
   background: #F8F8F8;
   color: #2D2D2D;
-  padding: 2.5rem 0;
+  padding: 3.75rem 0;
 }
 .reviews__slider {
   margin-top: 3rem;

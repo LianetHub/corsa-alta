@@ -143,12 +143,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
 
 
-.philosophy {
-    padding: 2.5rem 0;
+.history {
+    padding: 2.5rem 0 3.75rem;
 
-    // .philosophy__content
-    &__content {
+    // .history__slider
+    &__slider {
         margin-top: 3rem;
+    }
+
+    // .history__slide
+    &__slide {
         border-radius: 2rem;
         background: $bg-white;
         color: $text-black;
@@ -158,14 +162,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         gap: 2rem;
     }
 
-    // .philosophy__image
+    // .history__image
     &__image {
         & img {
             border-radius: rem(24);
         }
     }
 
-    // .philosophy__text
+    // .history__text
     &__text {
         display: flex;
         flex-direction: column;
@@ -173,35 +177,35 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         gap: 1.5rem;
     }
 
-    // .philosophy__caption
+    // .history__caption
     &__caption {}
 
-    // .philosophy__desc
+    // .history__desc
     &__desc {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
     }
 
-    // .philosophy__btn
-    &__btn {
+    // .history__next
+    &__next {
         margin-top: auto;
     }
 
 }
 
 .programm {
-    padding: rem(50) 0;
+    padding: 3.75rem 0;
 }
 
 .about {
-    padding: rem(50) 0 rem(100);
+    padding: 3.75rem 0;
 }
 
 .reviews {
     background: $bg-white;
     color: $text-black;
-    padding: 2.5rem 0;
+    padding: 3.75rem 0;
 
     // .reviews__slider
     &__slider {
@@ -267,7 +271,6 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         margin-top: 1rem;
     }
 }
-
 
 .start {
     background: $red;
