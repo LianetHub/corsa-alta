@@ -1052,6 +1052,108 @@ body {
   transform: rotate(-225deg);
 }
 
+.footer {
+  border-radius: 2rem 2rem 0 0;
+  background: #F8F8F8;
+  color: #2D2D2D;
+  padding: 2.5rem 0;
+}
+.footer__header {
+  display: flex;
+  gap: 1rem;
+}
+.footer__main {
+  border-right: 0.0625rem solid #BF1618;
+  padding-right: 5rem;
+  flex: 0 1 23.4375rem;
+}
+.footer__tagline {
+  margin-top: 4.25rem;
+  color: #BF1618;
+  text-transform: uppercase;
+}
+.footer__menu {
+  margin: 0 auto;
+}
+.footer__menu-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.footer__menu-link {
+  color: #535353;
+  transition: color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .footer__menu-link:hover {
+    color: #BF1618;
+  }
+}
+.footer__contacts {
+  padding-left: 1.5rem;
+  border-left: 0.0625rem solid #BF1618;
+  padding-left: 5rem;
+  flex: 0 1 19.9375rem;
+}
+.footer__contacts .footer__caption {
+  text-align: center;
+}
+.footer__contacts-blocks {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer__contacts-block {
+  border-radius: 2rem;
+  border: 0.0625rem solid #656565;
+  background: #F8F8F8;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.footer__contacts-block::before {
+  order: 1;
+  color: #BF1618;
+  font-size: 1.5rem;
+}
+@media (any-hover: hover) {
+  .footer__contacts-block:hover {
+    background: #BF1618;
+    color: #F8F8F8;
+  }
+  .footer__contacts-block:hover::before {
+    color: #F8F8F8;
+  }
+}
+.footer__bottom {
+  margin-top: 1.75rem;
+  border-top: 0.0625rem solid #BF1618;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer__column:last-child {
+  align-items: flex-end;
+}
+.footer__policy {
+  transition: color 0.3s ease;
+}
+@media (any-hover: hover) {
+  .footer__policy:hover {
+    color: #BF1618;
+  }
+}
+
 .hero {
   position: relative;
   z-index: 2;
