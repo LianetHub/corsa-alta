@@ -27,7 +27,7 @@
                         <div class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">Философия тура</h2>
                             <div class="section-header__content">
-                                <div class="section-header__tagline h1">За каждым маршрутом стоит&nbsp;человек</div>
+                                <div class="section-header__tagline h1">За каждым маршрутом стоит человек</div>
                             </div>
                         </div>
                         <div class="history__slider swiper">
@@ -92,7 +92,7 @@
                         <div class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">Программа</h2>
                             <div class="section-header__content">
-                                <div class="section-header__tagline h1">Маршруты для тех, кто живёт эмоциями</div>
+                                <div class="section-header__tagline h1">Маршруты для&nbsp;тех, кто живёт эмоциями</div>
                                 <p class="section-header__text text-s">
                                     Дороги, ради которых вы выбирали свой автомобиль. <br>
                                     Горы. Серпантины. Высота.
@@ -117,6 +117,7 @@
                                 <div class="swiper-wrapper">
                                     @@loop('./html/templates/_program-card.html', './html/json/program.json')
                                 </div>
+                                <div class="programm__details-scrollbar swiper-scrollbar"></div>
                             </div>
                         </div>
                         <div class="programm__info">
@@ -140,12 +141,12 @@
                         <div class="section-header">
                             <h2 class="section-header__title text-m icon-quotes">О нас</h2>
                             <div class="section-header__content">
-                                <div class="section-header__column">
-                                    <div class="section-header__tagline h1">Движение, которое ведёт к эмоциям</div>
-                                    <p class="section-header__desc text-m">Мы годами ездили по Кавказу за рулём, а не по карте. В этот маршрут вошли дороги, которые раскрываются в движении. И места, где важно замедлиться, чтобы увидеть регион целиком, а не проехать его насквозь.</p>
-                                </div>
+                                <div class="section-header__tagline h1">Движение, которое ведёт к эмоциям</div>
                                 <p class="section-header__text text-s">Это путешествие про состояние. Когда движение приносит удовольствие не только скоростью, но и наслаждением от траекторий и природы.</p>
                             </div>
+                        </div>
+                        <div class="about__desc text-m">
+                            <p>Мы годами ездили по Кавказу за рулём, а не по карте. В этот маршрут вошли дороги, которые раскрываются в движении. И места, где важно замедлиться, чтобы увидеть регион целиком, а не проехать его насквозь.</p>
                         </div>
                         <video class="about__video" muted loop playsinline autoplay="true" preload="metadata" poster="@img/about-poster.jpg">
                             <source src="./files/about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
@@ -224,7 +225,7 @@
                         <div class="start__line-text">
                             это
                         </div>
-                        <video class="start__line-media start__line-media--large" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-2-2.jpg">
+                        <video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-2-2.jpg">
                             <source src="./files/dombay-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                         </video>
                         <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-2-3.jpg">
@@ -241,7 +242,7 @@
                         <video class="start__line-media start__line-media--large" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-3-1.jpg">
                             <source src="./files/dzhylysu-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                         </video>
-                        <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-3-2.jpg">
+                        <video class="start__line-media start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-3-2.jpg">
                             <source src="./files/tseyloam-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                         </video>
                         <div class="start__line-text">
@@ -252,13 +253,16 @@
                         </div>
                     </div>
                     <div class="start__line start__line--four">
+                        <video class="start__line-media start__line-media--only-mobile" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-2-3.jpg">
+                            <source src="./files/dzhilysu-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
                         <div class="start__line-media">
                             <img src="@img/start/car.jpg" class="cover-image" alt="Фото поездки">
                         </div>
                         <div class="start__line-text">
                             начало
                         </div>
-                        <video class="start__line-media start__line-media--large" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-4-1.jpg">
+                        <video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-4-1.jpg">
                             <source src="./files/dzhsu5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                         </video>
                         <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="@img/start/line-4-2.jpg">
@@ -267,6 +271,7 @@
                         <div class="start__line-media start__line-media--large">
                             <img src="@img/start/car.jpg" class="cover-image" alt="Фото поездки">
                         </div>
+
                     </div>
                 </div>
                 <section id="faq" class="faq">

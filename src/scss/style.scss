@@ -79,7 +79,6 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     display: flex;
     flex-direction: column;
-
     padding: 7.5rem 0 2.5rem;
 
     @media (max-width:$md4) {
@@ -220,7 +219,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .history {
-    padding: 1.5rem 0 2.5rem;
+    padding: rem(80) 0 rem(40);
+
+    @media (min-width:$md4) {
+        padding: 1.5rem 0 2.5rem;
+    }
 
     @media (min-width:$md3) {
         padding: 2.5rem 0 3.75rem;
@@ -229,7 +232,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .history__slider
     &__slider {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+
+        @media (min-width:$md4) {
+            margin-top: 2.5rem;
+        }
 
         @media (min-width:$md3) {
             margin-top: 3rem;
@@ -239,12 +246,18 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .history__slide
     &__slide {
-        border-radius: 2rem;
         background: $bg-white;
         color: $text-black;
         display: grid;
         padding: 1.25rem;
         gap: 1.25rem;
+
+        border-radius: 1.5rem;
+
+        @media (min-width:$md4) {
+            border-radius: 2rem;
+
+        }
 
         @media (min-width:$md3) {
             grid-template-columns: repeat(2, 1fr);
@@ -260,7 +273,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .history__image
     &__image {
         & img {
-            border-radius: rem(24);
+            border-radius: rem(16);
+            object-position: center bottom;
+
+            @media (max-width:$md4) {
+                aspect-ratio: math.div(310, 235);
+            }
+
+            @media (min-width:$md4) {
+                border-radius: rem(24);
+            }
         }
     }
 
@@ -269,7 +291,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-        margin-bottom: auto;
+
 
         @media (min-width:$md3) {
             align-items: flex-start;
@@ -285,6 +307,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        margin-bottom: auto;
 
         @media (min-width:$md3) {
             gap: 0.75rem;
@@ -294,13 +317,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .history__next
     &__next {
-        margin-top: 1.5rem;
+        margin-top: 0.5rem;
+
+        @media (min-width:$md4) {
+            margin-top: 1.5rem;
+
+        }
     }
 
 }
 
 .programm {
-    padding: 3.75rem 0 3.25rem;
+    padding: rem(40) 0;
+
+    @media (min-width:$md4) {
+        padding: 3.75rem 0 3.25rem;
+    }
 
     @media (min-width:$md3) {
         padding: 3.75rem 0;
@@ -319,12 +351,17 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .programm__content
     &__content {
-        margin-top: rem(40);
-        display: grid;
-        align-items: start;
 
-        grid-template-columns: 1fr 4fr;
-        gap: 0.5rem;
+        margin-top: 2rem;
+
+        @media (min-width:$md4) {
+            margin-top: rem(40);
+            display: grid;
+            align-items: start;
+            gap: 0.5rem;
+            grid-template-columns: 1fr 4fr;
+
+        }
 
         @media (min-width:$md3) {
             gap: 1rem;
@@ -341,37 +378,47 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .programm__navigation
     &__navigation {
-        min-width: 0;
-        max-width: 100%;
-        margin-left: 0;
-        position: relative;
-        margin-top: rem(-35);
+        display: none;
 
+        @media (min-width:$md4) {
+            display: block;
+            min-width: 0;
+            max-width: 100%;
+            margin-left: 0;
+            position: relative;
+            margin-top: rem(-35);
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-            background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.00) 54.32%, #1F1F1F 100%);
-        }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                pointer-events: none;
+                background: linear-gradient(180deg, #1F1F1F 0%, rgba(31, 31, 31, 0.00) 54.32%, #1F1F1F 100%);
+            }
 
-        @media (min-width:$md3) {
-            margin-top: rem(-55);
         }
 
         & .swiper {
-            height: rem(300);
+            @media (min-width:$md4) {
+                height: rem(300);
+
+            }
 
             @media (min-width:$md3) {
                 height: rem(400);
 
             }
         }
+
+        @media (min-width:$md3) {
+            margin-top: rem(-55);
+        }
+
+
     }
 
     // .programm__navigation-item
@@ -402,10 +449,24 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__details {
         min-width: 0;
         max-width: 100%;
-        height: rem(340);
+
+        @media (max-width:$md4) {
+            overflow: visible;
+        }
+
+        @media (min-width:$md4) {
+            height: rem(340);
+
+        }
 
         @media (min-width:$md3) {
             height: rem(430);
+        }
+    }
+
+    &__details-scrollbar {
+        @media (min-width:$md4) {
+            display: none;
         }
     }
 
@@ -416,9 +477,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         border-radius: rem(32);
         overflow: hidden;
         display: flex;
-        gap: 1rem;
-        padding: 1.25rem;
+        gap: 1.5rem;
+        padding: 1.25rem 1.25rem 2rem;
+        flex-direction: column-reverse;
 
+        &.swiper-slide {
+            @media (max-width:$md4) {
+                height: auto;
+
+            }
+        }
+
+        @media (min-width:$md4) {
+            padding: 1.25rem;
+            gap: 1rem;
+            flex-direction: row;
+        }
 
         @media (min-width:$md3) {
             padding: 2rem;
@@ -431,8 +505,24 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 2rem;
         flex: 1 1 auto;
+        gap: 0.5rem;
+
+        @media (min-width:$md4) {
+            gap: 2rem;
+
+        }
+    }
+
+    &__card-day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+
+        @media (min-width:$md4) {
+            display: none;
+        }
     }
 
     // .programm__card-caption
@@ -448,12 +538,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__card-text {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        margin-top: 0.5rem;
+        gap: 0.35rem;
+
+
+        @media (min-width:$md4) {
+            gap: 0.5rem;
+            margin-top: 0;
+        }
     }
 
     // .programm__card-image
     &__card-image {
-        flex: 0 0 42.5%;
+        @media (min-width:$md4) {
+            flex: 0 0 42.5%;
+        }
 
         @media (min-width:$md3) {
             flex: 0 0 52.5%;
@@ -461,6 +560,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
         & img {
             border-radius: 1.5rem;
+
+            @media (max-width:$md4) {
+                aspect-ratio: math.div(19.375, 13.3125);
+            }
         }
     }
 
@@ -470,9 +573,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         border-radius: 2rem;
         background: $bg-white;
         display: flex;
-        gap: 1.25rem;
-        padding: 1.5rem;
+
+
         flex-direction: column;
+        padding: 1.25rem;
+        gap: 1rem;
+
+        @media (min-width:$md4) {
+            gap: 1.25rem;
+            padding: 1.5rem;
+        }
 
         @media (min-width:$md3) {
             flex-direction: row;
@@ -490,6 +600,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         border-radius: 2rem;
         overflow: hidden;
 
+        @media (max-width:$md5) {
+            height: 20.4375rem;
+        }
+
         @media (min-width:$md3) {
             flex: 0 0 rem(395);
         }
@@ -502,49 +616,84 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         border-radius: 2rem;
         background: $red;
         color: $text-white;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 1.25rem;
+
+        @media (min-width:$md4) {
+            padding: 2rem;
+
+        }
     }
 
     // .programm__tours-title
     &__tours-title {
         text-align: center;
+
+        @media (max-width:$md5) {
+            font-size: 1.375rem;
+        }
     }
 
     // .programm__tours-list
     &__tours-list {
-        margin-top: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+
+        @media (min-width:$md4) {
+            gap: 1rem;
+
+        }
+
 
         & li {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
+            align-items: flex-start;
+
+            @media (min-width:$md4) {
+                align-items: center;
+                gap: 1rem;
+
+            }
 
             &::before {
                 content: '';
-                width: rem(73);
-                height: rem(27);
+                width: 4.0625rem;
+                height: 1.5rem;
                 display: block;
-                background: url("@img/decor/ornament.svg") 0 0 / cover no-repeat;
+                background: url("@img/decor/ornament.svg") center / contain no-repeat;
+
+                @media (min-width:$md4) {
+                    width: rem(73);
+                    height: rem(27);
+                }
             }
         }
     }
 
     // .programm__tours-btn
     &__tours-btn {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
+
+        @media (min-width:$md4) {
+            margin-top: 2rem;
+
+        }
     }
 }
 
 .about {
     position: relative;
-    padding: 3.25rem 0 6.25rem;
+    padding: rem(40) 0 rem(80);
+
+    @media (min-width:$md4) {
+        padding: 3.25rem 0 6.25rem;
+    }
 
     @media (min-width:$md3) {
         padding: 3.75rem 0 7.5rem;
@@ -563,7 +712,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     }
 
     .section-header__text {
-        max-width: rem(205);
+        @media (min-width:$md4) {
+            max-width: rem(205);
+
+        }
 
         @media (min-width:$md3) {
             max-width: rem(290);
@@ -571,6 +723,39 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         }
     }
 
+    &__desc {
+        margin-top: 6.5rem;
+        text-align: center;
+
+        & p {
+            @media (min-width:$md4) {
+                max-width: 24.1875rem;
+
+            }
+
+            @media (min-width:$md3) {
+                max-width: rem(490);
+            }
+        }
+
+        @media (min-width:$md4) {
+            text-align: left;
+            margin-left: auto;
+            width: calc(75% - 1.5rem);
+            margin-top: 2rem;
+        }
+
+        @media (min-width:$md3) {
+            width: calc(75% - 2.5rem);
+
+        }
+
+        @media (min-width:$md2) {
+            margin-top: 3rem;
+            width: calc(66.66% - 2.5rem);
+
+        }
+    }
 
     // .about__video
     &__video {
@@ -586,7 +771,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .about__content
     &__content {
-        margin-top: 9.8rem;
+        margin-top: 2.5rem;
+
+        @media (min-width:$md4) {
+            margin-top: 9.8rem;
+        }
 
         @media (min-width:$md3) {
             margin-top: 15rem;
@@ -597,16 +786,36 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__heading {
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+
+        @media (min-width:$md4) {
+            text-align: left;
+            align-items: stretch;
+            flex-direction: row;
+        }
     }
 
     // .about__heading-text
     &__heading-text {
-        max-width: 19.6875rem;
+        &.subtitle {
+            @media (max-width:$md4) {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width:$md4) {
+            max-width: 19.6875rem;
+
+        }
     }
 
     // .about__cards
     &__cards {
         margin-top: 2rem;
+        overflow: visible;
 
         @media (min-width:$md3) {
             margin-top: 3rem;
@@ -614,9 +823,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         }
 
         .swiper-wrapper {
-            display: grid;
-            gap: 1.25rem;
-            grid-template-columns: repeat(2, 1fr);
+            @media (min-width:$md4) {
+                display: grid;
+                gap: 1.25rem;
+                grid-template-columns: repeat(2, 1fr);
+
+            }
 
             @media (min-width:$md3) {
                 grid-template-columns: repeat(4, 1fr);
@@ -637,6 +849,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         gap: 1rem;
         counter-increment: num;
 
+        @media (max-width:$md4) {
+            font-size: 0.875rem;
+        }
+
         &::before {
             content: counter(num);
             width: 1.875rem;
@@ -650,6 +866,30 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
             border-radius: 50%;
             background: $bg-white;
             color: $red;
+        }
+
+        &.swiper-slide {
+            height: auto;
+            width: 100%;
+            min-height: rem(162);
+
+            @media (max-width:$md4) {
+                @media (min-width:$md5) {
+                    width: 21.875rem;
+                }
+            }
+        }
+
+        @media (max-width:$md4) {
+            &:nth-child(even) {
+                background: $bg-white;
+                color: $text-black;
+
+                &::before {
+                    background: $red;
+                    color: $text-white;
+                }
+            }
         }
 
         @media (min-width:$md4) {
@@ -690,7 +930,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 .reviews {
     background: $bg-white;
     color: $text-black;
-    padding: 2rem 0;
+    padding: 1.25rem 0;
+
+    @media (min-width:$md4) {
+        padding: 2rem 0;
+
+    }
 
     @media (min-width:$md3) {
         padding: 2.5rem 0;
@@ -698,7 +943,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     }
 
     .section-header__text {
-        max-width: 14rem;
+        @media (min-width:$md4) {
+            max-width: 14rem;
+
+        }
 
         @media (min-width:$md3) {
             max-width: 17.1875rem;
@@ -709,7 +957,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .reviews__slider
     &__slider {
         overflow: visible;
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+
+        @media (min-width:$md4) {
+            margin-top: 2.5rem;
+        }
 
         @media (min-width:$md3) {
             margin-top: 3rem;
@@ -722,7 +974,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         display: flex;
         justify-content: center;
         gap: 1rem;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
+
+        @media (min-width:$md4) {
+            margin-top: 2rem;
+
+        }
     }
 
     // .reviews__prev
@@ -738,7 +995,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     box-shadow: rem(1) rem(4) remn(4) 0 rgba(169, 169, 169, 0.10);
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1.25rem 2.31rem;
 
     @media (min-width:$md3) {
         padding: 2rem;
@@ -776,7 +1033,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
         & img {
             border-radius: rem(24);
-            aspect-ratio: math.div(390, 265);
+            aspect-ratio: math.div(310, 264);
+
+            @media (min-width:$md5) {
+                aspect-ratio: math.div(390, 265);
+
+            }
 
             @media (min-width:$md3) {
                 aspect-ratio: math.div(362, 262);
@@ -789,6 +1051,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__text {
         margin-top: 1rem;
         line-height: 120%;
+        font-weight: 500;
+
+        @media (max-width:$md4) {
+            font-size: 0.875rem;
+        }
     }
 }
 
@@ -797,10 +1064,16 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     color: $text-black;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
     justify-content: center;
     text-transform: uppercase;
-    padding: 5rem 0;
+    padding: 3.75rem 1.25rem;
+
+    @media (min-width:$md5) {
+        gap: 1.25rem;
+        padding: 5rem 0;
+
+    }
 
     @media (min-width:$md3) {
         padding: 3.75rem 0;
@@ -810,12 +1083,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .start__line
     &__line {
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1.25rem;
+        gap: 1.5rem;
+        flex-direction: column;
+
+        @media (min-width:$md5) {
+            gap: 1.25rem;
+            justify-content: center;
+            flex-direction: row;
+        }
 
         &--one {
-            padding-left: 22vw;
+            @media (min-width:$md5) {
+                padding-left: 22vw;
+
+            }
 
             @media (min-width:$md3) {
                 padding-left: 13vw;
@@ -823,7 +1105,13 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         }
 
         &--two {
-            padding-right: 3vw;
+            @media (max-width:$md5) {
+                flex-direction: column-reverse;
+            }
+
+            @media (min-width:$md5) {
+                padding-right: 3vw;
+            }
 
             @media (min-width:$md3) {
                 padding-right: 11vw;
@@ -832,11 +1120,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         }
 
         &--three {
-            padding-right: 5vw;
+            @media (min-width:$md5) {
+                padding-right: 5vw;
+
+            }
         }
 
         &--four {
-            padding-left: 14vw;
+            @media (max-width:$md5) {
+                flex-direction: column-reverse;
+            }
+
+
+            @media (min-width:$md5) {
+                padding-left: 14vw;
+            }
 
             @media (min-width:$md3) {
                 padding-left: 7vw;
@@ -850,7 +1148,12 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         line-height: 1;
         font-weight: 700;
         flex-shrink: 0;
-        font-size: 7.3vw;
+        font-size: 17.5vw;
+
+        @media (min-width:$md5) {
+            font-size: 7.3vw;
+
+        }
 
         @media (min-width:$md3) {
             font-size: 8.3vw;
@@ -860,12 +1163,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .start__line-media
     &__line-media {
-        max-width: 100%;
         border-radius: 2rem;
+        max-width: 100%;
         overflow: hidden;
         flex-shrink: 0;
-        aspect-ratio: math.div(203, 120);
-        width: rem(203);
+        display: none;
+        aspect-ratio: math.div(350, 182);
+
+        &.start__line-media--mobile {
+            display: block;
+        }
+
+        @media (min-width:$md5) {
+            display: block;
+            aspect-ratio: math.div(203, 120);
+            width: rem(203);
+        }
 
         @media (min-width:$md1) {
             width: #{math.div(203, 1440) * 100}vw;
@@ -873,12 +1186,23 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         }
 
         &.start__line-media--large {
-            aspect-ratio: math.div(315, 120);
-            width: rem(315);
+            @media (min-width:$md5) {
+                aspect-ratio: math.div(315, 120);
+                width: rem(315);
+
+            }
 
             @media (min-width:$md1) {
                 width: #{math.div(315, 1440) * 100}vw;
 
+            }
+        }
+
+        &.start__line-media--only-mobile {
+            display: block;
+
+            @media (min-width:$md5) {
+                display: none;
             }
         }
 
@@ -901,14 +1225,21 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     }
 
     .section-header__text {
-        max-width: rem(177);
+        @media (min-width:$md4) {
+            max-width: rem(177);
+
+        }
     }
 
     // .faq__content
     &__content {
-        margin-left: auto;
-        width: calc(80% - 3.125rem);
         margin-top: 2rem;
+
+        @media (min-width:$md4) {
+            margin-left: auto;
+            width: calc(80% - 3.125rem);
+
+        }
 
         @media (min-width:$md3) {
             margin-top: 3rem;
@@ -943,6 +1274,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
             width: 1.25rem;
             height: 1.25rem;
             font-size: 1.25rem;
+            align-self: flex-start;
 
             @media (min-width:$md3) {
                 width: 1.5rem;
@@ -983,23 +1315,34 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 }
 
 .journey {
-    padding: rem(100) 0;
+    padding: rem(70) 0;
+
+    @media (min-width:$md4) {
+        padding: rem(100) 0;
+
+    }
 
     @media (min-width:$md3) {
         padding: rem(115) 0;
     }
 
     .container {
-        position: relative;
+        @media (min-width:$md4) {
+            position: relative;
+
+        }
 
         &::before {
-            content: '';
-            position: absolute;
-            top: 1.25rem;
-            left: 2.5rem;
-            width: rem(150);
-            height: rem(40);
-            background: url("@img/decor/arrows.svg") 0 center / contain no-repeat;
+            @media (min-width:$md4) {
+                content: '';
+                position: absolute;
+                top: 1.25rem;
+                left: 2.5rem;
+                width: rem(150);
+                height: rem(40);
+                background: url("@img/decor/arrows.svg") 0 center / contain no-repeat;
+
+            }
 
             @media (min-width:$md3) {
                 height: rem(60);
@@ -1011,8 +1354,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .journey__content
     &__content {
-        margin-left: auto;
-        width: calc(80% - 3.125rem);
+        @media (min-width:$md4) {
+            margin-left: auto;
+            width: calc(80% - 3.125rem);
+
+        }
 
         @media (min-width:$md3) {
             width: calc(66.66% - 0.5rem);
@@ -1022,7 +1368,10 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .journey__body
     &__body {
-        max-width: rem(475);
+        @media (min-width:$md4) {
+            max-width: rem(475);
+
+        }
 
         @media (min-width:$md3) {
             max-width: rem(555);
@@ -1031,16 +1380,40 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     }
 
     // .journey__title
-    &__title {}
+    &__title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+
+        @media (min-width:$md4) {
+            text-align: left;
+            display: block;
+        }
+    }
 
     // .journey__subtitle
     &__subtitle {
         margin-top: 1rem;
+        text-align: center;
+
+        @media (max-width:$md4) {
+            font-size: 0.75rem;
+        }
+
+        @media (min-width:$md4) {
+            text-align: left;
+        }
     }
 
     // .journey__form
     &__form {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+
+        @media (min-width:$md4) {
+            margin-top: 2.5rem;
+
+        }
 
         @media (min-width:$md3) {
             margin-top: 3rem;

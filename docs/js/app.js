@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // menu
         if (target.closest('[data-menu-toggler]')) {
-            header.classList.toggle('open-menu')
+            header.classList.toggle('open-menu');
+        }
+
+        if (target.closest('.menu__link')) {
+            header.classList.remove('open-menu');
         }
 
         // faq
@@ -66,11 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const detailsSwiper = new Swiper('.programm__details', {
-            direction: 'vertical',
+            direction: 'horizontal',
             spaceBetween: 20,
-            mousewheel: true,
+
             grabCursor: true,
-            effect: 'creative',
+            mousewheel: true,
+
+            effect: 'slide',
             creativeEffect: {
                 prev: {
                     shadow: true,
@@ -81,7 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     translate: [0, "120%", -500],
                 },
             },
-
+            scrollbar: {
+                el: '.programm__details-scrollbar',
+                draggable: true,
+            },
+            breakpoints: {
+                768: {
+                    direction: 'vertical',
+                    effect: 'creative',
+                }
+            }
         });
 
         daysSwiper.on('slideChange', () => {
