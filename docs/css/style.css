@@ -763,6 +763,20 @@ h3:not([class]) {
   pointer-events: none;
 }
 
+* {
+  scroll-margin-top: 3.5rem;
+}
+@media (min-width: 575.98px) {
+  * {
+    scroll-margin-top: 4.625rem;
+  }
+}
+@media (min-width: 991.98px) {
+  * {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
 body {
   font-family: "TTFirsNeue", sans-serif;
   font-size: 1rem;
@@ -979,10 +993,22 @@ body {
   z-index: 6;
   padding: 1.25rem;
 }
-.header .container {
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease 0.3s;
+}
+.header.open-menu .header__logo {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
 }
 .header__callback::before {
   width: 1.5rem;
@@ -997,6 +1023,42 @@ body {
   align-content: center;
   text-align: center;
   font-size: 0.75rem;
+}
+
+.menu {
+  background: #BF1618;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  transition: all 0.3s ease;
+}
+.header.open-menu .menu {
+  flex: 1 1 auto;
+  margin-right: -11.25rem;
+  padding-right: 11.25rem;
+}
+.menu__toggler {
+  flex-shrink: 0;
+}
+.menu__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 3rem;
+  display: none;
+}
+.header.open-menu .menu__list {
+  display: flex;
+}
+.menu__link {
+  transition: all 0.3s ease;
+}
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: #2D2D2D;
+  }
 }
 
 .icon-menu {
@@ -1033,22 +1095,22 @@ body {
   will-change: transform;
   margin: auto;
 }
-.icon-menu.active span {
+.header.open-menu .icon-menu span {
   transition: transform 0.3s ease 0s, opacity 0.3s ease;
 }
-.icon-menu.active span::before {
+.header.open-menu .icon-menu span::before {
   transition: transform 0.45s ease 0.35s, width 0.3s ease;
 }
-.icon-menu.active span:first-child {
+.header.open-menu .icon-menu span:first-child {
   transform: translateY(0.1875rem);
 }
-.icon-menu.active span:first-child::before {
+.header.open-menu .icon-menu span:first-child::before {
   transform: rotate(-135deg);
 }
-.icon-menu.active span:last-child {
+.header.open-menu .icon-menu span:last-child {
   transform: translateY(-0.1875rem);
 }
-.icon-menu.active span:last-child::before {
+.header.open-menu .icon-menu span:last-child::before {
   transform: rotate(-225deg);
 }
 

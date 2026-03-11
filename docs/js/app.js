@@ -15,7 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('click', function (e) {
         const target = e.target;
+        const header = document.querySelector('.header');
 
+        // menu
+        if (target.closest('.menu__toggler')) {
+            header.classList.toggle('open-menu')
+        }
+
+        // faq
         if (target.matches('.faq__item-btn')) {
             const content = target.nextElementSibling;
             if (content.classList.contains('_sliding')) return;

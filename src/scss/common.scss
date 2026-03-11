@@ -1,12 +1,14 @@
-// * {
-// 	scroll-margin-top: rem(56);
-// 	@media (min-width: $md5) {
-// 		scroll-margin-top: rem(74);
-// 	}
-// 	@media (min-width: $md3) {
-// 		scroll-margin-top: rem(82);
-// 	}
-// }
+* {
+	scroll-margin-top: rem(56);
+
+	@media (min-width: $md5) {
+		scroll-margin-top: rem(74);
+	}
+
+	@media (min-width: $md3) {
+		scroll-margin-top: rem(88);
+	}
+}
 
 body {
 	font-family: $fontfamily, sans-serif;

@@ -6,7 +6,16 @@
 	z-index: $ui-index-6;
 	padding: 1.25rem;
 
-	.container {
+
+	&.open-menu {
+		// .header__wrapper {
+		// 	background: $red;
+		// }
+	}
+
+
+	// .header__wrapper
+	&__wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -15,7 +24,20 @@
 	// .header__menu
 	&__menu {}
 
-	&__logo {}
+	&__logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		transition: all 0.3s ease 0.3s;
+
+		.header.open-menu & {
+			opacity: 0;
+			visibility: hidden;
+			transition: none;
+		}
+	}
 
 	// .header__callback
 	&__callback {
@@ -36,6 +58,60 @@
 	}
 }
 
+
+.menu {
+	background: $red;
+	border-radius: 2rem;
+	display: flex;
+	align-items: center;
+	flex: 0 1 auto;
+	transition: all 0.3s ease;
+
+	.header.open-menu & {
+		flex: 1 1 auto;
+		margin-right: rem(-180);
+		padding-right: rem(180);
+	}
+
+	// .menu__toggler
+	&__toggler {
+		flex-shrink: 0;
+	}
+
+	// .menu__toggler-icon
+	&__toggler-icon {}
+
+	// .menu__toggler-text
+	&__toggler-text {}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1 1 auto;
+		gap: 3rem;
+		display: none;
+
+		.header.open-menu & {
+			display: flex;
+		}
+	}
+
+	// .menu__item
+	&__item {}
+
+	// .menu__link
+	&__link {
+		transition: all 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $text-black;
+			}
+		}
+	}
+}
 
 
 .icon-menu {
@@ -76,7 +152,7 @@
 		}
 	}
 
-	&.active {
+	.header.open-menu & {
 
 		& span {
 			transition: transform 0.3s ease 0s, opacity 0.3s ease;

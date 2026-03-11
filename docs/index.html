@@ -21,18 +21,27 @@
         <div class="wrapper">
             <header class="header">
                 <div class="container">
-                    <nav aria-label="Меню" class="header__menu">
-                        <button type="button" class="header__menu-toggler btn btn-primary btn-sm">
-                            <span class="header__menu-toggler-icon icon-menu">
-                                <span></span><span></span>
-                            </span>
-                            <span class="header__menu-toggler-text">Меню</span>
-                        </button>
-                    </nav>
-                    <a href="#" class="header__logo">
-                        <img src="img/logo-white.svg" alt="Логотип">
-                    </a>
-                    <a href="" class="header__callback btn btn-primary btn-sm icon-envelope">Написать нам</a>
+                    <div class="header__wrapper">
+                        <nav aria-label="Меню" class="header__menu menu">
+                            <button type="button" class="menu__toggler btn btn-primary btn-sm">
+                                <span class="menu__toggler-icon icon-menu">
+                                    <span></span><span></span>
+                                </span>
+                                <span class="menu__toggler-text">Меню</span>
+                            </button>
+                            <ul class="menu__list text-s">
+                                <li class="menu__item"><a href="#history" class="menu__link">Философия тура</a></li>
+                                <li class="menu__item"><a href="#programm" class="menu__link">Программа</a></li>
+                                <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
+                                <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
+                                <li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
+                            </ul>
+                        </nav>
+                        <a href="#" class="header__logo">
+                            <img src="img/logo-white.svg" alt="Логотип">
+                        </a>
+                        <a href="#journey" class="header__callback btn btn-primary btn-sm icon-envelope">Написать нам</a>
+                    </div>
                 </div>
             </header>
             <main class="page">
@@ -509,11 +518,11 @@
                             <div class="footer__caption subtitle-sm">Меню</div>
                             <nav aria-label="Меню в подвале" class="footer__menu text-m">
                                 <ul class="footer__menu-list">
-                                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Философия тура</a></li>
-                                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Программа</a></li>
-                                    <li class="footer__menu-item"><a href="" class="footer__menu-link">О нас</a></li>
-                                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Отзывы</a></li>
-                                    <li class="footer__menu-item"><a href="" class="footer__menu-link">FAQ</a></li>
+                                    <li class="footer__menu-item"><a href="#history" class="footer__menu-link">Философия тура</a></li>
+                                    <li class="footer__menu-item"><a href="#programm" class="footer__menu-link">Программа</a></li>
+                                    <li class="footer__menu-item"><a href="#about" class="footer__menu-link">О нас</a></li>
+                                    <li class="footer__menu-item"><a href="#reviews" class="footer__menu-link">Отзывы</a></li>
+                                    <li class="footer__menu-item"><a href="#faq" class="footer__menu-link">FAQ</a></li>
                                 </ul>
                             </nav>
                         </div>
