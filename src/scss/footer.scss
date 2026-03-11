@@ -13,8 +13,14 @@
     // .footer__main
     &__main {
         border-right: rem(1) solid $red;
-        padding-right: 5rem;
-        flex: 0 1 23.4375rem;
+        padding-right: 2.5rem;
+        flex: 0 1 14.5rem;
+
+        @media (min-width:$md3) {
+            padding-right: 5rem;
+            flex: 0 1 23.4375rem;
+
+        }
     }
 
     // .footer__logo
@@ -67,8 +73,14 @@
     &__contacts {
         padding-left: 1.5rem;
         border-left: rem(1) solid $red;
-        padding-left: 5rem;
-        flex: 0 1 19.9375rem;
+        padding-left: 2.5rem;
+        flex: 0 1 15rem;
+
+        @media (min-width:$md3) {
+            padding-left: 5rem;
+            flex: 0 1 19.9375rem;
+
+        }
 
         .footer__caption {
             text-align: center;

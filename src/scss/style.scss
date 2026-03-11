@@ -17,7 +17,7 @@ $font-onest: "Onest";
 
 $md1: 1399.98px;
 $md2: 1199.98px;
-$md3: 991.98px;
+$md3: 959.98px;
 $md4: 743.98px;
 $md5: 575.98px;
 $md6: 389.98px;
@@ -174,12 +174,14 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         background: $bg-white;
         color: $text-black;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         padding: 1.25rem;
         gap: 1.25rem;
 
-
         @media (min-width:$md3) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width:$md2) {
             gap: 2rem;
             padding: 2.5rem;
 
@@ -253,6 +255,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         align-items: start;
 
         grid-template-columns: 1fr 4fr;
+        gap: 0.5rem;
 
         @media (min-width:$md3) {
             gap: 1rem;
@@ -400,20 +403,27 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         display: flex;
         gap: 1.25rem;
         padding: 1.5rem;
+        flex-direction: column;
 
         @media (min-width:$md3) {
-            padding: 2rem;
+            flex-direction: row;
+        }
 
+        @media (min-width:$md2) {
+            padding: 2rem;
         }
     }
 
     // .programm__info-video
     &__info-video {
-        flex: 0 0 rem(395);
         width: 100%;
         object-fit: cover;
         border-radius: 2rem;
         overflow: hidden;
+
+        @media (min-width:$md3) {
+            flex: 0 0 rem(395);
+        }
 
     }
 
@@ -918,9 +928,15 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
             position: absolute;
             top: 1.25rem;
             left: 2.5rem;
-            width: rem(172);
-            height: rem(60);
-            background: url("@img/decor/arrows.svg") 0 0 / cover no-repeat;
+            width: rem(150);
+            height: rem(40);
+            background: url("@img/decor/arrows.svg") 0 center / contain no-repeat;
+
+            @media (min-width:$md3) {
+                height: rem(60);
+                width: rem(172);
+
+            }
         }
     }
 

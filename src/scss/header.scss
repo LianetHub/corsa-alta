@@ -7,11 +7,7 @@
 	padding: 1.25rem 0;
 
 
-	&.open-menu {
-		// .header__wrapper {
-		// 	background: $red;
-		// }
-	}
+	&.open-menu {}
 
 
 	// .header__wrapper
@@ -68,8 +64,17 @@
 
 	.header.open-menu & {
 		flex: 1 1 auto;
-		margin-right: rem(-180);
-		padding-right: rem(180);
+
+		@media (min-width:$md4) {
+			margin-right: rem(-165);
+			padding-right: rem(165);
+		}
+
+		@media (min-width:$md3) {
+			margin-right: rem(-180);
+			padding-right: rem(180);
+
+		}
 	}
 
 	// .menu__toggler
@@ -97,7 +102,12 @@
 		align-items: center;
 		flex: 1 1 auto;
 		display: none;
-		gap: 2rem;
+		gap: 1.5rem;
+
+		@media (min-width:$md3) {
+			gap: 2rem;
+
+		}
 
 		@media (min-width:$md2) {
 			gap: 3rem;
