@@ -144,6 +144,35 @@ h3:not([class]) {
 	color: $red;
 }
 
+.contact-block {
+	border-radius: 2rem;
+	border: rem(1) solid $bg-line;
+	background: $bg-white;
+	color: $text-grey-dark;
+	padding: 0.5rem 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: background-color 0.3s ease, color 0.3s ease;
+
+	&::before {
+		order: 1;
+		color: $red;
+		font-size: 1.5rem;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background: $red;
+			color: $bg-white;
+
+			&::before {
+				color: $bg-white;
+			}
+		}
+	}
+}
+
 .swiper-button-next,
 .swiper-button-prev {
 	position: static;

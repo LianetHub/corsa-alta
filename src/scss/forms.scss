@@ -213,10 +213,17 @@
 	}
 
 	&.btn-sm {
-		padding: 0.75rem 1rem;
-		gap: 1rem;
-		font-size: 0.875rem;
 		text-transform: none;
+		padding: rem(6) rem(8);
+		font-size: 0.75rem;
+		gap: 0.5rem;
+
+		@media (min-width:$md4) {
+			gap: 1rem;
+			font-size: 0.875rem;
+			padding: 0.75rem 1rem;
+
+		}
 
 		@media (min-width:$md3) {
 			font-size: 1rem;

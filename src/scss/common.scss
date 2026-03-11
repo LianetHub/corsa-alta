@@ -50,10 +50,10 @@ body {
 
 .container {
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 1.25rem;
 	max-width: $maxWidthContainer;
 
-	@media (min-width: $md5) {
+	@media (min-width: $md4) {
 		padding: 0 rem(40);
 		box-sizing: content-box;
 	}

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const header = document.querySelector('.header');
 
         // menu
-        if (target.closest('.menu__toggler')) {
+        if (target.closest('[data-menu-toggler]')) {
             header.classList.toggle('open-menu')
         }
 

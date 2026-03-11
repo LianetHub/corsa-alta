@@ -19,24 +19,40 @@
     </head>
     <body>
         <div class="wrapper">
-            <header class="header open-menu">
+            <header class="header">
                 <div class="container">
                     <div class="header__wrapper">
-                        <nav aria-label="Меню" class="header__menu menu">
-                            <button type="button" class="menu__toggler btn btn-primary btn-sm">
+                        <div class="header__menu menu">
+                            <button type="button" data-menu-toggler class="menu__toggler btn btn-primary btn-sm">
                                 <span class="menu__toggler-icon icon-menu">
                                     <span></span><span></span>
                                 </span>
                                 <span class="menu__toggler-text">Меню</span>
                             </button>
-                            <ul class="menu__list text-s">
-                                <li class="menu__item"><a href="#history" class="menu__link">Философия тура</a></li>
-                                <li class="menu__item"><a href="#programm" class="menu__link">Программа</a></li>
-                                <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
-                                <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
-                                <li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
-                            </ul>
-                        </nav>
+                            <div class="menu__content">
+                                <div class="menu__header">
+                                    <div class="menu__logo">
+                                        <img src="img/logo-white.svg" alt="Логотип">
+                                    </div>
+                                    <button type="button" data-menu-toggler aria-label="Закрыть мобильное меню" class="icon-menu">
+                                        <span></span><span></span>
+                                    </button>
+                                </div>
+                                <nav aria-label="Меню" class="menu__body">
+                                    <ul class="menu__list text-s">
+                                        <li class="menu__item"><a href="#history" class="menu__link">Философия тура</a></li>
+                                        <li class="menu__item"><a href="#programm" class="menu__link">Программа</a></li>
+                                        <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
+                                        <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
+                                        <li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="menu__contacts">
+                                    <a href="" class="contact-block text-xs icon-telegram">Telegram</a>
+                                    <a href="" class="contact-block text-xs icon-mail">Написать нам</a>
+                                </div>
+                            </div>
+                        </div>
                         <a href="#" class="header__logo">
                             <img src="img/logo-white.svg" alt="Логотип">
                         </a>
@@ -530,8 +546,8 @@
                         <div class="footer__contacts">
                             <div class="footer__caption subtitle-sm">Контакты</div>
                             <div class="footer__contacts-blocks">
-                                <a href="" class="footer__contacts-block text-xs icon-telegram">Telegram</a>
-                                <a href="" class="footer__contacts-block text-xs icon-mail">Написать нам</a>
+                                <a href="" class="contact-block text-xs icon-telegram">Telegram</a>
+                                <a href="" class="contact-block text-xs icon-mail">Написать нам</a>
                             </div>
                         </div>
                     </div>

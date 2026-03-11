@@ -21,15 +21,20 @@
 	&__menu {}
 
 	&__logo {
-		max-width: rem(106);
-		transition: all 0.3s ease 0.3s;
+		max-width: rem(71);
 
-		.header.open-menu & {
-			max-width: 0;
-			opacity: 0;
-			visibility: hidden;
-			transition: none;
+		@media (min-width:$md4) {
+			transition: all 0.3s ease 0.3s;
+			max-width: rem(106);
+
+			.header.open-menu & {
+				max-width: 0;
+				opacity: 0;
+				visibility: hidden;
+				transition: none;
+			}
 		}
+
 	}
 
 	// .header__callback
@@ -37,8 +42,7 @@
 		flex-shrink: 0;
 
 		&::before {
-			width: 1.5rem;
-			height: 1.5rem;
+
 			background: $bg-white;
 			color: $red;
 			flex-shrink: 0;
@@ -48,24 +52,35 @@
 			align-items: center;
 			align-content: center;
 			text-align: center;
-			font-size: 0.75rem;
+			width: 1rem;
+			height: 1rem;
+			font-size: 0.5rem;
+
+			@media (min-width:$md4) {
+				font-size: 0.75rem;
+				width: 1.5rem;
+				height: 1.5rem;
+			}
 		}
 	}
 }
 
 
 .menu {
-	background: $red;
-	border-radius: 2rem;
-	display: flex;
-	align-items: center;
-	flex: 0 1 auto;
-	transition: all 0.3s ease;
+	@media (min-width:$md4) {
+		transition: all 0.3s ease;
+		display: flex;
+		flex: 0 1 auto;
+		flex-direction: row;
+		align-items: center;
+		border-radius: 2rem;
+		background: $red;
+	}
 
 	.header.open-menu & {
-		flex: 1 1 auto;
 
 		@media (min-width:$md4) {
+			flex: 1 1 auto;
 			margin-right: rem(-165);
 			padding-right: rem(165);
 		}
@@ -83,7 +98,19 @@
 	}
 
 	// .menu__toggler-icon
-	&__toggler-icon {}
+	&__toggler-icon {
+		@media (max-width:$md4) {
+			&.icon-menu {
+				width: 1rem;
+				height: 1rem;
+				padding: rem(0) rem(3);
+
+				& span {
+					padding: rem(1) 0;
+				}
+			}
+		}
+	}
 
 	// .menu__toggler-text
 	&__toggler-text {
@@ -95,18 +122,80 @@
 		}
 	}
 
+	// .menu__content
+	&__content {
+		flex: 1 1 auto;
+
+		@media (max-width:$md4) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 6;
+			background: $red;
+			padding: rem(20);
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			transform: translateY(-100%);
+			transition: transform 0.3s ease;
+
+			.header.open-menu & {
+				transform: none;
+			}
+		}
+	}
+
+	// .menu__body
+	&__body {}
+
+	// .menu__header
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media (min-width:$md4) {
+			display: none;
+		}
+	}
+
+	&__logo {
+		max-width: 11.625rem;
+		width: 100%;
+
+		& img {
+			width: 100%;
+		}
+	}
+
 	// .menu__list
 	&__list {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex: 1 1 auto;
-		display: none;
-		gap: 1.5rem;
+		flex-direction: column;
+
+		border-top: rem(1) solid $bg-white;
+		border-bottom: rem(1) solid $bg-white;
+		padding-block: 2rem;
+		gap: 1rem;
+
+		@media (min-width:$md4) {
+			border-top: 0;
+			border-bottom: 0;
+			padding-block: 0;
+			gap: 1.5rem;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			display: none;
+
+			.header.open-menu & {
+				display: flex;
+			}
+		}
 
 		@media (min-width:$md3) {
 			gap: 2rem;
-
 		}
 
 		@media (min-width:$md2) {
@@ -114,9 +203,7 @@
 
 		}
 
-		.header.open-menu & {
-			display: flex;
-		}
+
 	}
 
 	// .menu__item
@@ -126,10 +213,29 @@
 	&__link {
 		transition: all 0.3s ease;
 
+		@media (max-width:$md4) {
+			font-size: 1rem;
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: $text-black;
 			}
+		}
+	}
+
+	// .menu__contacts
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		.contact-block {
+			border: 0;
+		}
+
+		@media (min-width:$md4) {
+			display: none;
 		}
 	}
 }
