@@ -70,8 +70,16 @@ body {
 .section-header {
 	display: grid;
 	align-items: start;
-	grid-template-columns: 1fr 2fr;
-	gap: 1rem;
+
+
+	grid-template-columns: 1fr 4fr;
+	gap: 3.81rem;
+
+	@media (min-width:$md3) {
+		gap: 1rem;
+		grid-template-columns: 1fr 2fr;
+
+	}
 
 	// .section-header__title
 	&__title {
@@ -80,6 +88,7 @@ body {
 		gap: 1rem;
 
 		&::before {
+			align-self: flex-start;
 			color: $red;
 			font-size: 1.375rem;
 		}
@@ -93,13 +102,23 @@ body {
 
 	// .section-header__tagline
 	&__tagline {
-		max-width: rem(490);
+		max-width: 25.5rem;
+
+		@media (min-width:$md3) {
+			max-width: rem(490);
+
+		}
 	}
 
 	// .section-header__text
 	&__text {
-		max-width: rem(215);
 		margin-left: auto;
+		max-width: rem(235);
+
+		@media (min-width:$md3) {
+			max-width: rem(215);
+
+		}
 	}
 
 	// .section-header__column
@@ -107,7 +126,12 @@ body {
 		max-width: rem(490);
 		display: flex;
 		flex-direction: column;
-		gap: 3rem;
+		gap: 2rem;
+
+		@media (min-width:$md3) {
+			gap: 3rem;
+
+		}
 	}
 
 	// .section-header__tagline

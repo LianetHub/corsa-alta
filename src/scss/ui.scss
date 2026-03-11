@@ -1,6 +1,6 @@
 .h1,
 h1:not([class]) {
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 120%;
 	font-size: rem(32);
 	text-transform: uppercase;
@@ -10,6 +10,7 @@ h1:not([class]) {
 	}
 
 	@media (min-width: $md2) {
+		font-weight: 700;
 		font-size: rem(48)
 	}
 }
@@ -112,7 +113,7 @@ h3:not([class]) {
 		font-size: rem(14);
 	}
 
-	@media (min-width: $md2) {
+	@media (min-width: $md3) {
 		font-size: rem(16);
 	}
 }
@@ -123,7 +124,7 @@ h3:not([class]) {
 	font-weight: 400;
 	font-size: rem(12);
 
-	@media (min-width: $md2) {
+	@media (min-width: $md4) {
 		font-size: rem(14);
 	}
 }

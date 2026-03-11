@@ -22,9 +22,14 @@
 
     // .footer__tagline
     &__tagline {
-        margin-top: 4.25rem;
         color: $red;
         text-transform: uppercase;
+        margin-top: 4rem;
+
+        @media (min-width:$md3) {
+            margin-top: 4.25rem;
+
+        }
     }
 
     // .footer__menu

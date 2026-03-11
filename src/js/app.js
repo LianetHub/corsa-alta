@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 1,
             spaceBetween: 16,
             loop: true,
+            autoHeight: true,
             navigation: {
                 nextEl: '.history__next',
             },
@@ -51,11 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('.programm__content')) {
         const daysSwiper = new Swiper('.programm__navigation .swiper', {
             direction: 'vertical',
-            slidesPerView: 4,
+            slidesPerView: "auto",
+            spaceBetween: 12,
             watchSlidesProgress: true,
             slideToClickedSlide: true,
             mousewheel: true,
             centeredSlides: true,
+            breakpoints: {
+                991.98: {
+                    spaceBetween: 24,
+                }
+            }
         });
 
         const detailsSwiper = new Swiper('.programm__details', {
@@ -109,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 prevEl: '.reviews__prev',
             },
             breakpoints: {
-                991.98: {
+                767.98: {
                     slidesPerView: 2,
                     spaceBetween: 24,
                 },

@@ -4,7 +4,7 @@
 	left: 0;
 	width: 100%;
 	z-index: $ui-index-6;
-	padding: 1.25rem;
+	padding: 1.25rem 0;
 
 
 	&.open-menu {
@@ -25,14 +25,11 @@
 	&__menu {}
 
 	&__logo {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-
+		max-width: rem(106);
 		transition: all 0.3s ease 0.3s;
 
 		.header.open-menu & {
+			max-width: 0;
 			opacity: 0;
 			visibility: hidden;
 			transition: none;
@@ -41,6 +38,8 @@
 
 	// .header__callback
 	&__callback {
+		flex-shrink: 0;
+
 		&::before {
 			width: 1.5rem;
 			height: 1.5rem;
@@ -82,7 +81,14 @@
 	&__toggler-icon {}
 
 	// .menu__toggler-text
-	&__toggler-text {}
+	&__toggler-text {
+		font-size: 0.875rem;
+
+		@media (min-width:$md3) {
+			font-size: 1rem;
+
+		}
+	}
 
 	// .menu__list
 	&__list {
@@ -90,8 +96,13 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1 1 auto;
-		gap: 3rem;
 		display: none;
+		gap: 2rem;
+
+		@media (min-width:$md2) {
+			gap: 3rem;
+
+		}
 
 		.header.open-menu & {
 			display: flex;
