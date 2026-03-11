@@ -1415,15 +1415,49 @@ body {
   padding: 3.75rem 0;
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
   justify-content: center;
   text-transform: uppercase;
+}
+.start__line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+.start__line--one {
+  padding-left: 13vw;
+}
+.start__line--two {
+  padding-right: 11vw;
+}
+.start__line--three {
+  padding-right: 5vw;
+}
+.start__line--four {
+  padding-left: 7vw;
 }
 .start__line-text {
   line-height: 1;
   font-weight: 700;
-  font-size: 10vw;
+  font-size: 8.3vw;
+  flex-shrink: 0;
 }
-
+.start__line-media {
+  max-width: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 14.0972222222vw;
+  aspect-ratio: 1.6916666667;
+}
+.start__line-media.start__line-media--large {
+  width: 21.875vw;
+  aspect-ratio: 2.625;
+}
+.start__line-media:is(video) {
+  object-fit: cover;
+}
 .faq {
   background: #F8F8F8;
   color: #2D2D2D;

@@ -550,18 +550,63 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     padding: 3.75rem 0;
     display: flex;
     flex-direction: column;
+    gap: 1.25rem;
     justify-content: center;
     text-transform: uppercase;
 
     // .start__line
-    &__line {}
+    &__line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+
+        &--one {
+            padding-left: 13vw;
+        }
+
+        &--two {
+            padding-right: 11vw;
+        }
+
+        &--three {
+            padding-right: 5vw;
+        }
+
+        &--four {
+            padding-left: 7vw;
+        }
+    }
 
     // .start__line-text
     &__line-text {
         line-height: 1;
         font-weight: 700;
-        font-size: 10vw;
+        font-size: 8.3vw;
+        flex-shrink: 0;
     }
+
+    // .start__line-media
+    &__line-media {
+        max-width: 100%;
+        border-radius: 2rem;
+        overflow: hidden;
+        flex-shrink: 0;
+        width: #{math.div(203, 1440) * 100}vw;
+        aspect-ratio: math.div(203, 120);
+
+        &.start__line-media--large {
+            width: #{math.div(315, 1440) * 100}vw;
+            aspect-ratio: math.div(315, 120);
+        }
+
+        &:is(video) {
+            object-fit: cover;
+        }
+    }
+
+    // .start__line-text
+    &__line-text {}
 }
 
 
