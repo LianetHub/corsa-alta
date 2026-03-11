@@ -99,4 +99,20 @@ body {
 		max-width: rem(215);
 		margin-left: auto;
 	}
+
+	// .section-header__column
+	&__column {
+		max-width: rem(490);
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	// .section-header__tagline
+	&__tagline {}
+
+	// .section-header__desc
+	&__desc {
+		max-width: rem(428);
+	}
 }

@@ -1,7 +1,5 @@
 "use strict";
 
-// const { default: Swiper } = require("swiper");
-
 //  Fancybox
 if (typeof Fancybox !== "undefined" && Fancybox !== null) {
     Fancybox.bind("[data-fancybox]", {
@@ -61,6 +59,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
+    // sliders
+    class MobileSwiper {
+        constructor(sliderName, options, condition = 767.98) {
+            this.$slider = document.querySelector(sliderName);
+            this.options = options;
+            this.init = false;
+            this.swiper = null;
+            this.condition = condition;
+
+            if (this.$slider) {
+                this.handleResize();
+                window.addEventListener("resize", () => this.handleResize());
+            }
+        }
+
+        handleResize() {
+            if (window.innerWidth <= this.condition) {
+                if (!this.init) {
+                    this.init = true;
+                    this.swiper = new Swiper(this.$slider, this.options);
+                }
+            } else if (this.init) {
+                if (this.swiper) {
+                    this.swiper.destroy(true, true);
+                    this.swiper = null;
+                }
+                this.init = false;
+            }
+        }
+    }
+
     if (document.querySelector('.history__slider')) {
 
         new Swiper('.history__slider', {
@@ -70,28 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
             navigation: {
                 nextEl: '.history__next',
             },
-        });
-    }
-
-    if (document.querySelector('.reviews__slider')) {
-
-        const reviews__slider = new Swiper('.reviews__slider', {
-            slidesPerView: "auto",
-            spaceBetween: 16,
-            navigation: {
-                nextEl: '.reviews__next',
-                prevEl: '.reviews__prev',
-            },
-            breakpoints: {
-                991.98: {
-                    slidesPerView: 2,
-                    spaceBetween: 24,
-                },
-                1199.98: {
-                    spaceBetween: 24,
-                    slidesPerView: 3,
-                }
-            }
         });
     }
 
@@ -132,6 +139,42 @@ document.addEventListener("DOMContentLoaded", function () {
             daysSwiper.slideTo(detailsSwiper.activeIndex);
         });
     }
+
+    if (document.querySelector('.about__cards')) {
+        new MobileSwiper('.about__cards', {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            scrollbar: {
+                el: '.about__cards-scrollbar',
+                draggable: true,
+            },
+        })
+
+
+    }
+
+    if (document.querySelector('.reviews__slider')) {
+
+        new Swiper('.reviews__slider', {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            navigation: {
+                nextEl: '.reviews__next',
+                prevEl: '.reviews__prev',
+            },
+            breakpoints: {
+                991.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1199.98: {
+                    spaceBetween: 24,
+                    slidesPerView: 3,
+                }
+            }
+        });
+    }
+
 
     initPhoneMask();
     initFloatingLabels();
