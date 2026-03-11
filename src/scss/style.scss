@@ -65,25 +65,49 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 .hero {
     position: relative;
     z-index: $ui-index-2;
-    background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%),
-        url("@img/hero/noise.svg") center / cover no-repeat,
-        url("@img/hero/main.jpg") center / auto rem(1024) no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%);
+        z-index: 2;
+    }
 
     display: flex;
     flex-direction: column;
 
-    padding: 5rem 0;
-    min-height: rem(844);
+    padding: 7.5rem 0 2.5rem;
+
+    @media (max-width:$md4) {
+        @media (min-height: 850px) {
+            min-height: rem(844);
+        }
+    }
+
+    background: url("@img/hero/noise.svg") center / cover no-repeat,
+    url("@img/hero/main-mobile.jpg") center / cover no-repeat;
 
     @media (min-width:$md4) {
-        padding: 5rem 0;
-        min-height: rem(1024);
+        background: url("@img/hero/noise.svg") center / cover no-repeat,
+            url("@img/hero/main.jpg") center / cover no-repeat;
+        min-height: 100svh;
+        padding: 7.5rem 0 2.5rem;
+
+        @media (min-height: 1023.98px) {
+            background: url("@img/hero/noise.svg") center / cover no-repeat,
+                url("@img/hero/main.jpg") center / auto rem(1024) no-repeat;
+            padding: 5rem 0;
+            min-height: rem(1024);
+
+        }
     }
 
     @media (min-width:$md1) {
-
-        background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%),
-            url("@img/hero/noise.svg") center / cover no-repeat,
+        background: url("@img/hero/noise.svg") center / cover no-repeat,
             url("@img/hero/main.jpg") center / cover no-repeat;
     }
 
@@ -108,27 +132,61 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__tagline {
         position: relative;
         z-index: $ui-index-2;
-        max-width: 12.3125rem;
-        font-size: rem(18);
-        font-weight: 500;
+
         line-height: 120%;
+        font-size: rem(12);
+        max-width: 8.5rem;
+
+
+        @media (min-width:$md4) {
+            font-weight: 500;
+            max-width: 12.3125rem;
+            font-size: rem(18);
+
+        }
     }
 
     // .hero__logo
     &__logo {
-        margin-top: rem(30);
         display: block;
+        margin-top: rem(20);
+
+        @media (min-width:$md4) {
+            margin-top: rem(30);
+
+        }
     }
 
     // .hero__title
     &__title {
         position: relative;
         z-index: $ui-index-2;
-        margin-top: rem(130);
-        max-width: 21.125rem;
-        font-size: rem(18);
-        font-weight: 500;
-        line-height: 120%;
+        font-size: 1rem;
+        max-width: 18rem;
+        line-height: 100%;
+        margin-top: 12rem;
+
+        @media (max-width:$md4) {
+            margin-top: 6rem;
+
+            @media (min-height: 850px) {
+                margin-top: 12rem;
+            }
+        }
+
+        @media (min-width:$md4) {
+            line-height: 120%;
+            max-width: 21.125rem;
+            font-weight: 500;
+            font-size: rem(18);
+            margin-top: rem(40);
+
+            @media (min-height: 1023.98px) {
+                margin-top: rem(130);
+
+            }
+
+        }
     }
 
     // .hero__btn
@@ -136,6 +194,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         position: relative;
         z-index: $ui-index-2;
         margin-top: 2rem;
+        width: 100%;
+
+        @media (min-width:$md5) {
+            width: auto;
+        }
     }
 
     // .hero__image
