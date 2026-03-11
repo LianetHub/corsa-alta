@@ -266,7 +266,7 @@ h3:not([class]) {
   width: 4rem;
   height: 4rem;
   font-size: 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background: #1F1F1F;
   color: #F9F9F9;
   transition: all 0.3s ease;
@@ -1362,10 +1362,14 @@ body {
 .reviews {
   background: #F8F8F8;
   color: #2D2D2D;
-  padding: 3.75rem 0;
+  padding: 2.5rem 0;
+}
+.reviews .section-header__text {
+  max-width: 17.1875rem;
 }
 .reviews__slider {
   margin-top: 3rem;
+  overflow: visible;
 }
 .reviews__controls {
   margin-top: 2rem;

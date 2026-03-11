@@ -468,17 +468,19 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     &__cards-scrollbar {}
 }
 
-
-
-
 .reviews {
     background: $bg-white;
     color: $text-black;
-    padding: 3.75rem 0;
+    padding: 2.5rem 0;
+
+    .section-header__text {
+        max-width: 17.1875rem;
+    }
 
     // .reviews__slider
     &__slider {
         margin-top: 3rem;
+        overflow: visible;
     }
 
     // .reviews__controls
