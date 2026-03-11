@@ -15,80 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('click', function (e) {
         const target = e.target;
-        const header = document.querySelector('.header');
-        const toggler = document.querySelector('.header__toggler');
-        const menu = document.querySelector('.menu');
 
-        if (target.matches('.faq__item-question')) {
+        if (target.matches('.faq__item-btn')) {
+            const content = target.nextElementSibling;
+            if (content.classList.contains('_sliding')) return;
+
             target.classList.toggle('active');
-            target.nextElementSibling.slideToggle()
+            content.slideToggle()
         }
 
-        if (target.matches('.services__tabs-btn')) {
-            const btns = Array.from(document.querySelectorAll('.services__tabs-btn'));
-            const blocks = document.querySelectorAll('.services__block');
-            const index = btns.indexOf(target);
 
-            btns.forEach(btn => btn.classList.remove('active'));
-            target.classList.add('active');
-
-            blocks.forEach(block => block.classList.remove('active'));
-            if (blocks[index]) {
-                blocks[index].classList.add('active');
-            }
-        }
-
-        if (target.matches('.footer__arrow-top')) {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-        }
-
-        if (target.closest('.header__toggler')) {
-            toggler.classList.toggle('active');
-            header.classList.toggle('open-menu');
-            document.body.classList.toggle('open-mobile-menu');
-        } else if (
-            header.classList.contains('open-menu') &&
-            !target.closest('.menu')
-        ) {
-            toggler.classList.remove('active');
-            header.classList.remove('open-menu');
-            document.body.classList.remove('open-mobile-menu');
-        }
     })
 
     // sliders
-    class MobileSwiper {
-        constructor(sliderName, options, condition = 767.98) {
-            this.$slider = document.querySelector(sliderName);
-            this.options = options;
-            this.init = false;
-            this.swiper = null;
-            this.condition = condition;
-
-            if (this.$slider) {
-                this.handleResize();
-                window.addEventListener("resize", () => this.handleResize());
-            }
-        }
-
-        handleResize() {
-            if (window.innerWidth <= this.condition) {
-                if (!this.init) {
-                    this.init = true;
-                    this.swiper = new Swiper(this.$slider, this.options);
-                }
-            } else if (this.init) {
-                if (this.swiper) {
-                    this.swiper.destroy(true, true);
-                    this.swiper = null;
-                }
-                this.init = false;
-            }
-        }
-    }
 
     if (document.querySelector('.history__slider')) {
 
@@ -280,78 +219,101 @@ function initPhoneMask() {
     });
 }
 
+class MobileSwiper {
+    constructor(sliderName, options, condition = 767.98) {
+        this.$slider = document.querySelector(sliderName);
+        this.options = options;
+        this.init = false;
+        this.swiper = null;
+        this.condition = condition;
 
-HTMLElement.prototype.slideToggle = function (duration, callback) {
-    if (this.clientHeight === 0) {
-        _s(this, duration, callback, true);
-    } else {
-        _s(this, duration, callback);
-    }
-};
-
-HTMLElement.prototype.slideUp = function (duration, callback) {
-    _s(this, duration, callback);
-};
-
-HTMLElement.prototype.slideDown = function (duration, callback) {
-    _s(this, duration, callback, true);
-};
-
-function _s(el, duration, callback, isDown) {
-    if (typeof duration === 'undefined') duration = 400;
-    if (typeof isDown === 'undefined') isDown = false;
-
-    el.style.overflow = "hidden";
-    if (isDown) el.style.display = "block";
-
-    const elStyles = window.getComputedStyle(el);
-
-    const elHeight = parseFloat(elStyles.getPropertyValue('height'));
-    const elPaddingTop = parseFloat(elStyles.getPropertyValue('padding-top'));
-    const elPaddingBottom = parseFloat(elStyles.getPropertyValue('padding-bottom'));
-    const elMarginTop = parseFloat(elStyles.getPropertyValue('margin-top'));
-    const elMarginBottom = parseFloat(elStyles.getPropertyValue('margin-bottom'));
-
-    const stepHeight = elHeight / duration;
-    const stepPaddingTop = elPaddingTop / duration;
-    const stepPaddingBottom = elPaddingBottom / duration;
-    const stepMarginTop = elMarginTop / duration;
-    const stepMarginBottom = elMarginBottom / duration;
-
-    let start;
-
-    function step(timestamp) {
-        if (start === undefined) start = timestamp;
-
-        const elapsed = timestamp - start;
-
-        if (isDown) {
-            el.style.height = `${stepHeight * elapsed}px`;
-            el.style.paddingTop = `${stepPaddingTop * elapsed}px`;
-            el.style.paddingBottom = `${stepPaddingBottom * elapsed}px`;
-            el.style.marginTop = `${stepMarginTop * elapsed}px`;
-            el.style.marginBottom = `${stepMarginBottom * elapsed}px`;
-        } else {
-            el.style.height = `${elHeight - stepHeight * elapsed}px`;
-            el.style.paddingTop = `${elPaddingTop - stepPaddingTop * elapsed}px`;
-            el.style.paddingBottom = `${elPaddingBottom - stepPaddingBottom * elapsed}px`;
-            el.style.marginTop = `${elMarginTop - stepMarginTop * elapsed}px`;
-            el.style.marginBottom = `${elMarginBottom - stepMarginBottom * elapsed}px`;
-        }
-
-        if (elapsed >= duration) {
-            el.style.height = "";
-            el.style.paddingTop = "";
-            el.style.paddingBottom = "";
-            el.style.marginTop = "";
-            el.style.marginBottom = "";
-            el.style.overflow = "";
-            if (!isDown) el.style.display = "none";
-            if (typeof callback === "function") callback();
-        } else {
-            window.requestAnimationFrame(step);
+        if (this.$slider) {
+            this.handleResize();
+            window.addEventListener("resize", () => this.handleResize());
         }
     }
 
-    window.requestAnimationFrame(step);
+    handleResize() {
+        if (window.innerWidth <= this.condition) {
+            if (!this.init) {
+                this.init = true;
+                this.swiper = new Swiper(this.$slider, this.options);
+            }
+        } else if (this.init) {
+            if (this.swiper) {
+                this.swiper.destroy(true, true);
+                this.swiper = null;
+            }
+            this.init = false;
+        }
+    }
 }
+
+HTMLElement.prototype.slideToggle = function (duration = 400) {
+    if (window.getComputedStyle(this).display === 'none') {
+        return this.slideDown(duration);
+    } else {
+        return this.slideUp(duration);
+    }
+};
+
+HTMLElement.prototype.slideUp = function (duration = 400) {
+    this.classList.add('_sliding');
+    this.style.transitionProperty = 'height, margin, padding';
+    this.style.transitionDuration = duration + 'ms';
+    this.style.boxSizing = 'border-box';
+    this.style.height = this.offsetHeight + 'px';
+    this.offsetHeight;
+    this.style.overflow = 'hidden';
+    this.style.height = '0';
+    this.style.paddingTop = '0';
+    this.style.paddingBottom = '0';
+    this.style.marginTop = '0';
+    this.style.marginBottom = '0';
+
+    window.setTimeout(() => {
+        this.style.display = 'none';
+        this.style.removeProperty('height');
+        this.style.removeProperty('padding-top');
+        this.style.removeProperty('padding-bottom');
+        this.style.removeProperty('margin-top');
+        this.style.removeProperty('margin-bottom');
+        this.style.removeProperty('overflow');
+        this.style.removeProperty('transition-duration');
+        this.style.removeProperty('transition-property');
+        this.classList.remove('_sliding');
+    }, duration);
+};
+
+HTMLElement.prototype.slideDown = function (duration = 400) {
+    this.classList.add('_sliding');
+    this.style.removeProperty('display');
+    let display = window.getComputedStyle(this).display;
+    if (display === 'none') display = 'block';
+    this.style.display = display;
+
+    let height = this.offsetHeight;
+    this.style.overflow = 'hidden';
+    this.style.height = '0';
+    this.style.paddingTop = '0';
+    this.style.paddingBottom = '0';
+    this.style.marginTop = '0';
+    this.style.marginBottom = '0';
+    this.offsetHeight;
+
+    this.style.transitionProperty = "height, margin, padding";
+    this.style.transitionDuration = duration + 'ms';
+    this.style.height = height + 'px';
+    this.style.removeProperty('padding-top');
+    this.style.removeProperty('padding-bottom');
+    this.style.removeProperty('margin-top');
+    this.style.removeProperty('margin-bottom');
+
+    window.setTimeout(() => {
+        this.style.removeProperty('height');
+        this.style.removeProperty('overflow');
+        this.style.removeProperty('transition-duration');
+        this.style.removeProperty('transition-property');
+        this.classList.remove('_sliding');
+    }, duration);
+};

@@ -34,7 +34,7 @@
   font-weight: 600;
   font-style: normal;
 }
-[class^=icon-]:before,
+.faq__item-btn.active::before, [class^=icon-]:before,
 [class*=" icon-"]:before {
   font-family: "icons";
   font-style: normal;
@@ -72,7 +72,7 @@
   content: "\e903";
 }
 
-.icon-minus:before {
+.icon-minus:before, .faq__item-btn.active:before {
   content: "\e904";
 }
 
@@ -1461,7 +1461,10 @@ body {
 .faq {
   background: #F8F8F8;
   color: #2D2D2D;
-  padding: 2.5rem 0;
+  padding: 3.75rem 0;
+}
+.faq .section-header__text {
+  max-width: 11.0625rem;
 }
 .faq__content {
   margin-top: 3rem;
@@ -1488,6 +1491,9 @@ body {
   color: #BF1618;
   transition: all 0.3s ease;
 }
+.faq__item-btn.active::before {
+  transform: rotate(360deg);
+}
 @media (any-hover: hover) {
   .faq__item-btn:hover {
     background: #BF1618;
@@ -1499,6 +1505,8 @@ body {
 }
 .faq__item-answer {
   display: none;
+  padding: 0 3.75rem 1.25rem 1.25rem;
+  color: #535353;
 }
 
 .journey {

@@ -614,7 +614,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 .faq {
     background: $bg-white;
     color: $text-black;
-    padding: 2.5rem 0;
+    padding: rem(60) 0;
+
+    .section-header__text {
+        max-width: rem(177);
+    }
 
     // .faq__content
     &__content {
@@ -650,6 +654,13 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
             transition: all 0.3s ease;
         }
 
+        &.active {
+            &::before {
+                transform: rotate(360deg);
+                @extend %ic, .icon-minus;
+            }
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 background: $red;
@@ -665,6 +676,8 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .faq__item-answer
     &__item-answer {
         display: none;
+        padding: 0 3.75rem 1.25rem 1.25rem;
+        color: $text-grey-dark;
     }
 }
 
