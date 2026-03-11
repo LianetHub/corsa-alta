@@ -20,6 +20,13 @@ body {
 	color: #F9F9F9;
 	background: #1F1F1F;
 
+	&.preloading {
+
+		.header__logo {
+			visibility: hidden;
+		}
+	}
+
 	&.open-mobile-menu {
 		@media (max-width: $md3) {
 			overflow: hidden;
@@ -63,7 +70,8 @@ body {
 //=============== LAYOUT ===============================
 
 // =============== MODULES ====================
-@import "./modules/popup";
+// @import "./modules/popup";
+@import "./modules/preloader";
 
 // =============== MODULES ====================
 

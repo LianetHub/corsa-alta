@@ -1,17 +1,8 @@
 "use strict";
 
-//  Fancybox
-if (typeof Fancybox !== "undefined" && Fancybox !== null) {
-    Fancybox.bind("[data-fancybox]", {
-        dragToClose: false,
-        closeExisting: true
-    });
-}
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
+    initPreloader();
 
     document.addEventListener('click', function (e) {
         const target = e.target;
@@ -74,42 +65,62 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        const detailsSwiper = new Swiper('.programm__details', {
-            direction: 'horizontal',
-            spaceBetween: 20,
+        let detailsSwiper = null;
 
-            grabCursor: true,
-            mousewheel: true,
+        const initDetailsSwiper = () => {
+            const isDesktop = window.innerWidth >= 768;
 
-            effect: 'slide',
-            creativeEffect: {
-                prev: {
-                    shadow: true,
-                    translate: [0, "-120%", -500],
-                },
-                next: {
-                    shadow: true,
-                    translate: [0, "120%", -500],
-                },
-            },
-            scrollbar: {
-                el: '.programm__details-scrollbar',
-                draggable: true,
-            },
-            breakpoints: {
-                768: {
-                    direction: 'vertical',
-                    effect: 'creative',
-                }
+            if (detailsSwiper) {
+                detailsSwiper.destroy(true, true);
             }
-        });
 
-        daysSwiper.on('slideChange', () => {
-            detailsSwiper.slideTo(daysSwiper.activeIndex);
-        });
+            detailsSwiper = new Swiper('.programm__details', {
+                direction: isDesktop ? 'vertical' : 'horizontal',
+                spaceBetween: 20,
+                grabCursor: true,
+                mousewheel: {
+                    forceToAxis: true,
+                },
+                effect: isDesktop ? 'creative' : 'slide',
+                creativeEffect: isDesktop ? {
+                    prev: {
+                        shadow: true,
+                        translate: [0, "-120%", -500],
+                    },
+                    next: {
+                        shadow: true,
+                        translate: [0, "120%", -500],
+                    },
+                } : {},
+                scrollbar: {
+                    el: '.programm__details-scrollbar',
+                    draggable: true,
+                },
+                on: {
+                    slideChange: function () {
+                        daysSwiper.slideTo(this.activeIndex);
+                    }
+                }
+            });
 
-        detailsSwiper.on('slideChange', () => {
-            daysSwiper.slideTo(detailsSwiper.activeIndex);
+            daysSwiper.off('slideChange');
+            daysSwiper.on('slideChange', () => {
+                detailsSwiper.slideTo(daysSwiper.activeIndex);
+            });
+        };
+
+        initDetailsSwiper();
+
+        let timeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                const isDesktop = window.innerWidth >= 768;
+                if ((isDesktop && detailsSwiper.params.effect === 'slide') ||
+                    (!isDesktop && detailsSwiper.params.effect === 'creative')) {
+                    initDetailsSwiper();
+                }
+            }, 200);
         });
     }
 
@@ -152,83 +163,147 @@ document.addEventListener("DOMContentLoaded", function () {
     initPhoneMask();
     initFloatingLabels();
     initFormValidation();
+    initAnimation();
 
-    // animation
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    window.addEventListener('load', () => {
-        const startTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.start',
-                start: 'top 80%',
-                markers: true,
-                once: true,
-            }
-        });
-
-        startTl
-            .from('.start__line--one', {
-                xPercent: 100,
-                opacity: 0,
-                duration: 0.75,
-                ease: 'power1.inOut',
-            })
-            .from('.start__line--two', {
-                xPercent: -100,
-                opacity: 0,
-                duration: 0.75,
-                ease: 'power1.inOut',
-            })
-            .from('.start__line--three', {
-                xPercent: 100,
-                opacity: 0,
-                duration: 0.75,
-                ease: 'power1.inOut',
-            })
-            .from('.start__line--four', {
-                xPercent: -100,
-                opacity: 0,
-                duration: 0.75,
-                ease: 'power1.inOut',
-            });
-
-        const fadeAnimationBlocks = gsap.utils.toArray('[data-animate-fade]');
-        const bottomAnimationBlocks = gsap.utils.toArray('[data-animate-bottom]');
-
-        fadeAnimationBlocks.forEach((animBlock) => {
-            gsap.from(animBlock, {
-                scrollTrigger: {
-                    trigger: animBlock,
-                    start: 'top 80%',
-                    once: true
-                },
-                opacity: 0,
-                duration: 0.5,
-                ease: 'power1.inOut'
-            });
-        });
-
-        bottomAnimationBlocks.forEach((animBlock) => {
-            gsap.from(animBlock, {
-                scrollTrigger: {
-                    trigger: animBlock,
-                    start: 'top 80%',
-                    once: true
-                },
-                opacity: 0,
-                yPercent: 100,
-                duration: 0.5,
-                ease: 'power1.inOut'
-            });
-        });
-
-    });
 
 
 
 
 });
+
+function initPreloader() {
+    const preloader = document.querySelector('.preloader');
+    const flyLogo = document.querySelector('.preloader__logo-fly');
+    const headerLogo = document.querySelector('.header__logo');
+
+    if (!preloader || !headerLogo || !flyLogo) return;
+
+    let pageLoaded = false;
+    window.addEventListener('load', () => {
+        pageLoaded = true;
+    });
+
+    const mainTl = gsap.timeline();
+
+    mainTl.fromTo(preloader,
+        { scale: 200 },
+        {
+            scale: 1,
+            duration: 1.5,
+            ease: "power2.inOut",
+            onComplete: () => {
+                if (pageLoaded || document.readyState === "complete") {
+                    startFlight();
+                } else {
+                    window.addEventListener('load', startFlight, { once: true });
+                }
+            }
+        }
+    );
+
+    function startFlight() {
+        const targetRect = headerLogo.getBoundingClientRect();
+        const startRect = flyLogo.getBoundingClientRect();
+
+        const deltaX = targetRect.left - startRect.left + (targetRect.width / 2) - (startRect.width / 2);
+        const deltaY = targetRect.top - startRect.top + (targetRect.height / 2) - (startRect.height / 2);
+
+        const flightTl = gsap.timeline({
+            onComplete: () => {
+                gsap.set(headerLogo, { visibility: 'visible' });
+                preloader.remove();
+                document.body.classList.remove('preloading')
+            }
+        });
+
+
+        flightTl.to({}, { duration: 0.5 })
+            .to(preloader, {
+                backgroundColor: "transparent",
+                duration: 0.8,
+                ease: "power2.inOut"
+            })
+            .to(flyLogo, {
+                x: deltaX,
+                y: deltaY,
+                width: 106,
+                duration: 0.8,
+                ease: "power2.inOut"
+            }, "<");
+    }
+}
+
+function initAnimation() {
+    gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+    const startTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.start',
+            start: 'top 80%',
+            once: true,
+        }
+    });
+
+    startTl
+        .from('.start__line--one', {
+            xPercent: 100,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power1.inOut',
+        })
+        .from('.start__line--two', {
+            xPercent: -100,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power1.inOut',
+        })
+        .from('.start__line--three', {
+            xPercent: 100,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power1.inOut',
+        })
+        .from('.start__line--four', {
+            xPercent: -100,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power1.inOut',
+        });
+
+    const fadeAnimationBlocks = gsap.utils.toArray('[data-animate-fade]');
+    const bottomAnimationBlocks = gsap.utils.toArray('[data-animate-bottom]');
+
+    fadeAnimationBlocks.forEach((animBlock) => {
+        gsap.from(animBlock, {
+            scrollTrigger: {
+                trigger: animBlock,
+                start: 'top 80%',
+                once: true
+            },
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power1.inOut'
+        });
+    });
+
+    bottomAnimationBlocks.forEach((animBlock) => {
+        gsap.from(animBlock, {
+            scrollTrigger: {
+                trigger: animBlock,
+                start: 'top 80%',
+                once: true
+            },
+            opacity: 0,
+            yPercent: 100,
+            duration: 0.5,
+            ease: 'power1.inOut'
+        });
+    });
+}
 
 function initFloatingLabels() {
     const floatingInputs = document.querySelectorAll('.form__field > .form__input, .form__field > .form__textarea');

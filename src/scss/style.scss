@@ -65,6 +65,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 .hero {
     position: relative;
     z-index: $ui-index-2;
+    overflow: hidden;
 
     &::before {
         content: '';
@@ -1254,6 +1255,22 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
     // .faq__item
     &__item {
         border-bottom: rem(1) solid $red;
+        transition: all 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: $red;
+
+                .faq__item-btn,
+                .faq__item-answer {
+                    color: $text-white;
+
+                    &::before {
+                        color: $text-white;
+                    }
+                }
+            }
+        }
     }
 
     // .faq__item-btn
@@ -1294,16 +1311,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
             padding: 1.25rem 1.5rem;
         }
 
-        @media (any-hover: hover) {
-            &:hover {
-                background: $red;
-                color: $text-white;
 
-                &::before {
-                    color: $text-white;
-                }
-            }
-        }
     }
 
     // .faq__item-answer

@@ -21,10 +21,11 @@
 	&__menu {}
 
 	&__logo {
+		visibility: hidden;
 		max-width: rem(71);
 
 		@media (min-width:$md4) {
-			transition: all 0.3s ease 0.3s;
+			transition: opacity 0.3s ease 0.3s;
 			max-width: rem(106);
 
 			.header.open-menu & {
