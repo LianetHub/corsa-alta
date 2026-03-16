@@ -196,6 +196,25 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         margin-top: 2rem;
         width: 100%;
 
+        &.btn {
+            padding: rem(15) rem(39);
+
+            @media (min-width:$md4) {
+                padding: rem(19) rem(39);
+            }
+
+            &.btn-primary {
+                border: rem(1) solid $red;
+
+                &:hover,
+                &:active {
+                    border-color: $text-white;
+
+                }
+
+            }
+        }
+
         @media (min-width:$md5) {
             width: auto;
         }
