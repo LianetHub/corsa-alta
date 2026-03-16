@@ -1,8 +1,8 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
+initPreloader();
 
-    initPreloader();
+document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('click', function (e) {
         const target = e.target;
@@ -190,7 +190,7 @@ function initPreloader() {
         { scale: 200 },
         {
             scale: 1,
-            duration: 1.5,
+            duration: 1.2,
             ease: "power2.inOut",
             onComplete: () => {
                 if (pageLoaded || document.readyState === "complete") {
@@ -218,17 +218,17 @@ function initPreloader() {
         });
 
 
-        flightTl.to({}, { duration: 0.5 })
+        flightTl
             .to(preloader, {
                 backgroundColor: "transparent",
-                duration: 0.8,
+                duration: 0.6,
                 ease: "power2.inOut"
             })
             .to(flyLogo, {
                 x: deltaX,
                 y: deltaY,
                 width: 106,
-                duration: 0.8,
+                duration: 0.6,
                 ease: "power2.inOut"
             }, "<");
     }
@@ -236,9 +236,6 @@ function initPreloader() {
 
 function initAnimation() {
     gsap.registerPlugin(ScrollTrigger);
-
-
-
 
     const startTl = gsap.timeline({
         scrollTrigger: {
@@ -291,16 +288,20 @@ function initAnimation() {
     });
 
     bottomAnimationBlocks.forEach((animBlock) => {
+        const parent = animBlock.parentElement;
+
         gsap.from(animBlock, {
             scrollTrigger: {
-                trigger: animBlock,
-                start: 'top 80%',
-                once: true
+                trigger: parent,
+                start: 'top 85%',
+                once: true,
+                fastScrollEnd: true
             },
             opacity: 0,
-            yPercent: 100,
-            duration: 0.5,
-            ease: 'power1.inOut'
+            y: 50,
+            clearProps: "all",
+            duration: 0.6,
+            ease: 'power2.out'
         });
     });
 }

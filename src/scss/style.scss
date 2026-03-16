@@ -328,6 +328,8 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         flex-direction: column;
         gap: 0.5rem;
         margin-bottom: auto;
+        font-weight: 500;
+        color: $text-grey-dark;
 
         @media (min-width:$md3) {
             gap: 0.75rem;
