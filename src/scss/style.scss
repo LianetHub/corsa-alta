@@ -76,6 +76,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
         height: 100%;
         background: linear-gradient(180deg, rgba(31, 31, 31, 0.00) 64.27%, #1F1F1F 93.04%);
         z-index: 2;
+        pointer-events: none;
     }
 
     display: flex;
@@ -148,13 +149,23 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 
     // .hero__logo
     &__logo {
-        display: block;
+        display: flex;
+        justify-content: center;
+        text-align: center;
         margin-top: rem(20);
+
+        & img {
+            width: 100%;
+        }
 
         @media (min-width:$md4) {
             margin-top: rem(30);
-
         }
+
+        @media (min-width:$md2) {
+            width: #{math.div(74000, 1440)}vw;
+        }
+
     }
 
     // .hero__title
