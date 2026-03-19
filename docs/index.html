@@ -1,577 +1,581 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <title>Corsa Alta</title>
 
-<head>
-	<title>Corsa Alta</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/libs/swiper-bundle.min.css?_v=20260316213004">
-	<!-- plugins -->
-	<link rel="stylesheet" href="css/reset.min.css?_v=20260316213004">
-	<link rel="stylesheet" href="css/style.min.css?_v=20260316213004">
-</head>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body class="preloading">
-	<style>
-		body.preloading {
-			overflow: hidden;
-		}
+        <!-- plugins -->
+        <link rel="stylesheet" href="css/libs/swiper-bundle.min.css">
+        <!-- plugins -->
 
-	</style>
-	<div class="preloader">
-		<noscript>
-			<style>
-				.preloader {
-					display: none !important;
-				}
+        <link rel="stylesheet" href="css/reset.min.css">
+        <link rel="stylesheet" href="css/style.min.css">
 
-				body.preloading {
-					overflow: visible !important;
-				}
+    </head>
+    <body class="preloading">
+        <style>
+            body.preloading {
+                overflow: hidden;
+            }
+        </style>
 
-			</style>
-		</noscript>
-		<div class="preloader__logo-fly">
-			<img src="img/logo-white.svg" alt="Логотип">
-		</div>
-	</div>
-	<div class="wrapper">
-		<header class="header">
-			<div class="container">
-				<div class="header__wrapper">
-					<div class="header__menu menu">
-						<button type="button" data-menu-toggler class="menu__toggler btn btn-primary btn-sm">
-							<span class="menu__toggler-icon icon-menu">
-								<span></span><span></span>
-							</span>
-							<span class="menu__toggler-text">Меню</span>
-						</button>
-						<div class="menu__content">
-							<div class="menu__header">
-								<div class="menu__logo">
-									<img src="img/logo-white.svg" alt="Логотип">
-								</div>
-								<button type="button" data-menu-toggler aria-label="Закрыть мобильное меню" class="icon-menu">
-									<span></span><span></span>
-								</button>
-							</div>
-							<nav aria-label="Меню" class="menu__body">
-								<ul class="menu__list text-s">
-									<li class="menu__item"><a href="#history" class="menu__link">Философия тура</a></li>
-									<li class="menu__item"><a href="#programm" class="menu__link">Программа</a></li>
-									<li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
-									<li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
-									<li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
-								</ul>
-							</nav>
-							<div class="menu__contacts">
-								<a href="" class="contact-block text-xs icon-telegram">Telegram</a>
-								<a href="" class="contact-block text-xs icon-mail">Написать нам</a>
-							</div>
-						</div>
-					</div>
-					<a href="#" class="header__logo">
-						<img src="img/logo-white.svg" alt="Логотип">
-					</a>
-					<a href="#journey" class="header__callback btn btn-primary btn-sm icon-envelope">Написать нам</a>
-				</div>
-			</div>
-		</header>
-		<main class="page">
-			<section class="hero">
-				<div class="container">
-					<div class="hero__offer">
-						<div class="hero__tagline">Дороги, ради которых нужен спорткар</div>
-						<picture class="hero__logo">
-							<source media="(min-width: 767.98px)" srcset="img/hero/momentum.svg">
-							<img src="img/hero/momentum-mobile.svg" alt="momentum">
-						</picture>
-						<picture class="hero__image">
-							<source media="(min-width: 767.98px)" srcset="img/hero/car.png">
-							<img src="img/hero/car-mobile.png" alt="Фото спорткара с водителем">
-						</picture>
-						<h1 class="hero__title">Неделя по лучшим серпантинам Кавказа на вашем спорткаре. Без&nbsp;колонн. Без&nbsp;туристов.</h1>
-						<a href="#journey" class="hero__btn btn btn-primary icon-arrows">забронировать тур</a>
-					</div>
-				</div>
-			</section>
-			<section id="history" class="history">
-				<div class="container">
-					<div data-animate-fade class="history__header section-header">
-						<h2 class="section-header__title text-m icon-quotes">Философия тура</h2>
-						<div class="section-header__content">
-							<div class="section-header__tagline h1">За каждым маршрутом стоит человек</div>
-						</div>
-					</div>
-					<div class="history__slider swiper">
-						<div data-animate-bottom class="swiper-wrapper">
-							<div class="history__slide swiper-slide">
-								<div class="history__image">
-									<img src="img/history/01.jpg" class="cover-image" alt="Фото со спорткаром">
-								</div>
-								<div class="history__text">
-									<div class="history__caption h3"> Меня зовут Виталий. <br> Я — заядлый автолюбитель, который давно понял: <br> скорость — это не всегда главное. </div>
-									<div class="history__desc text-m">
-										<p>В какой‑то момент мне и моей небольшой коллекции спорткаров стало тесно в Москве и на подмосковных треках. Не физически, а ментально. Там можно ехать быстро, но редко получается ехать по‑настоящему. Душевно.</p>
-										<p>Мне нужны были дороги с характером. Такие, где каждый поворот — особенный. <strong>Где ритм задаёт не тайминг, а сама местность.</strong> Где машина становится частью пространства, а не просто инструментом.</p>
-										<p>Так я раз за разом возвращался на Кавказ.</p>
-									</div>
-									<button type="button" class="history__next btn btn-secondary icon-arrows">Читать историю</button>
-								</div>
-							</div>
-							<div class="history__slide swiper-slide">
-								<div class="history__image">
-									<img src="img/history/02.jpg" class="cover-image" alt="Фото со спорткаром">
-								</div>
-								<div class="history__text">
-									<div class="history__caption h3"> Этот регион невозможно проехать «одним днём» и понять с первого раза. </div>
-									<div class="history__desc text-m">
-										<p>Здесь серпантины не придуманы для развлечения — они выросли из рельефа, истории и жизни этих мест.</p>
-										<p>Несколько лет я ездил по этим дорогам на внедорожнике — исследовал перевалы, искал забытые маршруты. И в какой‑то момент стало очевидно: здесь есть место не только для внедорожника.</p>
-										<p><strong>Эти дороги идеально раскрываются на спорткаре</strong> — если ехать с правильным темпом и по правильному маршруту.</p>
-									</div>
-									<button type="button" class="history__next btn btn-secondary icon-arrows">узнать больше</button>
-								</div>
-							</div>
-							<div class="history__slide swiper-slide">
-								<div class="history__image">
-									<img src="img/history/03.jpg" class="cover-image" alt="Фото со спорткаром">
-								</div>
-								<div class="history__text">
-									<div class="history__caption h3"> Это не автопробег и не экскурсия. </div>
-									<div class="history__desc text-m">
-										<p>Сегодня это около 2000 километров по самым выразительным дорогам северного кавказа. С извилистыми серпантинами, продуманными паузами и осмысленным темпом.</p>
-										<p><strong>Это неделя глубокого погружения</strong> — в дорогу, в регион с его смесью культур, и в собственные ощущения за рулём любимой машины.</p>
-										<p>Своего рода этнографическая экспедиция. Только вместо заметок — километры, которые остаются с вами надолго.</p>
-									</div>
-									<button type="button" class="history__next btn btn-secondary icon-arrows">вернуться к истории</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="programm" class="programm">
-				<div class="container">
-					<div data-animate-fade class="programm__header section-header">
-						<h2 class="section-header__title text-m icon-quotes">Программа</h2>
-						<div class="section-header__content">
-							<div class="section-header__tagline h1">Маршруты для&nbsp;тех, кто живёт эмоциями</div>
-							<p class="section-header__text text-s"> Дороги, ради которых вы выбирали свой автомобиль. <br> Горы. Серпантины. Высота. </p>
-						</div>
-					</div>
-					<div data-animate-bottom class="programm__content">
-						<div class="programm__navigation">
-							<div class="swiper">
-								<div class="swiper-wrapper">
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 1</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 2</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 3</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 4</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 5</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 6</div>
-									<div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 7</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper programm__details">
-							<div class="swiper-wrapper">
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 1</div>
-										<div class="programm__card-caption h3">Точка старта</div>
-										<div class="programm__card-text text-m">
-											<p> Вы прилетаете в город назначения, забираете спорткары со стоянки и заселяетесь в отель уровня 5*.</p>
-											<p> Вечером — приветственный ужин, знакомство с командой и подробный брифинг по маршруту.</p>
-											<p> Всё готово. Завтра начинается главное.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/01.jpg" class="cover-image" alt="Вид на городскую улицу с историческими зданиями на фоне заснеженных горных вершин">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 2</div>
-										<div class="programm__card-caption h3">Набор высоты</div>
-										<div class="programm__card-text text-m">
-											<p> Тур начинается. Мы уезжаем высоко в&nbsp;горы — на идеальные дороги, о которых мало кто знает.</p>
-											<p> К вечеру — ночёвка в глубокой горной долине Северной Осетии в красивом альпийском отеле.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/02.jpg" class="cover-image" alt="Красный спортивный автомобиль едет по мокрой горной дороге в пасмурную погоду">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 3</div>
-										<div class="programm__card-caption h3">Ритм гор</div>
-										<div class="programm__card-text text-m">
-											<p> Выходим из отеля и сразу попадаем на идеальную дорогу вдоль горной реки — быстрые связки, чистый асфальт и эмоции.</p>
-											<p> Дальше — серпантин к подножью Эльбруса, плотный, техничный, в окружении хвои и скал. <br> Ночуем в Кисловодске.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/03.jpg" class="cover-image" alt="Вид из кабины автомобиля на извилистую дорогу в узком горном каньоне">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 4</div>
-										<div class="programm__card-caption h3">Рассвет и высота</div>
-										<div class="programm__card-text text-m">
-											<p> Пока мир только просыпается, мы уже на дороге. Самая красивая трасса страны, пустая и бесконечная. 160 км непрерывного хода и подъём на 2 600 м.</p>
-											<p> По пути — неожиданный выход из ритма: короткая прогулка-сюрприз в месте, которое невозможно забыть.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/04.jpg" class="cover-image" alt="Красный кабриолет на обочине горной дороги на фоне величественных хребтов">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 5</div>
-										<div class="programm__card-caption h3">Высота и масштаб</div>
-										<div class="programm__card-text text-m">
-											<p> Снежные вершины Домбая - цель на сегодня.</p>
-											<p> По пути нас ждет скрытый от масс серпантин вдоль горной реки с заездом в тихую долину, далёкую от цивилизации.</p>
-											<p> Финал дня - завораживающая дорога на Домбай.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/05.jpg" class="cover-image" alt="Синий спортивный автомобиль движется по серпантину среди холмов под кучевыми облаками">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 6</div>
-										<div class="programm__card-caption h3">Утро у горной реки</div>
-										<div class="programm__card-text text-m">
-											<p> На рассвете выезжаем к границе по техничному лесному серпантину.</p>
-											<p> По пути нас ждут короткие остановки, чтобы сменить ритм и вдохнуть вкус гор и рек.</p>
-											<p> На конец дня - плавный, быстрый серпантин в сторону Архыза.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/06.jpg" class="cover-image" alt="Три спорткара (синий, оранжевый и красный) припаркованы на фоне высоких гор с ледниками">
-									</div>
-								</div>
-								<div class="programm__card swiper-slide">
-									<div class="programm__card-info">
-										<div class="programm__card-day h3">День 7</div>
-										<div class="programm__card-caption h3">Grand Finale</div>
-										<div class="programm__card-text text-m">
-											<p> Прощаемся с горами на супер извилистом серпантине, ведущем к легендарному телескопу.</p>
-											<p> После — расслабленная дорога в Минеральные Воды, аэропорт и дом.</p>
-											<p> С ощущением, что это было по‑настоящему.</p>
-										</div>
-									</div>
-									<div class="programm__card-image">
-										<img src="img/program/07.jpg" class="cover-image" alt="Два автомобиля стоят на краю обрыва над глубокой горной долиной в лучах закатного солнца">
-									</div>
-								</div>
-							</div>
-							<div class="programm__details-scrollbar swiper-scrollbar"></div>
-						</div>
-					</div>
-					<div data-animate-bottom class="programm__info">
-						<video class="programm__info-video" muted loop playsinline autoplay="true" preload="metadata" poster="img/program/info.jpg">
-							<source src="./files/elbrusskiy.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-						</video>
-						<div class="programm__tours">
-							<div class="programm__tours-title h2">Ближайшие туры 2026</div>
-							<ul class="programm__tours-list text-l">
-								<li>20.06 - 29.06 2026</li>
-								<li>20.06 - 29.06 2026</li>
-								<li>20.06 - 29.06 2026</li>
-							</ul>
-							<a href="#journey" class="programm__tours-btn btn btn-white">стать участником</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="about" class="about">
-				<div class="container">
-					<div data-animate-bottom class="section-header">
-						<h2 class="section-header__title text-m icon-quotes">О нас</h2>
-						<div class="section-header__content">
-							<div class="section-header__tagline h1">Движение, которое ведёт к эмоциям</div>
-							<p class="section-header__text text-s">Это путешествие про состояние. Когда движение приносит удовольствие не только скоростью, но и наслаждением от траекторий и природы.</p>
-						</div>
-					</div>
-					<div data-animate-bottom class="about__desc text-m">
-						<p>Мы годами ездили по Кавказу за рулём, а не по карте. В этот маршрут вошли дороги, которые раскрываются в движении. И места, где важно замедлиться, чтобы увидеть регион целиком, а не проехать его насквозь.</p>
-					</div>
-					<video class="about__video" muted loop playsinline autoplay="true" preload="metadata" poster="img/about-poster.jpg">
-						<source src="./files/about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="about__content">
-						<div data-animate-bottom class="about__heading">
-							<div class="about__heading-text subtitle">Вы прилетаете , а мы берём на себя всё остальное</div>
-							<div class="about__heading-text text-s">Берём организацию под ключ.</div>
-						</div>
-						<div data-animate-bottom class="about__cards swiper">
-							<ol class="swiper-wrapper">
-								<li class="about__card text-s swiper-slide"> Самые лучшие из возможных отелей, логистика ваших автомобилей, помощь на дороге, фото-видео — все включено </li>
-								<li class="about__card text-s swiper-slide"> Создаём атмосферу, в которой хочется ехать дальше и наслаждаться каждой минутой </li>
-								<li class="about__card text-s swiper-slide"> Мы едем с вами: стильная машина сопровождения со всем необходимым всегда будет рядом </li>
-								<li class="about__card text-s swiper-slide"> Подбираем лучшие виды, точки остановок и места с характером </li>
-							</ol>
-							<div class="about__cards-scrollbar swiper-scrollbar"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="reviews" class="reviews">
-				<div class="container">
-					<div data-animate-fade class="section-header">
-						<h2 class="section-header__title text-m icon-quotes">Отзывы</h2>
-						<div class="section-header__content">
-							<div class="section-header__tagline h1">Впечатления без фильтров</div>
-							<p class="section-header__text text-s">Каждый тур — это личный опыт. Мы собираем впечатления тех, кто уже прокатился вместе с нами по серпантинам, чтобы вы могли увидеть путешествие их глазами.</p>
-						</div>
-					</div>
-					<div class="reviews__slider swiper" data-animate-bottom>
-						<ul class="swiper-wrapper">
-							<li class="review swiper-slide">
-								<div class="review__header text-xs">
-									<div class="review__author">Дмитрий</div>
-									<div class="review__time">Сентябрь 2025</div>
-								</div>
-								<div class="review__image">
-									<img src="img/reviews/dmitry.jpg" class="cover-image" alt="Мужчина на фоне красного спорткара в горах">
-								</div>
-								<blockquote class="review__text text-s">Каждый день ощущался по-разному. <strong>Очень сильный маршрут</strong>, разнообразный, живой, без проходных кусков. Отличные отели, классная еда и редкое чувство, что всё собрано людьми, которые сами любят дорогу и понимают, зачем ты здесь.</blockquote>
-							</li>
-							<li class="review swiper-slide">
-								<div class="review__header text-xs">
-									<div class="review__author">Леонид</div>
-									<div class="review__time">Сентябрь 2025</div>
-								</div>
-								<div class="review__image">
-									<img src="img/reviews/leonid.jpg" class="cover-image" alt="Мужчина в кабриолете рядом с лошадью">
-								</div>
-								<blockquote class="review__text text-s">Это не просто поездка, а цельный опыт. Маршрут невероятно интересный, <strong>мне хотелось именно ехать, а не «доехать»</strong>. Отели подобраны идеально, с характером, а еда — гастрономическое удовольствие. Ехал и понимал, что хочу здесь жить)</blockquote>
-							</li>
-							<li class="review swiper-slide">
-								<div class="review__header text-xs">
-									<div class="review__author">Кристина</div>
-									<div class="review__time">Сентябрь 2025</div>
-								</div>
-								<div class="review__image">
-									<img src="img/reviews/kristina.jpg" class="cover-image" alt="Девушка на балконе с видом на горы">
-								</div>
-								<blockquote class="review__text text-s">Для меня это стало открытием Кавказа с другой стороны. Очень красивый и продуманный маршрут, потрясающие отели. <strong>Ехать штурманом было не утомительно, а интересно</strong>. Всё проходило в правильном темпе и с комфортом.</blockquote>
-							</li>
-						</ul>
-						<div class="reviews__controls">
-							<button type="button" class="reviews__prev icon-left swiper-button-prev"></button>
-							<button type="button" class="reviews__next icon-right swiper-button-next"></button>
-						</div>
-					</div>
-				</div>
-			</section>
-			<div class="start">
-				<div class="start__line start__line--one">
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/line-1-1.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-					<video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-1-2.jpg">
-						<source src="./files/chegem.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-text"> дорога </div>
-					<div class="start__line-media">
-						<img src="img/start/line-1-3.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-				</div>
-				<div class="start__line start__line--two">
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-					<video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-1.jpg">
-						<source src="./files/dombay-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-text"> это </div>
-					<video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-2.jpg">
-						<source src="./files/dombay-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-3.jpg">
-						<source src="./files/dzhilysu-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/line-2-4.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-				</div>
-				<div class="start__line start__line--three">
-					<div class="start__line-media">
-						<img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-					<video class="start__line-media start__line-media--large" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-3-1.jpg">
-						<source src="./files/dzhylysu-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<video class="start__line-media start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-3-2.jpg">
-						<source src="./files/tseyloam-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-text"> только </div>
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/line-3-3.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-				</div>
-				<div class="start__line start__line--four">
-					<video class="start__line-media start__line-media--only-mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-3.jpg">
-						<source src="./files/dzhilysu-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-media">
-						<img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-					<div class="start__line-text"> начало </div>
-					<video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-4-1.jpg">
-						<source src="./files/dzhsu5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-4-2.jpg">
-						<source src="./files/dzhlsu-4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-					</video>
-					<div class="start__line-media start__line-media--large">
-						<img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
-					</div>
-				</div>
-			</div>
-			<section id="faq" class="faq">
-				<div class="container">
-					<div data-animate-fade class="section-header">
-						<h2 class="section-header__title text-m icon-quotes">На шаг ближе к мечте</h2>
-						<div class="section-header__content">
-							<div class="section-header__tagline h1">FAQ</div>
-							<p class="section-header__text text-s">Всё, что важно знать перед стартом</p>
-						</div>
-					</div>
-					<div class="faq__content">
-						<ul class="faq__list">
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Из скольких человек может состоять экипаж?</div>
-								<div class="faq__item-answer text-m">Экипаж состоит не более чем из двух человек (водитель и штурман).</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">На какой машине я могу поехать?</div>
-								<div class="faq__item-answer text-m">На любом исправном спорт- или суперкаре, который приносит вам удовольствие от езды и находится в хорошем техническом состоянии.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Как добираться до места старта?</div>
-								<div class="faq__item-answer text-m">Это самый комфортный и рациональный вариант: участники добираются самолетом, а автомобили мы доставляем централизованно на автовозе прямо к началу маршрута.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Насколько безопасны дороги?</div>
-								<div class="faq__item-answer text-m">Все маршруты проходят по дорогам общего пользования с асфальтовым покрытием. Путь построен так, чтобы езда была интересной и предсказуемой, без внедорожных участков или разбитого полотна.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Какой планируется среднесуточный пробег?</div>
-								<div class="faq__item-answer text-m">Общий пробег за тур составляет около 2000 км. Среднесуточный пробег — от 200 до 350 км, большая часть которых проходит по живописным горным серпантинам.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Какое качество дорожного полотна?</div>
-								<div class="faq__item-answer text-m">Качество дорог очень высокое, не уступает новым федеральным трассам. О любых локальных особенностях покрытия вас заранее предупредит ведущий во время брифинга.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Чем заняться помимо езды?</div>
-								<div class="faq__item-answer text-m">Программа включает остановки в знаковых локациях, вылазки на природу и прогулки по историческим городам Кавказских Минеральных Вод. Также в вашем распоряжении инфраструктура лучших 5★ отелей: СПА, бассейны и бани.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Что с бензином? Мне нужен 100-й.</div>
-								<div class="faq__item-answer text-m">Мы подготовили карту проверенных АЗС федеральных сетей (Лукойл, Газпром, Роснефть) с 100-м бензином по всему маршруту. Также в автомобиле сопровождения предусмотрен резервный запас топлива на всякий случай.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">Могу ли я сам приехать на машине до места старта?</div>
-								<div class="faq__item-answer text-m">Мы рекомендуем доставку автомобиля автовозом — это позволяет сохранить ресурс вашего спорткара и ваше личное время для самого путешествия.</div>
-							</li>
-							<li data-animate-bottom class="faq__item">
-								<div class="faq__item-btn h3 icon-plus">В каких отелях мы будем проживать?</div>
-								<div class="faq__item-answer text-m">Для проживания отобраны лучшие отели уровня 5★ в регионе. Высокий сервис, комфорт и возможность полноценно восстановиться после дня за рулем — приоритетная часть нашей программы.</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<section id="journey" class="journey">
-				<div class="container">
-					<div class="journey__content" data-animate-bottom>
-						<div class="journey__body">
-							<h2 class="journey__title h1">Ваше <span class="color-accent">путешествие</span> начинается здесь</h2>
-							<p class="journey__subtitle text-m">Дальше — личный контакт и детали маршрута</p>
-							<form action="#" class="journey__form form">
-								<label class="form__field">
-									<input type="name" name="name" class="form__control" placeholder="Ваше Имя">
-									<span class="form__field-placeholder">Ваше Имя</span>
-								</label>
-								<label class="form__field">
-									<input type="tel" name="tel" class="form__control" placeholder="Ваш номер для связи">
-									<span class="form__field-placeholder">Ваш номер для связи</span>
-								</label>
-								<label class="form__field">
-									<input type="email" name="email" class="form__control" placeholder="Ваш email">
-									<span class="form__field-placeholder">Ваш email</span>
-								</label>
-								<button type="submit" disabled class="form__submit btn btn-primary">стать участником</button>
-								<div class="form__policy caption"> Нажимая кнопку СТАТЬ УЧАСТНИКОМ, вы соглашаетесь с <a href="">обработкой персональных данных</a>. </div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="container">
-				<div class="footer__header">
-					<div class="footer__main">
-						<a href="" class="footer__logo">
-							<img src="img/logo-dark.svg" alt="Логотип">
-						</a>
-						<p class="footer__tagline subtitle-sm">Там, где дороги важнее точки назначения</p>
-					</div>
-					<div class="footer__menu">
-						<div class="footer__caption subtitle-sm">Меню</div>
-						<nav aria-label="Меню в подвале" class="footer__menu text-m">
-							<ul class="footer__menu-list">
-								<li class="footer__menu-item"><a href="#history" class="footer__menu-link">Философия тура</a></li>
-								<li class="footer__menu-item"><a href="#programm" class="footer__menu-link">Программа</a></li>
-								<li class="footer__menu-item"><a href="#about" class="footer__menu-link">О нас</a></li>
-								<li class="footer__menu-item"><a href="#reviews" class="footer__menu-link">Отзывы</a></li>
-								<li class="footer__menu-item"><a href="#faq" class="footer__menu-link">FAQ</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="footer__contacts">
-						<div class="footer__caption subtitle-sm">Контакты</div>
-						<div class="footer__contacts-blocks">
-							<a href="" class="contact-block text-xs icon-telegram">Telegram</a>
-							<a href="" class="contact-block text-xs icon-mail">Написать нам</a>
-						</div>
-					</div>
-				</div>
-				<div class="footer__bottom text-xs">
-					<div class="footer__column">
-						<div class="footer__copy">© 2026 CorsaAlta</div>
-						<a href="" class="footer__policy">Политика конфиденциальности</a>
-					</div>
-					<div class="footer__column">
-						<a href="" class="footer__policy">Пользовательское соглашение</a>
-						<a href="" class="footer__policy">Согласие на обработку персональных данных</a>
-					</div>
-				</div>
-			</div>
-		</footer> <!-- plugins -->
-		<script src="js/libs/swiper-bundle.min.js?_v=20260316213004"></script>
-		<script src="js/libs/gsap.min.js?_v=20260316213004"></script>
-		<script src="js/libs/ScrollTrigger.min.js?_v=20260316213004"></script>
-		<!-- plugins -->
-		<script src="js/app.min.js?_v=20260316213004"></script>
-	</div>
-</body>
+        <div class="preloader">
+            <noscript>
+                <style>
+                    .preloader {
+                        display: none !important;
+                    }
 
+                    body.preloading {
+                        overflow: visible !important;
+                    }
+                </style>
+            </noscript>
+            <div class="preloader__logo-fly">
+                <img src="img/logo-white.svg" alt="Логотип">
+            </div>
+        </div>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="header__wrapper">
+                        <div class="header__menu menu">
+                            <button type="button" data-menu-toggler class="menu__toggler btn btn-primary btn-sm">
+                                <span class="menu__toggler-icon icon-menu">
+                                    <span></span><span></span>
+                                </span>
+                                <span class="menu__toggler-text">Меню</span>
+                            </button>
+                            <div class="menu__content">
+                                <div class="menu__header">
+                                    <div class="menu__logo">
+                                        <img src="img/logo-white.svg" alt="Логотип">
+                                    </div>
+                                    <button type="button" data-menu-toggler aria-label="Закрыть мобильное меню" class="icon-menu">
+                                        <span></span><span></span>
+                                    </button>
+                                </div>
+                                <nav aria-label="Меню" class="menu__body">
+                                    <ul class="menu__list text-s">
+                                        <li class="menu__item"><a href="#history" class="menu__link">Философия тура</a></li>
+                                        <li class="menu__item"><a href="#programm" class="menu__link">Программа</a></li>
+                                        <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
+                                        <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
+                                        <li class="menu__item"><a href="#faq" class="menu__link">FAQ</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="menu__contacts">
+                                    <a href="" class="contact-block text-xs icon-telegram">Telegram</a>
+                                    <a href="" class="contact-block text-xs icon-mail">Написать нам</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="header__logo">
+                            <img src="img/logo-white.svg" alt="Логотип">
+                        </a>
+                        <a href="#journey" class="header__callback btn btn-primary btn-sm icon-envelope">Написать нам</a>
+                    </div>
+                </div>
+            </header>
+            <main class="page">
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero__offer">
+                            <div class="hero__tagline">Дороги, ради которых нужен спорткар</div>
+                            <picture class="hero__logo">
+                                <source media="(min-width: 767.98px)" srcset="img/hero/momentum.svg">
+                                <img src="img/hero/momentum-mobile.svg" alt="momentum">
+                            </picture>
+                            <picture class="hero__image">
+                                <source media="(min-width: 767.98px)" srcset="img/hero/car.png">
+                                <img src="img/hero/car-mobile.png" alt="Фото спорткара с водителем">
+                            </picture>
+                            <h1 class="hero__title">Неделя по лучшим серпантинам Кавказа на вашем спорткаре. Без&nbsp;колонн. Без&nbsp;туристов.</h1>
+                            <a href="#journey" class="hero__btn btn btn-primary icon-arrows">забронировать тур</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="history" class="history">
+                    <div class="container">
+                        <div data-animate-fade class="history__header section-header">
+                            <h2 class="section-header__title text-m icon-quotes">Философия тура</h2>
+                            <div class="section-header__content">
+                                <div class="section-header__tagline h1">За каждым маршрутом стоит человек</div>
+                            </div>
+                        </div>
+                        <div class="history__slider swiper">
+                            <div data-animate-bottom class="swiper-wrapper">
+                                <div class="history__slide swiper-slide">
+                                    <div class="history__image">
+                                        <img src="img/history/01.jpg" class="cover-image" alt="Фото со спорткаром">
+                                    </div>
+                                    <div class="history__text">
+                                        <div class="history__caption h3">
+                                            Меня зовут Виталий. <br>
+                                            Я — заядлый автолюбитель, который давно понял: <br>
+                                            скорость — это не всегда главное.
+                                        </div>
+                                        <div class="history__desc text-m">
+                                            <p>В какой‑то момент мне и моей небольшой коллекции спорткаров стало тесно в Москве и на подмосковных треках. Не физически, а ментально. Там можно ехать быстро, но редко получается ехать по‑настоящему. Душевно.</p>
+                                            <p>Мне нужны были дороги с характером. Такие, где каждый поворот — особенный. <strong>Где ритм задаёт не тайминг, а сама местность.</strong> Где машина становится частью пространства, а не просто инструментом.</p>
+                                            <p>Так я раз за разом возвращался на Кавказ.</p>
+                                        </div>
+                                        <button type="button" class="history__next btn btn-secondary icon-arrows">Читать историю</button>
+                                    </div>
+                                </div>
+                                <div class="history__slide swiper-slide">
+                                    <div class="history__image">
+                                        <img src="img/history/02.jpg" class="cover-image" alt="Фото со спорткаром">
+                                    </div>
+                                    <div class="history__text">
+                                        <div class="history__caption h3">
+                                            Этот регион невозможно проехать «одним днём» и понять с первого раза.
+                                        </div>
+                                        <div class="history__desc text-m">
+                                            <p>Здесь серпантины не придуманы для развлечения — они выросли из рельефа, истории и жизни этих мест.</p>
+                                            <p>Несколько лет я ездил по этим дорогам на внедорожнике — исследовал перевалы, искал забытые маршруты. И в какой‑то момент стало очевидно: здесь есть место не только для внедорожника.</p>
+                                            <p><strong>Эти дороги идеально раскрываются на спорткаре</strong> — если ехать с правильным темпом и по правильному маршруту.</p>
+                                        </div>
+                                        <button type="button" class="history__next btn btn-secondary icon-arrows">узнать больше</button>
+                                    </div>
+                                </div>
+                                <div class="history__slide swiper-slide">
+                                    <div class="history__image">
+                                        <img src="img/history/03.jpg" class="cover-image" alt="Фото со спорткаром">
+                                    </div>
+                                    <div class="history__text">
+                                        <div class="history__caption h3">
+                                            Это не автопробег и не экскурсия.
+                                        </div>
+                                        <div class="history__desc text-m">
+                                            <p>Сегодня это около 2000 километров по самым выразительным дорогам северного кавказа. С извилистыми серпантинами, продуманными паузами и осмысленным темпом.</p>
+                                            <p><strong>Это неделя глубокого погружения</strong> — в дорогу, в регион с его смесью культур, и в собственные ощущения за рулём любимой машины.</p>
+                                            <p>Своего рода этнографическая экспедиция. Только вместо заметок — километры, которые остаются с вами надолго.</p>
+                                        </div>
+                                        <button type="button" class="history__next btn btn-secondary icon-arrows">вернуться к истории</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="programm" class="programm">
+                    <div class="container">
+                        <div data-animate-fade class="programm__header section-header">
+                            <h2 class="section-header__title text-m icon-quotes">Программа</h2>
+                            <div class="section-header__content">
+                                <div class="section-header__tagline h1">Маршруты для&nbsp;тех, кто живёт эмоциями</div>
+                                <p class="section-header__text text-s">
+                                    Дороги, ради которых вы выбирали свой автомобиль. <br>
+                                    Горы. Серпантины. Высота.
+                                </p>
+                            </div>
+                        </div>
+                        <div data-animate-bottom class="programm__content">
+                            <div class="programm__navigation">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 1</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 2</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 3</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 4</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 5</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 6</div>
+                                        <div class="programm__navigation-item h1 swiper-slide">ДЕНЬ 7</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper programm__details">
+                                <div class="swiper-wrapper">
+                                    <div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 1</div>
+                                            <div class="programm__card-caption h3">Точка старта</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Вы прилетаете в город назначения, забираете спорткары со стоянки и заселяетесь в отель уровня 5*.</p> <p> Вечером — приветственный ужин, знакомство с командой и подробный брифинг по маршруту.</p> <p> Всё готово. Завтра начинается главное.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/01.jpg" class="cover-image" alt="Вид на городскую улицу с историческими зданиями на фоне заснеженных горных вершин">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 2</div>
+                                            <div class="programm__card-caption h3">Набор высоты</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Тур начинается. Мы уезжаем высоко в&nbsp;горы — на идеальные дороги, о которых мало кто знает.</p> <p> К вечеру — ночёвка в глубокой горной долине Северной Осетии в красивом альпийском отеле.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/02.jpg" class="cover-image" alt="Красный спортивный автомобиль едет по мокрой горной дороге в пасмурную погоду">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 3</div>
+                                            <div class="programm__card-caption h3">Ритм гор</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Выходим из отеля и сразу попадаем на идеальную дорогу вдоль горной реки — быстрые связки, чистый асфальт и эмоции.</p> <p> Дальше — серпантин к подножью Эльбруса, плотный, техничный, в окружении хвои и скал. <br> Ночуем в Кисловодске.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/03.jpg" class="cover-image" alt="Вид из кабины автомобиля на извилистую дорогу в узком горном каньоне">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 4</div>
+                                            <div class="programm__card-caption h3">Рассвет и высота</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Пока мир только просыпается, мы уже на дороге. Самая красивая трасса страны, пустая и бесконечная. 160 км непрерывного хода и подъём на 2 600 м.</p> <p> По пути — неожиданный выход из ритма: короткая прогулка-сюрприз в месте, которое невозможно забыть.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/04.jpg" class="cover-image" alt="Красный кабриолет на обочине горной дороги на фоне величественных хребтов">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 5</div>
+                                            <div class="programm__card-caption h3">Высота и масштаб</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Снежные вершины Домбая - цель на сегодня.</p> <p> По пути нас ждет скрытый от масс серпантин вдоль горной реки с заездом в тихую долину, далёкую от цивилизации.</p> <p> Финал дня - завораживающая дорога на Домбай.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/05.jpg" class="cover-image" alt="Синий спортивный автомобиль движется по серпантину среди холмов под кучевыми облаками">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 6</div>
+                                            <div class="programm__card-caption h3">Утро у горной реки</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> На рассвете выезжаем к границе по техничному лесному серпантину.</p> <p> По пути нас ждут короткие остановки, чтобы сменить ритм и вдохнуть вкус гор и рек.</p> <p> На конец дня - плавный, быстрый серпантин в сторону Архыза.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/06.jpg" class="cover-image" alt="Три спорткара (синий, оранжевый и красный) припаркованы на фоне высоких гор с ледниками">
+                                        </div>
+                                    </div><div class="programm__card swiper-slide">
+                                        <div class="programm__card-info">
+                                            <div class="programm__card-day h3">День 7</div>
+                                            <div class="programm__card-caption h3">Grand Finale</div>
+                                            <div class="programm__card-text text-m">
+                                                 <p> Прощаемся с горами на супер извилистом серпантине, ведущем к легендарному телескопу.</p> <p> После — расслабленная дорога в Минеральные Воды, аэропорт и дом.</p> <p> С ощущением, что это было по‑настоящему.</p>
+                                            </div>
+                                        </div>
+                                        <div class="programm__card-image">
+                                            <img src="img/program/07.jpg" class="cover-image" alt="Два автомобиля стоят на краю обрыва над глубокой горной долиной в лучах закатного солнца">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="programm__details-scrollbar swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                        <div data-animate-bottom class="programm__info">
+                            <video class="programm__info-video" muted loop playsinline autoplay="true" preload="metadata" poster="img/program/info.jpg">
+                                <source src="./files/elbrusskiy.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                            </video>
+                            <div class="programm__tours">
+                                <div class="programm__tours-title h2">Ближайшие туры 2026</div>
+                                <ul class="programm__tours-list text-l">
+                                    <li>20.06 - 29.06 2026</li>
+                                    <li>20.06 - 29.06 2026</li>
+                                    <li>20.06 - 29.06 2026</li>
+                                </ul>
+                                <a href="#journey" class="programm__tours-btn btn btn-white">стать участником</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="about" class="about">
+                    <div class="container">
+                        <div data-animate-bottom class="section-header">
+                            <h2 class="section-header__title text-m icon-quotes">О нас</h2>
+                            <div class="section-header__content">
+                                <div class="section-header__tagline h1">Движение, которое ведёт к эмоциям</div>
+                                <p class="section-header__text text-s">Это путешествие про состояние. Когда движение приносит удовольствие не только скоростью, но и наслаждением от траекторий и природы.</p>
+                            </div>
+                        </div>
+                        <div data-animate-bottom class="about__desc text-m">
+                            <p>Мы годами ездили по Кавказу за рулём, а не по карте. В этот маршрут вошли дороги, которые раскрываются в движении. И места, где важно замедлиться, чтобы увидеть регион целиком, а не проехать его насквозь.</p>
+                        </div>
+                        <video class="about__video" muted loop playsinline autoplay="true" preload="metadata" poster="img/about-poster.jpg">
+                            <source src="./files/about.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="about__content">
+                            <div data-animate-bottom class="about__heading">
+                                <div class="about__heading-text subtitle">Вы прилетаете , а мы берём на себя всё остальное</div>
+                                <div class="about__heading-text text-s">Берём организацию под ключ.</div>
+                            </div>
+                            <div data-animate-bottom class="about__cards swiper">
+                                <ol class="swiper-wrapper">
+                                    <li class="about__card text-s swiper-slide">
+                                        Самые лучшие из возможных отелей, логистика ваших автомобилей, помощь на дороге, фото-видео — все включено
+                                    </li>
+                                    <li class="about__card text-s swiper-slide">
+                                        Создаём атмосферу, в которой хочется ехать дальше и наслаждаться каждой минутой
+                                    </li>
+                                    <li class="about__card text-s swiper-slide">
+                                        Мы едем с вами: стильная машина сопровождения со всем необходимым всегда будет рядом
+                                    </li>
+                                    <li class="about__card text-s swiper-slide">
+                                        Подбираем лучшие виды, точки остановок и места с характером
+                                    </li>
+                                </ol>
+                                <div class="about__cards-scrollbar swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="reviews" class="reviews">
+                    <div class="container">
+                        <div data-animate-fade class="section-header">
+                            <h2 class="section-header__title text-m icon-quotes">Отзывы</h2>
+                            <div class="section-header__content">
+                                <div class="section-header__tagline h1">Впечатления без фильтров</div>
+                                <p class="section-header__text text-s">Каждый тур — это личный опыт. Мы собираем впечатления тех, кто уже прокатился вместе с нами по серпантинам, чтобы вы могли увидеть путешествие их глазами.</p>
+                            </div>
+                        </div>
+                        <div class="reviews__slider swiper" data-animate-bottom>
+                            <ul class="swiper-wrapper">
+                                <li class="review swiper-slide">
+                                    <div class="review__header text-xs">
+                                        <div class="review__author">Дмитрий</div>
+                                        <div class="review__time">Сентябрь 2025</div>
+                                    </div>
+                                    <div class="review__image">
+                                        <img src="img/reviews/dmitry.jpg" class="cover-image" alt="Мужчина на фоне красного спорткара в горах">
+                                    </div>
+                                    <blockquote class="review__text text-s">Каждый день ощущался по-разному. <strong>Очень сильный маршрут</strong>, разнообразный, живой, без проходных кусков. Отличные отели, классная еда и редкое чувство, что всё собрано людьми, которые сами любят дорогу и понимают, зачем ты здесь.</blockquote>
+                                </li><li class="review swiper-slide">
+                                    <div class="review__header text-xs">
+                                        <div class="review__author">Леонид</div>
+                                        <div class="review__time">Сентябрь 2025</div>
+                                    </div>
+                                    <div class="review__image">
+                                        <img src="img/reviews/leonid.jpg" class="cover-image" alt="Мужчина в кабриолете рядом с лошадью">
+                                    </div>
+                                    <blockquote class="review__text text-s">Это не просто поездка, а цельный опыт. Маршрут невероятно интересный, <strong>мне хотелось именно ехать, а не «доехать»</strong>. Отели подобраны идеально, с характером, а еда — гастрономическое удовольствие. Ехал и понимал, что хочу здесь жить)</blockquote>
+                                </li><li class="review swiper-slide">
+                                    <div class="review__header text-xs">
+                                        <div class="review__author">Кристина</div>
+                                        <div class="review__time">Сентябрь 2025</div>
+                                    </div>
+                                    <div class="review__image">
+                                        <img src="img/reviews/kristina.jpg" class="cover-image" alt="Девушка на балконе с видом на горы">
+                                    </div>
+                                    <blockquote class="review__text text-s">Для меня это стало открытием Кавказа с другой стороны. Очень красивый и продуманный маршрут, потрясающие отели. <strong>Ехать штурманом было не утомительно, а интересно</strong>. Всё проходило в правильном темпе и с комфортом.</blockquote>
+                                </li>
+                            </ul>
+                            <div class="reviews__controls">
+                                <button type="button" class="reviews__prev icon-left swiper-button-prev"></button>
+                                <button type="button" class="reviews__next icon-right swiper-button-next"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="start">
+                    <div class="start__line start__line--one">
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/line-1-1.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                        <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-1-2.jpg">
+                            <source src="./files/chegem.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-text">
+                            дорога
+                        </div>
+                        <div class="start__line-media">
+                            <img src="img/start/line-1-3.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                    </div>
+                    <div class="start__line start__line--two">
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                        <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-1.jpg">
+                            <source src="./files/dombay-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-text">
+                            это
+                        </div>
+                        <video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-2.jpg">
+                            <source src="./files/dombay-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-3.jpg">
+                            <source src="./files/dzhilysu-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/line-2-4.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                    </div>
+                    <div class="start__line start__line--three">
+                        <div class="start__line-media">
+                            <img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                        <video class="start__line-media start__line-media--large" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-3-1.jpg">
+                            <source src="./files/dzhylysu-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <video class="start__line-media start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-3-2.jpg">
+                            <source src="./files/tseyloam-1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-text">
+                            только
+                        </div>
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/line-3-3.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                    </div>
+                    <div class="start__line start__line--four">
+                        <video class="start__line-media start__line-media--only-mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-2-3.jpg">
+                            <source src="./files/dzhilysu-3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-media">
+                            <img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                        <div class="start__line-text">
+                            начало
+                        </div>
+                        <video class="start__line-media start__line-media--large start__line-media--mobile" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-4-1.jpg">
+                            <source src="./files/dzhsu5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <video class="start__line-media" muted loop playsinline autoplay="true" preload="metadata" poster="img/start/line-4-2.jpg">
+                            <source src="./files/dzhlsu-4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                        </video>
+                        <div class="start__line-media start__line-media--large">
+                            <img src="img/start/car.jpg" class="cover-image" alt="Фото поездки">
+                        </div>
+                    </div>
+                </div>
+                <section id="faq" class="faq">
+                    <div class="container">
+                        <div data-animate-fade class="section-header">
+                            <h2 class="section-header__title text-m icon-quotes">На шаг ближе к мечте</h2>
+                            <div class="section-header__content">
+                                <div class="section-header__tagline h1">FAQ</div>
+                                <p class="section-header__text text-s">Всё, что важно знать перед стартом</p>
+                            </div>
+                        </div>
+                        <div class="faq__content">
+                            <ul class="faq__list">
+                                <li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Из скольких человек может состоять экипаж?</div>
+                                    <div class="faq__item-answer text-m">Экипаж состоит не более чем из двух человек (водитель и штурман).</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">На какой машине я могу поехать?</div>
+                                    <div class="faq__item-answer text-m">На любом исправном спорт- или суперкаре, который приносит вам удовольствие от езды и находится в хорошем техническом состоянии.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Как добираться до места старта?</div>
+                                    <div class="faq__item-answer text-m">Это самый комфортный и рациональный вариант: участники добираются самолетом, а автомобили мы доставляем централизованно на автовозе прямо к началу маршрута.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Насколько безопасны дороги?</div>
+                                    <div class="faq__item-answer text-m">Все маршруты проходят по дорогам общего пользования с асфальтовым покрытием. Путь построен так, чтобы езда была интересной и предсказуемой, без внедорожных участков или разбитого полотна.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Какой планируется среднесуточный пробег?</div>
+                                    <div class="faq__item-answer text-m">Общий пробег за тур составляет около 2000 км. Среднесуточный пробег — от 200 до 350 км, большая часть которых проходит по живописным горным серпантинам.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Какое качество дорожного полотна?</div>
+                                    <div class="faq__item-answer text-m">Качество дорог очень высокое, не уступает новым федеральным трассам. О любых локальных особенностях покрытия вас заранее предупредит ведущий во время брифинга.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Чем заняться помимо езды?</div>
+                                    <div class="faq__item-answer text-m">Программа включает остановки в знаковых локациях, вылазки на природу и прогулки по историческим городам Кавказских Минеральных Вод. Также в вашем распоряжении инфраструктура лучших 5★ отелей: СПА, бассейны и бани.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Что с бензином? Мне нужен 100-й.</div>
+                                    <div class="faq__item-answer text-m">Мы подготовили карту проверенных АЗС федеральных сетей (Лукойл, Газпром, Роснефть) с 100-м бензином по всему маршруту. Также в автомобиле сопровождения предусмотрен резервный запас топлива на всякий случай.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">Могу ли я сам приехать на машине до места старта?</div>
+                                    <div class="faq__item-answer text-m">Мы рекомендуем доставку автомобиля автовозом — это позволяет сохранить ресурс вашего спорткара и ваше личное время для самого путешествия.</div>
+                                </li><li data-animate-bottom class="faq__item">
+                                    <div class="faq__item-btn h3 icon-plus">В каких отелях мы будем проживать?</div>
+                                    <div class="faq__item-answer text-m">Для проживания отобраны лучшие отели уровня 5★ в регионе. Высокий сервис, комфорт и возможность полноценно восстановиться после дня за рулем — приоритетная часть нашей программы.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section id="journey" class="journey">
+                    <div class="container">
+                        <div class="journey__content" data-animate-bottom>
+                            <div class="journey__body">
+                                <h2 class="journey__title h1">Ваше <span class="color-accent">путешествие</span> начинается здесь</h2>
+                                <p class="journey__subtitle text-m">Дальше — личный контакт и детали маршрута</p>
+                                <form action="#" class="journey__form form">
+                                    <label class="form__field">
+                                        <input type="name" name="name" class="form__control" placeholder="Ваше Имя">
+                                        <span class="form__field-placeholder">Ваше Имя</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="tel" name="tel" class="form__control" placeholder="Ваш номер для связи">
+                                        <span class="form__field-placeholder">Ваш номер для связи</span>
+                                    </label>
+                                    <label class="form__field">
+                                        <input type="email" name="email" class="form__control" placeholder="Ваш email">
+                                        <span class="form__field-placeholder">Ваш email</span>
+                                    </label>
+                                    <button type="submit" disabled class="form__submit btn btn-primary">стать участником</button>
+                                    <div class="form__policy caption">
+                                        Нажимая кнопку СТАТЬ УЧАСТНИКОМ, вы соглашаетесь с <a href="">обработкой персональных данных</a>.
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer__header">
+                        <div class="footer__main">
+                            <a href="" class="footer__logo">
+                                <img src="img/logo-dark.svg" alt="Логотип">
+                            </a>
+                            <p class="footer__tagline subtitle-sm">Там, где дороги важнее точки назначения</p>
+                        </div>
+                        <div class="footer__menu">
+                            <div class="footer__caption subtitle-sm">Меню</div>
+                            <nav aria-label="Меню в подвале" class="footer__menu text-m">
+                                <ul class="footer__menu-list">
+                                    <li class="footer__menu-item"><a href="#history" class="footer__menu-link">Философия тура</a></li>
+                                    <li class="footer__menu-item"><a href="#programm" class="footer__menu-link">Программа</a></li>
+                                    <li class="footer__menu-item"><a href="#about" class="footer__menu-link">О нас</a></li>
+                                    <li class="footer__menu-item"><a href="#reviews" class="footer__menu-link">Отзывы</a></li>
+                                    <li class="footer__menu-item"><a href="#faq" class="footer__menu-link">FAQ</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer__contacts">
+                            <div class="footer__caption subtitle-sm">Контакты</div>
+                            <div class="footer__contacts-blocks">
+                                <a href="" class="contact-block text-xs icon-telegram">Telegram</a>
+                                <a href="" class="contact-block text-xs icon-mail">Написать нам</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__bottom text-xs">
+                        <div class="footer__column">
+                            <div class="footer__copy">© 2026 CorsaAlta</div>
+                            <a href="" class="footer__policy">Политика конфиденциальности</a>
+                        </div>
+                        <div class="footer__column">
+                            <a href="" class="footer__policy">Пользовательское соглашение</a>
+                            <a href="" class="footer__policy">Согласие на обработку персональных данных</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- plugins -->
+
+            <script src="js/libs/swiper-bundle.min.js"></script>
+            <script src="js/libs/gsap.min.js"></script>
+            <script src="js/libs/ScrollTrigger.min.js"></script>
+            <!-- plugins -->
+
+            <script src="js/app.min.js"></script>
+        </div>
+    </body>
 </html>
